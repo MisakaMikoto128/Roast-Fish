@@ -1152,6 +1152,27 @@ Section Cross References
     sys.o(.text.UserPIDInit) refers to sys.o(.bss.FishPID) for FishPID
     sys.o(.text.UserPIDInit) refers to sys.o(.text.piddecayfun) for piddecayfun
     sys.o(.ARM.exidx.text.UserPIDInit) refers to sys.o(.text.UserPIDInit) for [Anonymous Symbol]
+    flash.o(.ARM.exidx.text.FLASH_PageErase_L) refers to flash.o(.text.FLASH_PageErase_L) for [Anonymous Symbol]
+    flash.o(.text.Flash_Write64) refers to stm32g0xx_hal_flash.o(.text.HAL_FLASH_Unlock) for HAL_FLASH_Unlock
+    flash.o(.text.Flash_Write64) refers to stm32g0xx_hal_flash.o(.text.HAL_FLASH_Program) for HAL_FLASH_Program
+    flash.o(.text.Flash_Write64) refers to stm32g0xx_hal_flash.o(.text.HAL_FLASH_Lock) for HAL_FLASH_Lock
+    flash.o(.ARM.exidx.text.Flash_Write64) refers to flash.o(.text.Flash_Write64) for [Anonymous Symbol]
+    flash.o(.text.Flash_Write_Alignment64) refers to flash.o(.text.GetPage) for GetPage
+    flash.o(.text.Flash_Write_Alignment64) refers to flash.o(.text.FLASH_Page_Erase) for FLASH_Page_Erase
+    flash.o(.text.Flash_Write_Alignment64) refers to stm32g0xx_hal_flash.o(.text.HAL_FLASH_Unlock) for HAL_FLASH_Unlock
+    flash.o(.text.Flash_Write_Alignment64) refers to stm32g0xx_hal_flash.o(.text.HAL_FLASH_Program) for HAL_FLASH_Program
+    flash.o(.text.Flash_Write_Alignment64) refers to memcpya.o(.text) for __aeabi_memcpy
+    flash.o(.text.Flash_Write_Alignment64) refers to stm32g0xx_hal_flash.o(.text.HAL_FLASH_Lock) for HAL_FLASH_Lock
+    flash.o(.ARM.exidx.text.Flash_Write_Alignment64) refers to flash.o(.text.Flash_Write_Alignment64) for [Anonymous Symbol]
+    flash.o(.ARM.exidx.text.GetPage) refers to flash.o(.text.GetPage) for [Anonymous Symbol]
+    flash.o(.text.FLASH_Page_Erase) refers to stm32g0xx_hal_flash.o(.text.HAL_FLASH_Unlock) for HAL_FLASH_Unlock
+    flash.o(.text.FLASH_Page_Erase) refers to stm32g0xx_hal_flash.o(.text.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    flash.o(.text.FLASH_Page_Erase) refers to flash.o(.text.FLASH_PageErase_L) for FLASH_PageErase_L
+    flash.o(.text.FLASH_Page_Erase) refers to stm32g0xx_hal_flash.o(.text.HAL_FLASH_Lock) for HAL_FLASH_Lock
+    flash.o(.ARM.exidx.text.FLASH_Page_Erase) refers to flash.o(.text.FLASH_Page_Erase) for [Anonymous Symbol]
+    flash.o(.text.FLASH_Write_Test) refers to flash.o(.text.GetPage) for GetPage
+    flash.o(.text.FLASH_Write_Test) refers to flash.o(.text.Flash_Write_Alignment64) for Flash_Write_Alignment64
+    flash.o(.ARM.exidx.text.FLASH_Write_Test) refers to flash.o(.text.FLASH_Write_Test) for [Anonymous Symbol]
     exp.o(i.__softfp_exp) refers (Special) to iusefp.o(.text) for __I$use$fp
     exp.o(i.__softfp_exp) refers to exp.o(i.exp) for exp
     exp.o(i.exp) refers (Special) to iusefp.o(.text) for __I$use$fp
@@ -2282,6 +2303,19 @@ Removing Unused input sections from the image.
     Removing sys.o(.text), (0 bytes).
     Removing sys.o(.ARM.exidx.text.piddecayfun), (8 bytes).
     Removing sys.o(.ARM.exidx.text.UserPIDInit), (8 bytes).
+    Removing flash.o(.text), (0 bytes).
+    Removing flash.o(.text.FLASH_PageErase_L), (40 bytes).
+    Removing flash.o(.ARM.exidx.text.FLASH_PageErase_L), (8 bytes).
+    Removing flash.o(.text.Flash_Write64), (50 bytes).
+    Removing flash.o(.ARM.exidx.text.Flash_Write64), (8 bytes).
+    Removing flash.o(.text.Flash_Write_Alignment64), (142 bytes).
+    Removing flash.o(.ARM.exidx.text.Flash_Write_Alignment64), (8 bytes).
+    Removing flash.o(.text.GetPage), (18 bytes).
+    Removing flash.o(.ARM.exidx.text.GetPage), (8 bytes).
+    Removing flash.o(.text.FLASH_Page_Erase), (84 bytes).
+    Removing flash.o(.ARM.exidx.text.FLASH_Page_Erase), (8 bytes).
+    Removing flash.o(.text.FLASH_Write_Test), (52 bytes).
+    Removing flash.o(.ARM.exidx.text.FLASH_Write_Test), (8 bytes).
     Removing fdiv.o(.text), (124 bytes).
     Removing dadd.o(.text), (356 bytes).
     Removing dmul.o(.text), (208 bytes).
@@ -2298,7 +2332,7 @@ Removing Unused input sections from the image.
     Removing cdrcmple.o(.text), (40 bytes).
     Removing depilogue.o(i.__ARM_clz), (46 bytes).
 
-1018 unused section(s) (total 74262 bytes) removed from the image.
+1031 unused section(s) (total 74696 bytes) removed from the image.
 
 ==============================================================================
 
@@ -2331,6 +2365,8 @@ Image Symbol Table
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../fplib/microlib/d2f.c                  0x00000000   Number         0  d2f.o ABSOLUTE
@@ -2365,6 +2401,7 @@ Image Symbol Table
     cdcmple.s                                0x00000000   Number         0  cdcmple.o ABSOLUTE
     cdrcmple.s                               0x00000000   Number         0  cdrcmple.o ABSOLUTE
     dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    flash.c                                  0x00000000   Number         0  flash.o ABSOLUTE
     gpio.c                                   0x00000000   Number         0  gpio.o ABSOLUTE
     handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
     init.s                                   0x00000000   Number         0  init.o ABSOLUTE
@@ -2865,27 +2902,27 @@ Memory Map of the image
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x000000c0   Data   RO            3    RESET               startup_stm32g030xx.o
-    0x080000c0   0x080000c0   0x00000000   Code   RO         1300  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
-    0x080000c0   0x080000c0   0x00000004   Code   RO         1356    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
-    0x080000c4   0x080000c4   0x00000004   Code   RO         1359    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
-    0x080000c8   0x080000c8   0x00000000   Code   RO         1361    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
-    0x080000c8   0x080000c8   0x00000000   Code   RO         1363    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
-    0x080000c8   0x080000c8   0x00000008   Code   RO         1364    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
-    0x080000d0   0x080000d0   0x00000000   Code   RO         1366    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
-    0x080000d0   0x080000d0   0x00000000   Code   RO         1368    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
-    0x080000d0   0x080000d0   0x00000004   Code   RO         1357    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
+    0x080000c0   0x080000c0   0x00000000   Code   RO         1319  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x080000c0   0x080000c0   0x00000004   Code   RO         1379    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
+    0x080000c4   0x080000c4   0x00000004   Code   RO         1382    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x080000c8   0x080000c8   0x00000000   Code   RO         1384    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x080000c8   0x080000c8   0x00000000   Code   RO         1386    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x080000c8   0x080000c8   0x00000008   Code   RO         1387    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x080000d0   0x080000d0   0x00000000   Code   RO         1389    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
+    0x080000d0   0x080000d0   0x00000000   Code   RO         1391    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
+    0x080000d0   0x080000d0   0x00000004   Code   RO         1380    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
     0x080000d4   0x080000d4   0x0000001c   Code   RO            4    .text               startup_stm32g030xx.o
-    0x080000f0   0x080000f0   0x00000024   Code   RO         1307    .text               mc_p.l(memseta.o)
-    0x08000114   0x08000114   0x000000b2   Code   RO         1309    .text               mf_p.l(fadd.o)
-    0x080001c6   0x080001c6   0x0000007a   Code   RO         1311    .text               mf_p.l(fmul.o)
-    0x08000240   0x08000240   0x0000001c   Code   RO         1323    .text               mf_p.l(fcmplt.o)
-    0x0800025c   0x0800025c   0x0000001c   Code   RO         1325    .text               mf_p.l(fcmpgt.o)
-    0x08000278   0x08000278   0x0000000e   Code   RO         1327    .text               mf_p.l(ffltui.o)
-    0x08000286   0x08000286   0x00000032   Code   RO         1329    .text               mf_p.l(ffixi.o)
-    0x080002b8   0x080002b8   0x0000003e   Code   RO         1372    .text               mc_p.l(uidiv_div0.o)
-    0x080002f6   0x080002f6   0x00000000   Code   RO         1389    .text               mc_p.l(iusefp.o)
-    0x080002f6   0x080002f6   0x00000082   Code   RO         1390    .text               mf_p.l(fepilogue.o)
-    0x08000378   0x08000378   0x00000024   Code   RO         1408    .text               mc_p.l(init.o)
+    0x080000f0   0x080000f0   0x00000024   Code   RO         1328    .text               mc_p.l(memseta.o)
+    0x08000114   0x08000114   0x000000b2   Code   RO         1332    .text               mf_p.l(fadd.o)
+    0x080001c6   0x080001c6   0x0000007a   Code   RO         1334    .text               mf_p.l(fmul.o)
+    0x08000240   0x08000240   0x0000001c   Code   RO         1346    .text               mf_p.l(fcmplt.o)
+    0x0800025c   0x0800025c   0x0000001c   Code   RO         1348    .text               mf_p.l(fcmpgt.o)
+    0x08000278   0x08000278   0x0000000e   Code   RO         1350    .text               mf_p.l(ffltui.o)
+    0x08000286   0x08000286   0x00000032   Code   RO         1352    .text               mf_p.l(ffixi.o)
+    0x080002b8   0x080002b8   0x0000003e   Code   RO         1395    .text               mc_p.l(uidiv_div0.o)
+    0x080002f6   0x080002f6   0x00000000   Code   RO         1412    .text               mc_p.l(iusefp.o)
+    0x080002f6   0x080002f6   0x00000082   Code   RO         1413    .text               mf_p.l(fepilogue.o)
+    0x08000378   0x08000378   0x00000024   Code   RO         1431    .text               mc_p.l(init.o)
     0x0800039c   0x0800039c   0x0000000e   Code   RO           15    .text.Error_Handler  main.o
     0x080003aa   0x080003aa   0x00000002   PAD
     0x080003ac   0x080003ac   0x00000040   Code   RO          610    .text.HAL_Delay     stm32g0xx_hal.o
@@ -2982,14 +3019,14 @@ Memory Map of the image
     0x08004278   0x08004278   0x00000088   Code   RO          537    .text.__NVIC_SetPriority  stm32g0xx_hal_cortex.o
     0x08004300   0x08004300   0x00000068   Code   RO           11    .text.main          main.o
     0x08004368   0x08004368   0x0000000c   Code   RO         1276    .text.piddecayfun   sys.o
-    0x08004374   0x08004374   0x0000000e   Code   RO         1414    i.__scatterload_copy  mc_p.l(handlers.o)
-    0x08004382   0x08004382   0x00000002   Code   RO         1415    i.__scatterload_null  mc_p.l(handlers.o)
-    0x08004384   0x08004384   0x0000000e   Code   RO         1416    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x08004374   0x08004374   0x0000000e   Code   RO         1437    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x08004382   0x08004382   0x00000002   Code   RO         1438    i.__scatterload_null  mc_p.l(handlers.o)
+    0x08004384   0x08004384   0x0000000e   Code   RO         1439    i.__scatterload_zeroinit  mc_p.l(handlers.o)
     0x08004392   0x08004392   0x00000002   PAD
     0x08004394   0x08004394   0x00000040   Data   RO         1230    .rodata.AHBPrescTable  system_stm32g0xx.o
     0x080043d4   0x080043d4   0x00000020   Data   RO         1231    .rodata.APBPrescTable  system_stm32g0xx.o
     0x080043f4   0x080043f4   0x00000018   Data   RO         1175    .rodata.UARTPrescTable  stm32g0xx_hal_uart.o
-    0x0800440c   0x0800440c   0x00000020   Data   RO         1413    Region$$Table       anon$$obj.o
+    0x0800440c   0x0800440c   0x00000020   Data   RO         1436    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08004430, Size: 0x00000608, Max: 0x00002000, ABSOLUTE)
@@ -3023,31 +3060,31 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       248         28          0          0          0       1948   gpio.o
-       288         12          0          0          0       2593   main.o
+       248         28          0          0          0       1951   gpio.o
+       288         12          0          0          0       2592   main.o
          0          0          0          0          4        278   measure.o
-       316          0          0          0          0       4319   pid.o
-       220         20          0          0         44       3326   rtc.o
+       316          0          0          0          0       4299   pid.o
+       220         20          0          0         44       3324   rtc.o
         28          8        192          0       1024        592   startup_stm32g030xx.o
-       280         16          0          5          4       6520   stm32g0xx_hal.o
-       326         24          0          0          0       6111   stm32g0xx_hal_cortex.o
-       720         32          0          0          0       4363   stm32g0xx_hal_gpio.o
-        56          4          0          0          0       1254   stm32g0xx_hal_msp.o
-       124         12          0          0          0       3985   stm32g0xx_hal_pwr_ex.o
-      2652        124          0          0          0       8726   stm32g0xx_hal_rcc.o
-       552         16          0          0          0       5360   stm32g0xx_hal_rcc_ex.o
-      1332         28          0          0          0       9966   stm32g0xx_hal_rtc.o
-      5776        320          0          0          0      37519   stm32g0xx_hal_tim.o
-       212          0          0          0          0      17808   stm32g0xx_hal_tim_ex.o
-      1690        120         24          0          0      23649   stm32g0xx_hal_uart.o
-       292         40          0          8          4       4785   stm32g0xx_it.o
-       104         36          0          0         64       1021   sys.o
-        16          4         96          4          0       2105   system_stm32g0xx.o
-       932         64          0          0        228       7917   tim.o
-       192         16          0          0        144       5256   usart.o
+       280         16          0          5          4       6464   stm32g0xx_hal.o
+       326         24          0          0          0       6076   stm32g0xx_hal_cortex.o
+       720         32          0          0          0       4350   stm32g0xx_hal_gpio.o
+        56          4          0          0          0       1257   stm32g0xx_hal_msp.o
+       124         12          0          0          0       3958   stm32g0xx_hal_pwr_ex.o
+      2652        124          0          0          0       8700   stm32g0xx_hal_rcc.o
+       552         16          0          0          0       5355   stm32g0xx_hal_rcc_ex.o
+      1332         28          0          0          0       9929   stm32g0xx_hal_rtc.o
+      5776        320          0          0          0      37298   stm32g0xx_hal_tim.o
+       212          0          0          0          0      17719   stm32g0xx_hal_tim_ex.o
+      1690        120         24          0          0      23532   stm32g0xx_hal_uart.o
+       292         40          0          8          4       4775   stm32g0xx_it.o
+       104         36          0          0         64       1020   sys.o
+        16          4         96          4          0       2103   system_stm32g0xx.o
+       932         64          0          0        228       7906   tim.o
+       192         16          0          0        144       5252   usart.o
 
     ----------------------------------------------------------------------
-     16372        924        344         20       1524     159401   Object Totals
+     16372        924        344         20       1524     158730   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         16          0          0          3          8          0   (incl. Padding)
 
@@ -3097,8 +3134,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     17108        940        344         20       1524     159797   Grand Totals
-     17108        940        344         20       1524     159797   ELF Image Totals
+     17108        940        344         20       1524     159050   Grand Totals
+     17108        940        344         20       1524     159050   ELF Image Totals
      17108        940        344         20          0          0   ROM Totals
 
 ==============================================================================
