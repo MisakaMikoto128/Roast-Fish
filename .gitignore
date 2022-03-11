@@ -1,0 +1,4 @@
+/CT/
+/MDK-ARM/.vscode/
+*.o
+*.d
