@@ -21,11 +21,16 @@ typedef enum{
 	SET_TIME_WIGET_OFF,
 
 
+
+    SET_CLOCK_NORMAL_SHOW,
+    SET_CLOCK_SETTING_SHOW,
+    SET_CLOCK_SHOW_NONE,
+
 }UI_Message_t;
 
 void UI_Init(void);
 void UI_Scan(void);
-void UI_SendMessage(uint8_t *pMsg);
+void UI_SendMessage(UI_Message_t message);
 void UI_Constant_Text_Show(void);
 
 

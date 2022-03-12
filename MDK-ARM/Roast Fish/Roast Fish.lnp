@@ -32,6 +32,8 @@
 "roast fish\pid.o"
 "roast fish\sys.o"
 "roast fish\flash.o"
+"roast fish\ht1621.o"
+"roast fish\ui.o"
 --library_type=microlib --strict --scatter "Roast Fish\Roast Fish.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
