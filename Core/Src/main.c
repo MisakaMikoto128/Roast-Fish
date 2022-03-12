@@ -28,6 +28,8 @@
 /* USER CODE BEGIN Includes */
 #include "Sys.h"
 #include "UI.h"
+#include "Key.h"
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -110,6 +112,12 @@ int main(void)
 	Lcd_Area_Nixie_Show(22);
   Lcd_Minit_Nixie_Show(129);
   Lcd_Minit_Nixe_Off();
+  //only one key examle,read pin pullup,and key com pin connect to GND
+  KeyPin_t keyinpins[4] = {{GPIOA, GPIO_PIN_0},{GPIOA, GPIO_PIN_1},{GPIOA, GPIO_PIN_2},{GPIOA, GPIO_PIN_3}};
+  KeyPin_t keysetpins[4] = {{GPIOA, GPIO_PIN_4},{GPIOA, GPIO_PIN_5},{GPIOA, GPIO_PIN_6},{GPIOA, GPIO_PIN_7}};
+  KeyInit(4, 4, keyinpins, keysetpins);
+  KeyStateValue_t key = KEY_NONE;
+  int key1_cnt = 0;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -121,6 +129,43 @@ int main(void)
     /* USER CODE BEGIN 3 */
     HAL_Delay(0);
     UI_Scan();
+    KeyScan();
+    
+    if (!isKeyFIFOEmpty())
+    {
+			key = Key_FIFO_Get();
+			switch (key)
+			{
+			case KEY1_Down:
+        key1_cnt++;
+        if(key1_cnt == 3){
+          key1_cnt = 0;
+        }
+        switch (key1_cnt)
+        {
+        case 0:
+          UI_SendMessage(SET_CLOCK_NORMAL_SHOW);
+          break;
+        case 1:
+          UI_SendMessage(SET_CLOCK_SETTING_SHOW);
+          break;
+        case 2:
+          UI_SendMessage(SET_CLOCK_SHOW_NONE);
+          break;
+        default:
+          break;
+        }
+				
+				break;
+	
+			case KEY1_LongPress:
+
+				break;
+
+			default:
+				break;
+			}
+    }
   }
   /* USER CODE END 3 */
 }

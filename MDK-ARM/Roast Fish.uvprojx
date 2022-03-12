@@ -579,6 +579,11 @@
               <FileType>1</FileType>
               <FilePath>..\User\UI.c</FilePath>
             </File>
+            <File>
+              <FileName>Key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Key.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
