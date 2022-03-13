@@ -3,6 +3,7 @@
         "key.h": "c",
         "counter.h": "c",
         "time.h": "c",
-        "main.h": "c"
+        "main.h": "c",
+        "TimeSetting.C": "cpp"
     }
 }

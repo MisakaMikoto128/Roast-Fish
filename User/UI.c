@@ -99,7 +99,6 @@ void UI_Scan(void)
             break;
         }
 
-
         switch (MinitDotTetx_WigetState)
         {
         case UI_WIGET_BLINK:
@@ -118,16 +117,61 @@ void UI_Scan(void)
         switch (BoxText_WigetState)
         {
         case UI_WIGET_BLINK:
-        __BOX_TEXT_Toggle();
-        break;
+            __BOX_TEXT_Toggle();
+            break;
         case UI_WIGET_OFF:
-        __BOX_TEXT_Off();
-        break;
+            __BOX_TEXT_Off();
+            break;
         case UI_WIGET_ON:
-        __BOX_TEXT_On();
-        break;
+            __BOX_TEXT_On();
+            break;
         default:
-        break;
+            break;
+        }
+
+        switch (PeriodText_WigetState)
+        {
+        case UI_WIGET_BLINK:
+            __PERIOD_TEXT_Toggle();
+            break;
+        case UI_WIGET_OFF:
+            __PERIOD_TEXT_Off();
+            break;
+        case UI_WIGET_ON:
+            __PERIOD_TEXT_On();
+            break;
+        default:
+            break;
+        }
+
+        switch (OpenText_WigetState)
+        {
+        case UI_WIGET_BLINK:
+            __PERIOD_TEXT_isOn() ? __OPEN_TEXT_On() : __OPEN_TEXT_Off();
+            break;
+        case UI_WIGET_OFF:
+            __OPEN_TEXT_Off();
+            break;
+        case UI_WIGET_ON:
+            __OPEN_TEXT_On();
+            break;
+        default:
+            break;
+        }
+
+        switch (CloseText_WigetState)
+        {
+        case UI_WIGET_BLINK:
+            __PERIOD_TEXT_isOn() ? __CLOSE_TEXT_On() : __CLOSE_TEXT_Off();
+            break;
+        case UI_WIGET_OFF:
+            __CLOSE_TEXT_Off();
+            break;
+        case UI_WIGET_ON:
+            __CLOSE_TEXT_On();
+            break;
+        default:
+            break;
         }
 
         /* Get the RTC current Time */
@@ -183,7 +227,7 @@ void UI_SendMessage(UI_Message_t message, void *arg)
         __ARROW2_TEXT_Off();
         __ARROW3_TEXT_On();
         break;
-        
+
     case SET_MINIT_DOT_BLINK:
         MinitDotTetx_WigetState = UI_WIGET_BLINK;
         break;
@@ -192,6 +236,45 @@ void UI_SendMessage(UI_Message_t message, void *arg)
         break;
     case SET_MINIT_DOT_ON:
         MinitDotTetx_WigetState = UI_WIGET_ON;
+        break;
+
+    case SET_OPEN_TEXT_BLINK:
+        OpenText_WigetState = UI_WIGET_BLINK;
+        break;
+    case SET_OPEN_TEXT_OFF:
+        OpenText_WigetState = UI_WIGET_OFF;
+        break;
+    case SET_OPEN_TEXT_ON:
+        OpenText_WigetState = UI_WIGET_ON;
+        break;
+    case SET_CLOSE_TEXT_BLINK:
+        CloseText_WigetState = UI_WIGET_BLINK;
+        break;
+    case SET_CLOSE_TEXT_OFF:
+        CloseText_WigetState = UI_WIGET_OFF;
+        break;
+    case SET_CLOSE_TEXT_ON:
+        CloseText_WigetState = UI_WIGET_ON;
+        break;
+
+    case SET_PERIOD_TEXT_BLINK:
+        PeriodText_WigetState = UI_WIGET_BLINK;
+        break;
+    case SET_PERIOD_TEXT_OFF:
+        PeriodText_WigetState = UI_WIGET_OFF;
+        break;
+    case SET_PERIOD_TEXT_ON:
+        PeriodText_WigetState = UI_WIGET_ON;
+        break;
+        
+    case SET_PERIOD_NIXIE_VALUE:
+        Lcd_Period_Show(*(uint8_t *)arg);
+        break;
+    case SET_BOX_NIXIE_NONE:
+        Lcd_Period_Show(NIXIE_NONE);
+        break;
+    case SET_BOX_NIXIE_OFF:
+        Lcd_Period_Off();
         break;
 
     case SET_FODDER_NUM:

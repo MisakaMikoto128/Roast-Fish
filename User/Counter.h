@@ -14,6 +14,7 @@ void Counter_decrement(Counter *this);
 void Counter_increment_circle(Counter *this);
 void Counter_decrement_circle(Counter *this);
 int Counter_get(Counter *this);
+void Counter_reset(Counter *this);
 void Counter_set(Counter *this, int count);
 #define CounterGET(this) ((this)->count)
 #define CounterSET(this, count) ((this)->count = (count))

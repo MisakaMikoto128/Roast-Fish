@@ -2,28 +2,28 @@
 #define __HT1621_H
 #include "main.h"
 #include <time.h>
-/* ÏÔ´æ */
+/* ï¿½Ô´ï¿½ */
 #define LCD_MEM_SZIE 32
 extern uint8_t lcd_mem[LCD_MEM_SZIE];
 
 #define SYSOFF 0x00
 #define SYSEN  0x01
 #define RC256K 0x18
-#define BIAS   0x29//Ñ¡ÖÐCOMÎª4¸ö¹«¹²¿Ú   0x01  Ñ¡ÔñÁË1/3Æ«Ñ¹
+#define BIAS   0x29//Ñ¡ï¿½ï¿½COMÎª4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   0x01  Ñ¡ï¿½ï¿½ï¿½ï¿½1/3Æ«Ñ¹
 #define LCDON  0x03
 #define SYSDIS 0x00
 #define WDTDIS 0x05
-#define WrCmd  0x80//¿ØÖÆ·¢ËÍÃüÁî±êÊ¶µÄºê
-#define WrData 0xA0//¿ØÖÆ·¢ËÍÐ´Êý¾ÝµÄºê
+#define WrCmd  0x80//ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¶ï¿½Äºï¿½
+#define WrData 0xA0//ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ÝµÄºï¿½
 
-#define   PinHigh_WR     HAL_GPIO_WritePin(GPIOB,GPIO_PIN_1,GPIO_PIN_SET);//½«CSÒý½ÅµçÆ½À­¸ß
-#define   PinLow_WR      HAL_GPIO_WritePin(GPIOB,GPIO_PIN_1,GPIO_PIN_RESET);     //½«CSÒý½ÅµçÆ½À­µÍ
+#define   PinHigh_WR     HAL_GPIO_WritePin(GPIOB,GPIO_PIN_1,GPIO_PIN_SET);//ï¿½ï¿½CSï¿½ï¿½ï¿½Åµï¿½Æ½ï¿½ï¿½ï¿½ï¿½
+#define   PinLow_WR      HAL_GPIO_WritePin(GPIOB,GPIO_PIN_1,GPIO_PIN_RESET);     //ï¿½ï¿½CSï¿½ï¿½ï¿½Åµï¿½Æ½ï¿½ï¿½ï¿½ï¿½
 
-#define   PinHigh_Data   HAL_GPIO_WritePin(GPIOB,GPIO_PIN_0,GPIO_PIN_SET);//½«CSÒý½ÅµçÆ½À­¸ß
-#define   PinLow_Data    HAL_GPIO_WritePin(GPIOB,GPIO_PIN_0,GPIO_PIN_RESET);     //½«CSÒý½ÅµçÆ½À­µÍ
+#define   PinHigh_Data   HAL_GPIO_WritePin(GPIOB,GPIO_PIN_0,GPIO_PIN_SET);//ï¿½ï¿½CSï¿½ï¿½ï¿½Åµï¿½Æ½ï¿½ï¿½ï¿½ï¿½
+#define   PinLow_Data    HAL_GPIO_WritePin(GPIOB,GPIO_PIN_0,GPIO_PIN_RESET);     //ï¿½ï¿½CSï¿½ï¿½ï¿½Åµï¿½Æ½ï¿½ï¿½ï¿½ï¿½
 
-#define   PinHigh_CS     HAL_GPIO_WritePin(GPIOB,GPIO_PIN_2,GPIO_PIN_SET);//½«CSÒý½ÅµçÆ½À­¸ß
-#define   PinLow_CS      HAL_GPIO_WritePin(GPIOB,GPIO_PIN_2,GPIO_PIN_RESET);     //½«CSÒý½ÅµçÆ½À­µÍ
+#define   PinHigh_CS     HAL_GPIO_WritePin(GPIOB,GPIO_PIN_2,GPIO_PIN_SET);//ï¿½ï¿½CSï¿½ï¿½ï¿½Åµï¿½Æ½ï¿½ï¿½ï¿½ï¿½
+#define   PinLow_CS      HAL_GPIO_WritePin(GPIOB,GPIO_PIN_2,GPIO_PIN_RESET);     //ï¿½ï¿½CSï¿½ï¿½ï¿½Åµï¿½Æ½ï¿½ï¿½ï¿½ï¿½
 
 
 #define ShiZ_Open()       lcd_mem[1] |=  (1<<3)
@@ -113,6 +113,7 @@ SECOND_DOT_TEXT,
 #define __CLOSE_TEXT_Off()          (lcd_mem[0] &=~ (1<<1))   
 #define __CLOSE_TEXT_Toggle()       (lcd_mem[0] ^=  (1<<1))
 
+#define __PERIOD_TEXT_isOn()        (lcd_mem[10] & (1<<3))
 
 
 void WriteDatatoHT1621(uint8_t Data,uint8_t num);
@@ -127,6 +128,7 @@ void Lcd_Text_Toggle(LCD_TextName_t textName);
 void Lcd_8Nixie_ShowChar(int id, char c);
 void Lcd_Clock_Show_None();
 void Lcd_Period_Show(uint8_t period);
+void Lcd_Period_Off();
 void Lcd_Minit_Nixie_Show(uint8_t minit);
 void Lcd_Fodder_Nixie_Show(uint8_t num);
 void Lcd_Interval_Nixie_Show(uint8_t num);
@@ -137,7 +139,7 @@ void Lcd_Supply_Nixie_Show(uint16_t num);
 void Lcd_8Nixie_Off(int id);
 void Lcd_10Nixe_Off(const uint8_t *mem_addr);
 void Lcd_Minit_Nixe_Off();
-#define NIXIE_NPNE -1
+#define NIXIE_NONE -1
 void Lcd_Clock_Show(uint8_t hour,uint8_t minute);
 void Lcd_Show_Updata(void);
 

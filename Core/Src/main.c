@@ -32,6 +32,7 @@
 #include "Keydef.h"
 #include "Counter.h"
 #include <stdio.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -70,16 +71,19 @@ void User_KeyInit()
   KeyInit(4, 4, keyinpins, keysetpins);
 };
 
+Counter key_calitime_cnt = {.count_max = 2, .count_min = 0, .count = 0, .step = 1};
+Counter key_mode_cnt = {.count_max = 2, .count_min = 0, .count = 0, .step = 1};
+Counter key_fodder_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1};
+Counter key_interval_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1};
+Counter key_output_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1};
+Counter key_area_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1};
+Counter key_run_time_set_cnt = {.count_max = 120, .count_min = 5, .count = 5, .step = 5};
+Counter key_period_cnt = {.count_max = 8 * 2, .count_min = 0, .count = 0, .step = 1};
+
 void KeyDriver()
 {
   static KeyState_t key = KEY_NONE;
-  static Counter key_calitime_cnt = {.count_max = 2, .count_min = 0, .count = 0, .step = 1};
-  static Counter key_mode_cnt = {.count_max = 2, .count_min = 0, .count = 0, .step = 1};
-  static Counter key_fodder_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1};
-  static Counter key_interval_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1};
-  static Counter key_output_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1};
-  static Counter key_area_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1};
-  static Counter key_run_time_set_cnt = {.count_max = 120, .count_min = 5, .count = 5, .step = 5};
+
   if (!isKeyFIFOEmpty())
   {
     key = Key_FIFO_Get();
@@ -139,7 +143,7 @@ void KeyDriver()
       Counter_increment(&key_output_cnt);
       sysState.output_num = CounterGET(&key_output_cnt);
       break;
-    case KEY_OUTPUT_P_LongPress:  
+    case KEY_OUTPUT_P_LongPress:
       Counter_increment(&key_output_cnt);
       sysState.output_num = CounterGET(&key_output_cnt);
       break;
@@ -167,7 +171,7 @@ void KeyDriver()
       Counter_decrement(&key_area_cnt);
       sysState.area_num = CounterGET(&key_area_cnt);
       break;
-      
+
     case KEY_OFF_Down:
       sysState.runState = SYS_STOP;
       break;
@@ -178,10 +182,12 @@ void KeyDriver()
       Counter_increment_circle(&key_mode_cnt);
       sysState.mode = CounterGET(&key_mode_cnt);
       sysState.runState = SYS_STOP;
+      __TDOT_TEXT_Off(); // Elimination of residual display
       break;
 
     case KEY_MINUTE_Down:
-      if(sysState.runState == SYS_RUN){
+      if (sysState.runState == SYS_RUN)
+      {
         sysState.runState = SYS_STOP;
       }
       Counter_increment_circle(&key_run_time_set_cnt);
@@ -189,14 +195,36 @@ void KeyDriver()
       break;
 
     case KEY_MINUTE_LongPress:
-      if(sysState.runState == SYS_RUN){
+      if (sysState.runState == SYS_RUN)
+      {
         sysState.runState = SYS_STOP;
       }
       Counter_increment_circle(&key_run_time_set_cnt);
       sysState.run_time_set_value = CounterGET(&key_run_time_set_cnt);
       break;
 
+    case KEY_PERIOD_Down:
+      if (sysState.runState == SYS_RUN)
+      {
+        sysState.runState = SYS_STOP;
+      }
 
+      if (sysState.mode == MOD_NORMAL_AOTO)
+      {
+        Counter_increment_circle(&key_period_cnt);
+        if (IS_ODD(CounterGET(&key_period_cnt)))
+        {
+          __CLOSE_TEXT_Off(); // Elimination of residual display
+          __OPEN_TEXT_On();   // Elimination of residual display
+        }
+        else
+        {
+          __OPEN_TEXT_Off(); // Elimination of residual display
+          __CLOSE_TEXT_On(); // Elimination of residual display
+        }
+      }
+
+      break;
     default:
       break;
     }

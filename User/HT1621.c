@@ -38,46 +38,46 @@ void WriteDatatoHT1621(uint8_t Data, uint8_t num)
     uint8_t i;
     for (i = 0; i < num; i++)
     {
-        PinLow_WR; //À­µÍWR½Å  DataÏßÉÏµÄÊý¾ÝÔÚWR½ÅÎ»ÉÏÉýÑØÐ´Èë
+        PinLow_WR; //ï¿½ï¿½ï¿½ï¿½WRï¿½ï¿½  Dataï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½WRï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½
 
-        if (((Data & 0x80) >> 7) == 1) //Èç¹ûµ±Ç°bitÎª1£¬¾ÍÀ­¸ßDATAÒý½Å
+        if (((Data & 0x80) >> 7) == 1) //ï¿½ï¿½ï¿½ï¿½ï¿½Ç°bitÎª1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½DATAï¿½ï¿½ï¿½ï¿½
             PinHigh_Data;
-        if (((Data & 0x80) >> 7) == 0) //Èç¹ûµ±Ç°bitÎª0£¬¾ÍÀ­µÍDATAÒý½Å
+        if (((Data & 0x80) >> 7) == 0) //ï¿½ï¿½ï¿½ï¿½ï¿½Ç°bitÎª0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½DATAï¿½ï¿½ï¿½ï¿½
             PinLow_Data;
 
-        PinHigh_WR; //µ±Ç°ÕâÒ»bitÐ´Íê£¬À­¸ßWR½Å£¬ÎªÏÂ´ÎWRÎªÉÏÉýÑØ×ö×¼±¸
-        Data <<= 1; //µ±Ç°Î»ÓÃÍêÁË£¬ÒÆµ½ÏÂÒ»Î»¼ÌÐøÉÏÊö¶¯×÷
+        PinHigh_WR; //ï¿½ï¿½Ç°ï¿½ï¿½Ò»bitÐ´ï¿½ê£¬ï¿½ï¿½ï¿½ï¿½WRï¿½Å£ï¿½Îªï¿½Â´ï¿½WRÎªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¼ï¿½ï¿½
+        Data <<= 1; //ï¿½ï¿½Ç°Î»ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½Æµï¿½ï¿½ï¿½Ò»Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     }
 }
 
 /*******************************************************************************
  * fuction	WritetoHT1621
- * brief	½«ÒªÏÔÊ¾µÄÊý¾ÝÐ´µ½HT1621
- * param	Addr£ºÐ´Èë³õÊ¼µØÖ·£¬Data£ºÐ´ÈëÊý¾Ý£¬Mode£º0x80 /0xa0
- * return	ÎÞ
+ * brief	ï¿½ï¿½Òªï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½HT1621
+ * param	Addrï¿½ï¿½Ð´ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½ï¿½Dataï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½Modeï¿½ï¿½0x80 /0xa0
+ * return	ï¿½ï¿½
  *******************************************************************************/
 void WritetoHT1621(uint8_t Addr, uint8_t Data, uint8_t Mode)
 {
     PinLow_CS;
-    WriteDatatoHT1621(Mode, 3);      //Ð´Èë0x80 /0xa0
-    WriteDatatoHT1621(Addr << 2, 6); //Ð´ÈëµØÖ·
-    WriteDatatoHT1621(Data << 4, 4); //Ð´ÈëÊý¾Ý  ÕâÀïÊÇ¶ÔÓ¦µ¥¸öSEGÐ´µÄ ¹Ê¶øÎª4
+    WriteDatatoHT1621(Mode, 3);      //Ð´ï¿½ï¿½0x80 /0xa0
+    WriteDatatoHT1621(Addr << 2, 6); //Ð´ï¿½ï¿½ï¿½Ö·
+    WriteDatatoHT1621(Data << 4, 4); //Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½ï¿½Ç¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½SEGÐ´ï¿½ï¿½ ï¿½Ê¶ï¿½Îª4
     PinHigh_CS;
 }
 
 /*******************************************************************************
  * fuction	WriteCmdtoHT1621
- * brief	Ð´ÃüÁîµ½HT1621
- * param	Cmd£ºÃüÁî
- * return	ÎÞ
+ * brief	Ð´ï¿½ï¿½ï¿½îµ½HT1621
+ * param	Cmdï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * return	ï¿½ï¿½
  *******************************************************************************/
 void WriteCmdtoHT1621(uint8_t Cmd)
 {
-    PinLow_CS;                   //À­µÍCS½Å  CSÀ­µÍÊ±WRÓÐÐ§
-    WriteDatatoHT1621(WrCmd, 3); //Ð´ÈëÃüÁî±êÖ¾100    0x80 3
-    WriteDatatoHT1621(Cmd, 8);   //Ð´ÈëÃüÁîÊý¾Ý
+    PinLow_CS;                   //ï¿½ï¿½ï¿½ï¿½CSï¿½ï¿½  CSï¿½ï¿½ï¿½ï¿½Ê±WRï¿½ï¿½Ð§
+    WriteDatatoHT1621(WrCmd, 3); //Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾100    0x80 3
+    WriteDatatoHT1621(Cmd, 8);   //Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     WriteDatatoHT1621(0, 1);
-    PinHigh_CS; //À­¸ßCS½Å
+    PinHigh_CS; //ï¿½ï¿½ï¿½ï¿½CSï¿½ï¿½
 }
 
 void HT1621Init(void)
@@ -86,13 +86,13 @@ void HT1621Init(void)
     PinHigh_WR;
     PinHigh_Data;
 
-    /* ÅäÖÃHT1621 */
+    /* ï¿½ï¿½ï¿½ï¿½HT1621 */
     WriteCmdtoHT1621(SYSEN);
     WriteCmdtoHT1621(RC256K);
     WriteCmdtoHT1621(BIAS);
     WriteCmdtoHT1621(LCDON);
 
-    /* Çå¿ÕÆÁÄ» */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½Ä» */
     for (int i = 0; i < LCD_MEM_SZIE; i++)
     {
         WritetoHT1621(i, 0x00, WrData);
@@ -191,6 +191,12 @@ void Lcd_8Nixie_ShowChar(int id, char c)
     }
 }
 
+/**
+ * @brief 
+ * 
+ * @param id 
+ * @param num num == NIXIE_NONE,show '-'
+ */
 void Lcd_8Nixie_ShowNum(int id, uint8_t num)
 {
     if (id >= sizeof(Nixie_Mem_ID_table) / 2 / sizeof(uint8_t))
@@ -208,7 +214,12 @@ void Lcd_8Nixie_ShowNum(int id, uint8_t num)
 }
 
 
-
+/**
+ * @brief 
+ * 
+ * @param id 
+ * @param num num > 9,show '1' at the left
+ */
 void Lcd_10Nixie_ShowNum(uint8_t num, const uint8_t *mem_addr)
 {
 
@@ -225,7 +236,7 @@ void Lcd_10Nixie_ShowNum(uint8_t num, const uint8_t *mem_addr)
 }
 
 void Lcd_8Nixie_Off(int id){
-    lcd_mem[Nixie_Mem_ID_table[id][0]] = 0x0 | (Nixie_Mem_ID_table[id][0] & 0x08);
+    lcd_mem[Nixie_Mem_ID_table[id][0]] = 0x00;
     lcd_mem[Nixie_Mem_ID_table[id][1]] = 0x00;
 }
 
@@ -236,20 +247,20 @@ void Lcd_10Nixe_Off(const uint8_t *mem_addr){
 
 void Lcd_Clock_Show(uint8_t hour, uint8_t minute)
 {
-    /* Ð¡Ê±ÏÔÊ¾ */
+    /* Ð¡Ê±ï¿½ï¿½Ê¾ */
     Lcd_8Nixie_ShowNum(0, hour / 10);
     Lcd_8Nixie_ShowNum(1, hour % 10);
-    /* ·ÖÖÓÏÔÊ¾ */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ */
     Lcd_8Nixie_ShowNum(2, minute / 10);
     Lcd_8Nixie_ShowNum(3, minute % 10);
 }
 
 void Lcd_Clock_Show_None()
 {
-    /* Ð¡Ê±ÏÔÊ¾ */
+    /* Ð¡Ê±ï¿½ï¿½Ê¾ */
     Lcd_8Nixie_ShowNum(0, '-');
     Lcd_8Nixie_ShowNum(1, '-');
-    /* ·ÖÖÓÏÔÊ¾ */
+    /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ */
     Lcd_8Nixie_ShowNum(2, '-');
     Lcd_8Nixie_ShowNum(3, '-');
 }
@@ -257,6 +268,11 @@ void Lcd_Clock_Show_None()
 void Lcd_Period_Show(uint8_t period)
 {
     Lcd_8Nixie_ShowNum(4, period);
+}
+
+void Lcd_Period_Off()
+{
+    Lcd_8Nixie_Off(4);
 }
 
 void Lcd_Minit_Nixie_Show(uint8_t minit)

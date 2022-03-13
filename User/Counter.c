@@ -49,3 +49,7 @@ void Counter_set(Counter *this, int count){
         this->count = count;
     }
 }
+
+inline void Counter_reset(Counter *this){
+    this->count = this->count_min;
+}
