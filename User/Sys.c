@@ -19,3 +19,7 @@ void UserPIDInit(){
     FishPID.Target = 1100;
     FishPID.pidDecayByAbsErrorFunc = piddecayfun;
 }
+
+
+SysRunState sysRunState = SYS_RUN;
+SysMode sysMode = MOD_TIMING;
