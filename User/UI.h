@@ -41,6 +41,7 @@ void UI_Scan(void);
 void UI_SendMessage(UI_Message_t message);
 void UI_Constant_Text_Show(void);
 
+extern struct Mode_CheckGroup_Wiget_ Mode_CheckGroup_Wiget;
 
 #endif // _UI_H_
 

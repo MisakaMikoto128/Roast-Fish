@@ -76,6 +76,7 @@ void KeyDriver()
   if (!isKeyFIFOEmpty())
   {
     key = Key_FIFO_Get();
+
     switch (key)
     {
     case KEY_FODDDER_P_Down:

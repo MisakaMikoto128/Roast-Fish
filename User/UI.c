@@ -10,6 +10,13 @@ UI_WigetState_t PeriodText_WigetState = UI_WIGET_OFF;
 UI_WigetState_t OpenText_WigetState = UI_WIGET_OFF;
 UI_WigetState_t CloseText_WigetState = UI_WIGET_OFF;
 UI_ClockWigetState_t Clock_WigetState = UI_CLOCKWIGET_ON;
+struct Mode_CheckGroup_Wiget_
+{
+  UI_WigetState_t state;
+  int click_cnt;
+  int click_cnt_max;
+}Mode_CheckGroup_Wiget = {UI_WIGET_OFF, 0, 2};
+
 
 void UI_Init(void)
 {
@@ -121,6 +128,11 @@ void UI_SendMessage(UI_Message_t message)
         default:
         break;
     }
+}
+
+
+void UI_Click_Wiget(){
+
 }
 
 void UI_Constant_Text_Show(void)
