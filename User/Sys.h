@@ -60,4 +60,5 @@ typedef struct Sys_
 extern Sys sysState;
 
 void Sys_Update_State_2_UI();
+void reloadSysStateFromFlash();
 #endif // _SYS_H_

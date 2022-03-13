@@ -73,8 +73,9 @@ void User_KeyInit()
 void KeyDriver()
 {
   static KeyState_t key = KEY_NONE;
-  static Counter key_foddder_cnt = {.count_max = 2,.count_min = 0,.count = 0,.step = 1};
+  static Counter key_calitime_cnt = {.count_max = 2,.count_min = 0,.count = 0,.step = 1};
   static Counter key_mode_cnt = {.count_max = 2,.count_min = 0,.count = 0,.step = 1};
+  static Counter key_fodder_cnt = {.count_max = 16,.count_min = 1,.count = 1,.step = 1};
   if (!isKeyFIFOEmpty())
   {
     key = Key_FIFO_Get();
@@ -82,8 +83,8 @@ void KeyDriver()
     switch (key)
     {
     case KEY_CaliTime_Down:
-      Counter_increment(&key_foddder_cnt);
-      switch (CounterGET(&key_foddder_cnt))
+      Counter_increment(&key_calitime_cnt);
+      switch (CounterGET(&key_calitime_cnt))
       {
       case 0:
         UI_SendMessage(SET_CLOCK_NORMAL_SHOW,NULL);
@@ -98,29 +99,32 @@ void KeyDriver()
         break;
       }
       break;
+    case KEY_FODDDER_P_Down:
+      Counter_increment(&key_fodder_cnt);
+      sysState.fodder_num = CounterGET(&key_fodder_cnt);
+      break;
+    case KEY_FODDDER_P_LongPress:
+      Counter_increment(&key_fodder_cnt);
+      sysState.fodder_num = CounterGET(&key_fodder_cnt);
+      break;
+    case KEY_FODDDER_N_Down:
+      Counter_decrement(&key_fodder_cnt);
+      sysState.fodder_num = CounterGET(&key_fodder_cnt);
+      break;
+    case KEY_FODDDER_N_LongPress:
+      Counter_decrement(&key_fodder_cnt);
+      sysState.fodder_num = CounterGET(&key_fodder_cnt);
+      break;
 
     case KEY_OFF_Down:
-      UI_SendMessage(SET_RUN_OFF,NULL);
+      sysState.runState = SYS_STOP;
       break;
     case KEY_ON_Down:
-      UI_SendMessage(SET_RUN_ON,NULL);
+      sysState.runState = SYS_RUN;
       break;
     case KEY_MODE_Down:
       Counter_increment(&key_mode_cnt);
-      switch (CounterGET(&key_mode_cnt))
-      {
-      case 0:
-        UI_SendMessage(SET_ARROW1_ON,NULL);
-        break;
-      case 1:
-        UI_SendMessage(SET_ARROW2_ON,NULL);
-        break;
-      case 2:
-        UI_SendMessage(SET_ARROW3_ON,NULL);
-        break;
-      default:
-        break;
-      }
+      sysState.mode = CounterGET(&key_mode_cnt);
       break;
     default:
       break;

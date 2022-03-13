@@ -25,10 +25,10 @@ Sys sysState = {
     .runState = SYS_RUN,
     .mode = MOD_TIMING,
     .period = {0},
-    .fodder_num = 0,
-    .interval_num = 0,
-    .outPout_num = 0,
-    .area_num = 0,
+    .fodder_num = 1,
+    .interval_num = 1,
+    .outPout_num = 1,
+    .area_num = 1,
 };
 
 void Sys_Update_State_2_UI(){
@@ -58,3 +58,8 @@ void Sys_Update_State_2_UI(){
 
 
 };
+
+
+void reloadSysStateFromFlash(){
+
+}
