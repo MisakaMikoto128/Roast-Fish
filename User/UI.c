@@ -10,13 +10,32 @@ UI_WigetState_t PeriodText_WigetState = UI_WIGET_OFF;
 UI_WigetState_t OpenText_WigetState = UI_WIGET_OFF;
 UI_WigetState_t CloseText_WigetState = UI_WIGET_OFF;
 UI_ClockWigetState_t Clock_WigetState = UI_CLOCKWIGET_ON;
-struct Mode_CheckGroup_Wiget_
-{
-  UI_WigetState_t state;
-  int click_cnt;
-  int click_cnt_max;
-}Mode_CheckGroup_Wiget = {UI_WIGET_OFF, 0, 2};
 
+CheckGroup_Wiget_t Mode_CheckGroup_Wiget = {UI_WIGET_OFF, 0, 2,NULL,true};
+CheckGroup_Wiget_t Nixie_Wiget_Fodder = {UI_WIGET_OFF, 0, 2,NULL,true};
+
+/**
+ * @brief 
+ * 
+ * @param wiget 
+ * @return int current wiget click count
+ */
+int UI_ClickWiget(CheckGroup_Wiget_t * wiget){
+    if(wiget->enable){
+        if(wiget->state == UI_WIGET_ON){
+            if(wiget->click_cnt < wiget->click_cnt_max){
+                wiget->click_cnt++;
+            }
+            else{
+                wiget->click_cnt = 0;
+            }
+        }
+        else{
+            wiget->click_cnt = 0;
+        }
+    }
+    return wiget->click_cnt;
+}
 
 void UI_Init(void)
 {
@@ -130,10 +149,6 @@ void UI_SendMessage(UI_Message_t message)
     }
 }
 
-
-void UI_Click_Wiget(){
-
-}
 
 void UI_Constant_Text_Show(void)
 {
