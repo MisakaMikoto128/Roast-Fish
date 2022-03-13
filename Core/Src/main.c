@@ -32,7 +32,7 @@
 #include "Keydef.h"
 #include "Counter.h"
 #include <stdio.h>
-
+#include "TimeSetting.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -79,7 +79,7 @@ Counter key_output_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1
 Counter key_area_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1};
 Counter key_run_time_set_cnt = {.count_max = 120, .count_min = 5, .count = 5, .step = 5};
 Counter key_period_cnt = {.count_max = 8 * 2, .count_min = 0, .count = 0, .step = 1};
-
+Counter set_rtc_cnt = {.count_max = 400, .count_min = 0, .count = 0, .step = 1};
 void KeyDriver()
 {
   static KeyState_t key = KEY_NONE;
@@ -90,23 +90,7 @@ void KeyDriver()
 
     switch (key)
     {
-    case KEY_CaliTime_Down:
-      Counter_increment(&key_calitime_cnt);
-      switch (CounterGET(&key_calitime_cnt))
-      {
-      case 0:
-        UI_SendMessage(SET_CLOCK_NORMAL_SHOW, NULL);
-        break;
-      case 1:
-        UI_SendMessage(SET_CLOCK_SETTING_SHOW, NULL);
-        break;
-      case 2:
-        UI_SendMessage(SET_CLOCK_SHOW_NONE, NULL);
-        break;
-      default:
-        break;
-      }
-      break;
+
     case KEY_FODDDER_P_Down:
       Counter_increment(&key_fodder_cnt);
       sysState.fodder_num = CounterGET(&key_fodder_cnt);
@@ -190,8 +174,40 @@ void KeyDriver()
       {
         sysState.runState = SYS_STOP;
       }
-      Counter_increment_circle(&key_run_time_set_cnt);
-      sysState.run_time_set_value = CounterGET(&key_run_time_set_cnt);
+      if(sysState.mode == MOD_TIMING){
+        Counter_increment_circle(&key_run_time_set_cnt);
+        sysState.run_time_set_value = CounterGET(&key_run_time_set_cnt);
+      }else{
+          switch (timeSettingMode)
+              {
+              case SET_INVALID:
+                  
+                  break;
+              case SET_RTC_TIME:
+                  stimestructureget.Minutes++;
+                  if (stimestructureget.Minutes >= 60)
+                  {
+                    stimestructureget.Minutes = 0;
+                  }
+                  Counter_reset(&set_rtc_cnt);
+                  Lcd_Clock_Show(stimestructureget.Hours, stimestructureget.Minutes);
+                  if (HAL_RTC_SetTime(&hrtc, &stimestructureget, RTC_FORMAT_BCD) != HAL_OK)
+                  {
+                    Error_Handler();
+                  }
+                  break;
+              case SET_PERIOD_START:
+
+                  break;
+              case SET_PERIOD_END:
+
+                  break;
+
+              default:
+                  break;
+              }
+      }
+      
       break;
 
     case KEY_MINUTE_LongPress:
@@ -225,6 +241,15 @@ void KeyDriver()
       }
 
       break;
+
+      case KEY_CaliTime_Down:
+        if(sysState.mode == MOD_NORMAL_OPEN)
+        {
+          timeSettingMode = SET_RTC_TIME;
+        }
+      break;
+
+
     default:
       break;
     }

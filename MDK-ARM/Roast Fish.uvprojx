@@ -589,6 +589,11 @@
               <FileType>1</FileType>
               <FilePath>..\User\Counter.c</FilePath>
             </File>
+            <File>
+              <FileName>TimeSetting.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\TimeSetting.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

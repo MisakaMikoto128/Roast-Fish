@@ -154,7 +154,7 @@
           <Type>0</Type>
           <LineNumber>221</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134235414</Address>
+          <Address>134235518</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -170,7 +170,7 @@
           <Type>0</Type>
           <LineNumber>216</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134235370</Address>
+          <Address>134235474</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -197,6 +197,16 @@
           <count>2</count>
           <WinNumber>1</WinNumber>
           <ItemText>KeyMat</ItemText>
+        </Ww>
+        <Ww>
+          <count>3</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>timeSettingMode</ItemText>
+        </Ww>
+        <Ww>
+          <count>4</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>TimeText_WigetState</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>
@@ -752,6 +762,18 @@
       <bDave2>0</bDave2>
       <PathWithFileName>..\User\Counter.c</PathWithFileName>
       <FilenameWithoutPath>Counter.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>5</GroupNumber>
+      <FileNumber>38</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\User\TimeSetting.c</PathWithFileName>
+      <FilenameWithoutPath>TimeSetting.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

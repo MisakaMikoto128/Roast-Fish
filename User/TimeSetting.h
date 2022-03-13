@@ -1,6 +1,6 @@
 #ifndef _TIME_SETTING_H_
 #define _TIME_SETTING_H_
-
+#include "rtc.h"
 
 typedef enum
 {
@@ -11,4 +11,5 @@ typedef enum
 } TimeSettingMode_t;
 
 extern TimeSettingMode_t timeSettingMode;
+extern RTC_TimeTypeDef globalSettingTimeObj;
 #endif // _TIME_SETTING_H_

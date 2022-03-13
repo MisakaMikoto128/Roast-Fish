@@ -2,6 +2,7 @@
 #include "Measure.h"
 #include "UI.h"
 #include "Counter.h"
+#include "TimeSetting.h"
 PID FishPID;
 float piddecayfun(float z)
 {
@@ -92,21 +93,22 @@ void Sys_Update_State_2_UI()
         else if (IS_ODD(CounterGET(&key_period_cnt)))
         {
             // 1,2->1
-            // 3,4->2 
-            Lcd_Period_Show(CounterGET(&key_period_cnt) / 2 + CounterGET(&key_period_cnt)%2);
+            // 3,4->2
+            Lcd_Period_Show(CounterGET(&key_period_cnt) / 2 + CounterGET(&key_period_cnt) % 2);
             UI_SendMessage(SET_CLOSE_TEXT_OFF, NULL);
             UI_SendMessage(SET_PERIOD_TEXT_BLINK, NULL);
             UI_SendMessage(SET_OPEN_TEXT_BLINK, NULL);
         }
         else
         {
-            Lcd_Period_Show(CounterGET(&key_period_cnt) / 2 + CounterGET(&key_period_cnt)%2);
+            Lcd_Period_Show(CounterGET(&key_period_cnt) / 2 + CounterGET(&key_period_cnt) % 2);
             UI_SendMessage(SET_OPEN_TEXT_OFF, NULL);
             UI_SendMessage(SET_PERIOD_TEXT_BLINK, NULL);
             UI_SendMessage(SET_CLOSE_TEXT_BLINK, NULL);
         }
 
-        if(sysState.runState == SYS_RUN){
+        if (sysState.runState == SYS_RUN)
+        {
             Counter_reset(&key_period_cnt);
         }
     }
@@ -118,15 +120,49 @@ void Sys_Update_State_2_UI()
         Lcd_Period_Off();
     }
 
-
-
     UI_SendMessage(SET_FODDER_NUM, &sysState.fodder_num);
     UI_SendMessage(SET_INTERVAL_NUM, &sysState.interval_num);
     UI_SendMessage(SET_OUTPUT_NUM, &sysState.output_num);
     UI_SendMessage(SET_AREA_NUM, &sysState.area_num);
+
+    // system time and period time setting
+    switch (timeSettingMode)
+    {
+    case SET_INVALID:
+        UI_SendMessage(SET_CLOCK_NORMAL_SHOW, NULL);
+        break;
+    case SET_RTC_TIME:
+        if (Counter_unreach_max(&set_rtc_cnt))
+        {
+            Counter_increment(&set_rtc_cnt);
+            UI_SendMessage(SET_CLOCK_SETTING_SHOW, NULL);
+        }
+        else
+        {
+            Counter_reset(&set_rtc_cnt);
+            timeSettingMode = SET_INVALID;
+        }
+        break;
+    case SET_PERIOD_START:
+
+        break;
+    case SET_PERIOD_END:
+
+        break;
+
+    default:
+        break;
+    }
+
+    if (sysState.runState == SYS_RUN)
+    {
+        timeSettingMode = SET_INVALID;
+    }
+    else
+    {
+    }
 };
 
 void reloadSysStateFromFlash()
 {
-
 }

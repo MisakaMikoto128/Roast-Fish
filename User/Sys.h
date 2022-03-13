@@ -74,4 +74,5 @@ extern Counter key_output_cnt;
 extern Counter key_area_cnt;
 extern Counter key_run_time_set_cnt;
 extern Counter key_period_cnt;
+extern Counter set_rtc_cnt;
 #endif // _SYS_H_

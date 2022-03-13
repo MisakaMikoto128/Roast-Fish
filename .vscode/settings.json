@@ -4,6 +4,8 @@
         "counter.h": "c",
         "time.h": "c",
         "main.h": "c",
-        "TimeSetting.C": "cpp"
+        "TimeSetting.C": "cpp",
+        "timesetting.h": "c",
+        "ui.h": "c"
     }
 }

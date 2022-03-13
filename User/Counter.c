@@ -53,3 +53,10 @@ void Counter_set(Counter *this, int count){
 inline void Counter_reset(Counter *this){
     this->count = this->count_min;
 }
+
+inline bool Counter_unreach_max(Counter *this){
+    return this->count < this->count_max;
+}
+inline bool Counter_unreach_min(Counter *this){
+    return this->count > this->count_min;
+}

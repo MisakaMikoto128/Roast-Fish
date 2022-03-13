@@ -18,6 +18,7 @@ typedef enum
     UI_CLOCKWIGET_BLINK,
     UI_CLOCKWIGET_SETTING,
     UI_CLOCKWIGET_NONE,
+    UI_CLOCKWIGET_SHOW_GLOBAL_SETTING_TIME,
 } UI_ClockWigetState_t;
 
 typedef enum
@@ -55,7 +56,11 @@ typedef enum
     SET_PERIOD_TEXT_ON,
     SET_PERIOD_NIXIE_VALUE,
     SET_BOX_NIXIE_NONE,
-    SET_BOX_NIXIE_OFF
+    SET_BOX_NIXIE_OFF,
+
+    SET_TIME_TEXT_BLINK,
+    SET_TIME_TEXT_OFF,
+    SET_TIME_TEXT_ON,
 } UI_Message_t;
 
 typedef struct CheckGroup_Wiget_
@@ -66,7 +71,8 @@ typedef struct CheckGroup_Wiget_
     void (*onClick)(int click_cnt);
     bool enable;
 } CheckGroup_Wiget_t;
-
+extern RTC_DateTypeDef sdatestructureget;
+extern RTC_TimeTypeDef stimestructureget;
 void UI_Init(void);
 void UI_Scan(void);
 void UI_SendMessage(UI_Message_t message,void * arg);

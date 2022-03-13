@@ -1,5 +1,6 @@
 #ifndef _COUNTER_H_
 #define _COUNTER_H_
+#include <stdbool.h>
 typedef struct Counter_
 {
     int count;
@@ -16,6 +17,8 @@ void Counter_decrement_circle(Counter *this);
 int Counter_get(Counter *this);
 void Counter_reset(Counter *this);
 void Counter_set(Counter *this, int count);
+bool Counter_unreach_max(Counter *this);
+bool Counter_unreach_min(Counter *this);
 #define CounterGET(this) ((this)->count)
 #define CounterSET(this, count) ((this)->count = (count))
 #define CounterINC(this) ((this)->count++)

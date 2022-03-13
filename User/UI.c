@@ -83,7 +83,7 @@ void UI_Scan(void)
         switch (Clock_WigetState)
         {
         case UI_WIGET_ON:
-            Lcd_Clock_Show(stimestructureget.Hours, stimestructureget.Seconds);
+            Lcd_Clock_Show(stimestructureget.Hours, stimestructureget.Minutes);
             __TIME_TEXT_On();
             __SECOND_DOT_TEXT_Toggle();
             break;
@@ -95,6 +95,11 @@ void UI_Scan(void)
             __TIME_TEXT_Toggle();
             __SECOND_DOT_TEXT_On();
             break;
+            case UI_CLOCKWIGET_SHOW_GLOBAL_SETTING_TIME:
+            Lcd_Clock_Show(stimestructureget.Hours, stimestructureget.Minutes);
+            break;
+
+
         default:
             break;
         }
@@ -266,7 +271,7 @@ void UI_SendMessage(UI_Message_t message, void *arg)
     case SET_PERIOD_TEXT_ON:
         PeriodText_WigetState = UI_WIGET_ON;
         break;
-        
+
     case SET_PERIOD_NIXIE_VALUE:
         Lcd_Period_Show(*(uint8_t *)arg);
         break;
@@ -292,6 +297,16 @@ void UI_SendMessage(UI_Message_t message, void *arg)
     case SET_AREA_NUM:
         Lcd_Area_Nixie_Show(*(uint8_t *)arg);
         break;
+
+
+    case SET_TIME_TEXT_BLINK:
+        TimeText_WigetState = UI_WIGET_BLINK;
+        break;
+    case SET_TIME_TEXT_OFF:
+        TimeText_WigetState = UI_WIGET_OFF;
+        break;
+    case SET_TIME_TEXT_ON:
+        TimeText_WigetState = UI_WIGET_ON;
         break;
     default:
         break;
