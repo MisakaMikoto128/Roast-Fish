@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "key.h": "c"
+        "key.h": "c",
+        "counter.h": "c",
+        "time.h": "c"
     }
 }

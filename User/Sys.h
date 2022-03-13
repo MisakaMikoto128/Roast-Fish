@@ -4,6 +4,9 @@
 #define TIMER1_FREQ 400000
 #define TIMER3_FREQ 100L
 #include "PID.h"
+#include "rtc.h"
+#include <time.h>
+#include <stdbool.h>
 extern PID FishPID;
 void UserPIDInit();
 
@@ -33,6 +36,28 @@ typedef enum {
     MOD_NORMAL_OPEN,
     MOD_NORMAL_AOTO,
 }SysMode;
-extern SysRunState sysRunState;
-extern SysMode sysMode;
+
+
+typedef struct SysPeriodNode_
+{
+    RTC_TimeTypeDef start;
+    RTC_TimeTypeDef end;
+    bool isOpen;
+}SysPeriodNode;
+
+
+typedef struct Sys_
+{
+    SysRunState runState;
+    SysMode mode;
+    SysPeriodNode period[PERIOD_NUM];
+    int fodder_num;
+    int interval_num;
+    int outPout_num;
+    int area_num;
+}Sys;
+
+extern Sys sysState;
+
+void Sys_Update_State_2_UI();
 #endif // _SYS_H_

@@ -30,6 +30,7 @@
 #include "UI.h"
 #include "Key.h"
 #include "Keydef.h"
+#include "Counter.h"
 #include <stdio.h>
 /* USER CODE END Includes */
 
@@ -72,60 +73,50 @@ void User_KeyInit()
 void KeyDriver()
 {
   static KeyState_t key = KEY_NONE;
-  static int key_foddder_cnt = 0, key_mode_cnt = 0;
+  static Counter key_foddder_cnt = {.count_max = 2,.count_min = 0,.count = 0,.step = 1};
+  static Counter key_mode_cnt = {.count_max = 2,.count_min = 0,.count = 0,.step = 1};
   if (!isKeyFIFOEmpty())
   {
     key = Key_FIFO_Get();
 
     switch (key)
     {
-    case KEY_FODDDER_P_Down:
-      key_foddder_cnt++;
-      if (key_foddder_cnt == 3)
-      {
-        key_foddder_cnt = 0;
-      }
-      switch (key_foddder_cnt)
+    case KEY_CaliTime_Down:
+      Counter_increment(&key_foddder_cnt);
+      switch (CounterGET(&key_foddder_cnt))
       {
       case 0:
-        UI_SendMessage(SET_CLOCK_NORMAL_SHOW);
+        UI_SendMessage(SET_CLOCK_NORMAL_SHOW,NULL);
         break;
       case 1:
-        UI_SendMessage(SET_CLOCK_SETTING_SHOW);
+        UI_SendMessage(SET_CLOCK_SETTING_SHOW,NULL);
         break;
       case 2:
-        UI_SendMessage(SET_CLOCK_SHOW_NONE);
+        UI_SendMessage(SET_CLOCK_SHOW_NONE,NULL);
         break;
       default:
         break;
       }
       break;
 
-    case KEY_FODDDER_P_LongPress:
-
-      break;
     case KEY_OFF_Down:
-      UI_SendMessage(SET_RUN_OFF);
+      UI_SendMessage(SET_RUN_OFF,NULL);
       break;
     case KEY_ON_Down:
-      UI_SendMessage(SET_RUN_ON);
+      UI_SendMessage(SET_RUN_ON,NULL);
       break;
     case KEY_MODE_Down:
-      key_mode_cnt++;
-      if (key_mode_cnt == 3)
-      {
-        key_mode_cnt = 0;
-      }
-      switch (key_mode_cnt)
+      Counter_increment(&key_mode_cnt);
+      switch (CounterGET(&key_mode_cnt))
       {
       case 0:
-        UI_SendMessage(SET_ARROW1_ON);
+        UI_SendMessage(SET_ARROW1_ON,NULL);
         break;
       case 1:
-        UI_SendMessage(SET_ARROW2_ON);
+        UI_SendMessage(SET_ARROW2_ON,NULL);
         break;
       case 2:
-        UI_SendMessage(SET_ARROW3_ON);
+        UI_SendMessage(SET_ARROW3_ON,NULL);
         break;
       default:
         break;
@@ -180,8 +171,6 @@ int main(void)
   HAL_TIM_PWM_Start_IT(&htim14, TIM_CHANNEL_1);
   TIM14->CNT = PLUS_DELAY_CNT_MAX / 2;
 
-  //初始选项
-  UI_SendMessage(SET_ARROW1_ON);
   /* USER CODE END 2 */
 
   /* Infinite loop */

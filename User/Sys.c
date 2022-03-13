@@ -1,5 +1,6 @@
 #include "Sys.h"
 #include "Measure.h"
+#include "UI.h"
 PID FishPID;
 float piddecayfun(float z){
     //return sigmoidabsx(z,11,5);
@@ -20,6 +21,40 @@ void UserPIDInit(){
     FishPID.pidDecayByAbsErrorFunc = piddecayfun;
 }
 
+Sys sysState = {
+    .runState = SYS_RUN,
+    .mode = MOD_TIMING,
+    .period = {0},
+    .fodder_num = 0,
+    .interval_num = 0,
+    .outPout_num = 0,
+    .area_num = 0,
+};
 
-SysRunState sysRunState = SYS_RUN;
-SysMode sysMode = MOD_TIMING;
+void Sys_Update_State_2_UI(){
+   if(sysState.runState == SYS_RUN){
+       UI_SendMessage(SET_RUN_ON,NULL);
+    }else{
+       UI_SendMessage(SET_RUN_OFF,NULL);
+    }
+
+    switch(sysState.mode){
+        case MOD_TIMING:
+            UI_SendMessage(SET_ARROW3_ON,NULL);
+            break;
+        case MOD_NORMAL_OPEN:
+            UI_SendMessage(SET_ARROW2_ON,NULL);
+            break;
+        case MOD_NORMAL_AOTO:
+            UI_SendMessage(SET_ARROW1_ON,NULL);
+            break;
+        default:
+            break;
+    }
+    UI_SendMessage(SET_FODDER_NUM,&sysState.fodder_num);
+    UI_SendMessage(SET_INTERVAL_NUM,&sysState.interval_num);
+    UI_SendMessage(SET_OUTPUT_NUM,&sysState.outPout_num);
+    UI_SendMessage(SET_AREA_NUM,&sysState.area_num);
+
+
+};

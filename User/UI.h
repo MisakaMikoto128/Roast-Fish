@@ -35,7 +35,10 @@ typedef enum
     SET_ARROW1_ON,
     SET_ARROW2_ON,
     SET_ARROW3_ON,
-
+    SET_FODDER_NUM,
+    SET_INTERVAL_NUM,
+    SET_OUTPUT_NUM,
+    SET_AREA_NUM,
 } UI_Message_t;
 
 typedef struct CheckGroup_Wiget_
@@ -49,9 +52,8 @@ typedef struct CheckGroup_Wiget_
 
 void UI_Init(void);
 void UI_Scan(void);
-void UI_SendMessage(UI_Message_t message);
+void UI_SendMessage(UI_Message_t message,void * arg);
 void UI_Constant_Text_Show(void);
 int ClickWiget(CheckGroup_Wiget_t *wiget);
-extern struct Mode_CheckGroup_Wiget_ Mode_CheckGroup_Wiget;
-extern struct Nixie_Wiget_ Nixie_Wiget;
+
 #endif // _UI_H_

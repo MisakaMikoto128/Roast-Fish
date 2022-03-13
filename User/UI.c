@@ -67,6 +67,7 @@ void UI_Scan(void)
     if (cnt % 10 == 0)
     {
         Lcd_Show_Updata();
+        Sys_Update_State_2_UI();
     }
 
     if (cnt % 500 == 0)
@@ -97,7 +98,7 @@ void UI_Scan(void)
     }
 }
 
-void UI_SendMessage(UI_Message_t message)
+void UI_SendMessage(UI_Message_t message,void * arg)
 {
     switch (message)
     {
@@ -143,6 +144,23 @@ void UI_SendMessage(UI_Message_t message)
         __ARROW1_TEXT_Off();
         __ARROW2_TEXT_Off();
         __ARROW3_TEXT_On();
+        break;
+    
+    case SET_FODDER_NUM:
+        Lcd_Fodder_Nixie_Show(*(uint8_t*)arg);
+        break;
+
+    case SET_INTERVAL_NUM:
+        Lcd_Interval_Nixie_Show(*(uint8_t*)arg);
+        break;
+
+    case SET_OUTPUT_NUM:
+        Lcd_Output_Nixie_Show(*(uint8_t*)arg);
+        break;
+
+    case SET_AREA_NUM:
+        Lcd_Area_Nixie_Show(*(uint8_t*)arg);
+        break;
         break;
         default:
         break;

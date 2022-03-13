@@ -584,6 +584,11 @@
               <FileType>1</FileType>
               <FilePath>..\User\Key.c</FilePath>
             </File>
+            <File>
+              <FileName>Counter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Counter.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
