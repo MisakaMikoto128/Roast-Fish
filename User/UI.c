@@ -9,28 +9,36 @@ UI_WigetState_t TimeText_WigetState = UI_WIGET_OFF;
 UI_WigetState_t PeriodText_WigetState = UI_WIGET_OFF;
 UI_WigetState_t OpenText_WigetState = UI_WIGET_OFF;
 UI_WigetState_t CloseText_WigetState = UI_WIGET_OFF;
+UI_WigetState_t MinitDotTetx_WigetState = UI_WIGET_OFF;
+UI_WigetState_t BoxText_WigetState = UI_WIGET_BLINK;
 UI_ClockWigetState_t Clock_WigetState = UI_CLOCKWIGET_ON;
 
-CheckGroup_Wiget_t Mode_CheckGroup_Wiget = {UI_WIGET_OFF, 0, 2,NULL,true};
-CheckGroup_Wiget_t Nixie_Wiget_Fodder = {UI_WIGET_OFF, 0, 2,NULL,true};
+CheckGroup_Wiget_t Mode_CheckGroup_Wiget = {UI_WIGET_OFF, 0, 2, NULL, true};
+CheckGroup_Wiget_t Nixie_Wiget_Fodder = {UI_WIGET_OFF, 0, 2, NULL, true};
 
 /**
- * @brief 
- * 
- * @param wiget 
+ * @brief
+ *
+ * @param wiget
  * @return int current wiget click count
  */
-int UI_ClickWiget(CheckGroup_Wiget_t * wiget){
-    if(wiget->enable){
-        if(wiget->state == UI_WIGET_ON){
-            if(wiget->click_cnt < wiget->click_cnt_max){
+int UI_ClickWiget(CheckGroup_Wiget_t *wiget)
+{
+    if (wiget->enable)
+    {
+        if (wiget->state == UI_WIGET_ON)
+        {
+            if (wiget->click_cnt < wiget->click_cnt_max)
+            {
                 wiget->click_cnt++;
             }
-            else{
+            else
+            {
                 wiget->click_cnt = 0;
             }
         }
-        else{
+        else
+        {
             wiget->click_cnt = 0;
         }
     }
@@ -74,7 +82,7 @@ void UI_Scan(void)
     {
         switch (Clock_WigetState)
         {
-        case UI_CLOCKWIGET_ON:
+        case UI_WIGET_ON:
             Lcd_Clock_Show(stimestructureget.Hours, stimestructureget.Seconds);
             __TIME_TEXT_On();
             __SECOND_DOT_TEXT_Toggle();
@@ -91,6 +99,37 @@ void UI_Scan(void)
             break;
         }
 
+
+        switch (MinitDotTetx_WigetState)
+        {
+        case UI_WIGET_BLINK:
+            __TDOT_TEXT_Toggle();
+            break;
+        case UI_WIGET_OFF:
+            __TDOT_TEXT_Off();
+            break;
+        case UI_WIGET_ON:
+            __TDOT_TEXT_On();
+            break;
+        default:
+            break;
+        }
+
+        switch (BoxText_WigetState)
+        {
+        case UI_WIGET_BLINK:
+        __BOX_TEXT_Toggle();
+        break;
+        case UI_WIGET_OFF:
+        __BOX_TEXT_Off();
+        break;
+        case UI_WIGET_ON:
+        __BOX_TEXT_On();
+        break;
+        default:
+        break;
+        }
+
         /* Get the RTC current Time */
         HAL_RTC_GetTime(&hrtc, &stimestructureget, RTC_FORMAT_BCD);
         /* Get the RTC current Date */
@@ -98,7 +137,7 @@ void UI_Scan(void)
     }
 }
 
-void UI_SendMessage(UI_Message_t message,void * arg)
+void UI_SendMessage(UI_Message_t message, void *arg)
 {
     switch (message)
     {
@@ -124,7 +163,6 @@ void UI_SendMessage(UI_Message_t message,void * arg)
         __STOP_TEXT_On();
         break;
 
-    
     case SET_ARROWS_OFF:
         __ARROW1_TEXT_Off();
         __ARROW2_TEXT_Off();
@@ -145,28 +183,37 @@ void UI_SendMessage(UI_Message_t message,void * arg)
         __ARROW2_TEXT_Off();
         __ARROW3_TEXT_On();
         break;
-    
+        
+    case SET_MINIT_DOT_BLINK:
+        MinitDotTetx_WigetState = UI_WIGET_BLINK;
+        break;
+    case SET_MINIT_DOT_OFF:
+        MinitDotTetx_WigetState = UI_WIGET_OFF;
+        break;
+    case SET_MINIT_DOT_ON:
+        MinitDotTetx_WigetState = UI_WIGET_ON;
+        break;
+
     case SET_FODDER_NUM:
-        Lcd_Fodder_Nixie_Show(*(uint8_t*)arg);
+        Lcd_Fodder_Nixie_Show(*(uint8_t *)arg);
         break;
 
     case SET_INTERVAL_NUM:
-        Lcd_Interval_Nixie_Show(*(uint8_t*)arg);
+        Lcd_Interval_Nixie_Show(*(uint8_t *)arg);
         break;
 
     case SET_OUTPUT_NUM:
-        Lcd_Output_Nixie_Show(*(uint8_t*)arg);
+        Lcd_Output_Nixie_Show(*(uint8_t *)arg);
         break;
 
     case SET_AREA_NUM:
-        Lcd_Area_Nixie_Show(*(uint8_t*)arg);
+        Lcd_Area_Nixie_Show(*(uint8_t *)arg);
         break;
         break;
-        default:
+    default:
         break;
     }
 }
-
 
 void UI_Constant_Text_Show(void)
 {

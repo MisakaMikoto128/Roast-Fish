@@ -39,6 +39,10 @@ typedef enum
     SET_INTERVAL_NUM,
     SET_OUTPUT_NUM,
     SET_AREA_NUM,
+
+    SET_MINIT_DOT_BLINK,
+    SET_MINIT_DOT_OFF,
+    SET_MINIT_DOT_ON,
 } UI_Message_t;
 
 typedef struct CheckGroup_Wiget_

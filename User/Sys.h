@@ -26,6 +26,7 @@ void UserPIDInit();
 #define PERIOD_NUM 8
 #define RUN_STATE_NUM 2
 
+#define MIN_RUN_TIME 5
 typedef enum {
     SYS_RUN,
     SYS_STOP,
@@ -53,8 +54,10 @@ typedef struct Sys_
     SysPeriodNode period[PERIOD_NUM];
     int fodder_num;
     int interval_num;
-    int outPout_num;
+    int output_num;
     int area_num;
+    int run_time_set_value;
+    int run_time; //定时模式的运行时间
 }Sys;
 
 extern Sys sysState;

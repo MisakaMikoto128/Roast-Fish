@@ -11,6 +11,8 @@ typedef struct Counter_
 void Counter_init(Counter *this, int count_max, int count_min,int step);
 void Counter_increment(Counter *this);
 void Counter_decrement(Counter *this);
+void Counter_increment_circle(Counter *this);
+void Counter_decrement_circle(Counter *this);
 int Counter_get(Counter *this);
 void Counter_set(Counter *this, int count);
 #define CounterGET(this) ((this)->count)

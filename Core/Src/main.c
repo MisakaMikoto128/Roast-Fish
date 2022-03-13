@@ -57,7 +57,7 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+//当前UI的设计模式一部分是UI更新值到设备，另一部分是不断更新sysState的值到UI设备
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -76,6 +76,10 @@ void KeyDriver()
   static Counter key_calitime_cnt = {.count_max = 2, .count_min = 0, .count = 0, .step = 1};
   static Counter key_mode_cnt = {.count_max = 2, .count_min = 0, .count = 0, .step = 1};
   static Counter key_fodder_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1};
+  static Counter key_interval_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1};
+  static Counter key_output_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1};
+  static Counter key_area_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1};
+  static Counter key_run_time_set_cnt = {.count_max = 120, .count_min = 5, .count = 5, .step = 5};
   if (!isKeyFIFOEmpty())
   {
     key = Key_FIFO_Get();
@@ -115,7 +119,55 @@ void KeyDriver()
       Counter_decrement(&key_fodder_cnt);
       sysState.fodder_num = CounterGET(&key_fodder_cnt);
       break;
-
+    case KEY_INTERVAL_P_Down:
+      Counter_increment(&key_interval_cnt);
+      sysState.interval_num = CounterGET(&key_interval_cnt);
+      break;
+    case KEY_INTERVAL_P_LongPress:
+      Counter_increment(&key_interval_cnt);
+      sysState.interval_num = CounterGET(&key_interval_cnt);
+      break;
+    case KEY_INTERVAL_N_Down:
+      Counter_decrement(&key_interval_cnt);
+      sysState.interval_num = CounterGET(&key_interval_cnt);
+      break;
+    case KEY_INTERVAL_N_LongPress:
+      Counter_decrement(&key_interval_cnt);
+      sysState.interval_num = CounterGET(&key_interval_cnt);
+      break;
+    case KEY_OUTPUT_P_Down:
+      Counter_increment(&key_output_cnt);
+      sysState.output_num = CounterGET(&key_output_cnt);
+      break;
+    case KEY_OUTPUT_P_LongPress:  
+      Counter_increment(&key_output_cnt);
+      sysState.output_num = CounterGET(&key_output_cnt);
+      break;
+    case KEY_OUTPUT_N_Down:
+      Counter_decrement(&key_output_cnt);
+      sysState.output_num = CounterGET(&key_output_cnt);
+      break;
+    case KEY_OUTPUT_N_LongPress:
+      Counter_decrement(&key_output_cnt);
+      sysState.output_num = CounterGET(&key_output_cnt);
+      break;
+    case KEY_AREA_P_Down:
+      Counter_increment(&key_area_cnt);
+      sysState.area_num = CounterGET(&key_area_cnt);
+      break;
+    case KEY_AREA_P_LongPress:
+      Counter_increment(&key_area_cnt);
+      sysState.area_num = CounterGET(&key_area_cnt);
+      break;
+    case KEY_AREA_N_Down:
+      Counter_decrement(&key_area_cnt);
+      sysState.area_num = CounterGET(&key_area_cnt);
+      break;
+    case KEY_AREA_N_LongPress:
+      Counter_decrement(&key_area_cnt);
+      sysState.area_num = CounterGET(&key_area_cnt);
+      break;
+      
     case KEY_OFF_Down:
       sysState.runState = SYS_STOP;
       break;
@@ -123,9 +175,28 @@ void KeyDriver()
       sysState.runState = SYS_RUN;
       break;
     case KEY_MODE_Down:
-      Counter_increment(&key_mode_cnt);
+      Counter_increment_circle(&key_mode_cnt);
       sysState.mode = CounterGET(&key_mode_cnt);
+      sysState.runState = SYS_STOP;
       break;
+
+    case KEY_MINUTE_Down:
+      if(sysState.runState == SYS_RUN){
+        sysState.runState = SYS_STOP;
+      }
+      Counter_increment_circle(&key_run_time_set_cnt);
+      sysState.run_time_set_value = CounterGET(&key_run_time_set_cnt);
+      break;
+
+    case KEY_MINUTE_LongPress:
+      if(sysState.runState == SYS_RUN){
+        sysState.runState = SYS_STOP;
+      }
+      Counter_increment_circle(&key_run_time_set_cnt);
+      sysState.run_time_set_value = CounterGET(&key_run_time_set_cnt);
+      break;
+
+
     default:
       break;
     }
@@ -134,7 +205,6 @@ void KeyDriver()
 
 void oneMilliSecCallback()
 {
-
   KeyScan();
 }
 /* USER CODE END 0 */
@@ -193,7 +263,6 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
     KeyScan();
-
     UI_Scan();
     KeyDriver();
     HAL_Delay(0);
