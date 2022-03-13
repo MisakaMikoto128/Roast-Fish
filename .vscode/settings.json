@@ -2,6 +2,7 @@
     "files.associations": {
         "key.h": "c",
         "counter.h": "c",
-        "time.h": "c"
+        "time.h": "c",
+        "main.h": "c"
     }
 }

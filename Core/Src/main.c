@@ -73,9 +73,9 @@ void User_KeyInit()
 void KeyDriver()
 {
   static KeyState_t key = KEY_NONE;
-  static Counter key_calitime_cnt = {.count_max = 2,.count_min = 0,.count = 0,.step = 1};
-  static Counter key_mode_cnt = {.count_max = 2,.count_min = 0,.count = 0,.step = 1};
-  static Counter key_fodder_cnt = {.count_max = 16,.count_min = 1,.count = 1,.step = 1};
+  static Counter key_calitime_cnt = {.count_max = 2, .count_min = 0, .count = 0, .step = 1};
+  static Counter key_mode_cnt = {.count_max = 2, .count_min = 0, .count = 0, .step = 1};
+  static Counter key_fodder_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1};
   if (!isKeyFIFOEmpty())
   {
     key = Key_FIFO_Get();
@@ -87,13 +87,13 @@ void KeyDriver()
       switch (CounterGET(&key_calitime_cnt))
       {
       case 0:
-        UI_SendMessage(SET_CLOCK_NORMAL_SHOW,NULL);
+        UI_SendMessage(SET_CLOCK_NORMAL_SHOW, NULL);
         break;
       case 1:
-        UI_SendMessage(SET_CLOCK_SETTING_SHOW,NULL);
+        UI_SendMessage(SET_CLOCK_SETTING_SHOW, NULL);
         break;
       case 2:
-        UI_SendMessage(SET_CLOCK_SHOW_NONE,NULL);
+        UI_SendMessage(SET_CLOCK_SHOW_NONE, NULL);
         break;
       default:
         break;
@@ -130,6 +130,12 @@ void KeyDriver()
       break;
     }
   }
+}
+
+void oneMilliSecCallback()
+{
+
+  KeyScan();
 }
 /* USER CODE END 0 */
 
@@ -173,6 +179,8 @@ int main(void)
   HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_1);
   HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_2);
   HAL_TIM_PWM_Start_IT(&htim14, TIM_CHANNEL_1);
+  HAL_TIM_Base_Start(&htim17);
+  HAL_TIM_Base_Start_IT(&htim17);
   TIM14->CNT = PLUS_DELAY_CNT_MAX / 2;
 
   /* USER CODE END 2 */
@@ -184,10 +192,11 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    HAL_Delay(0);
-    UI_Scan();
     KeyScan();
+
+    UI_Scan();
     KeyDriver();
+    HAL_Delay(0);
   }
   /* USER CODE END 3 */
 }

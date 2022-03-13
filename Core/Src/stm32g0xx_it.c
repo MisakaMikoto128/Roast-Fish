@@ -211,7 +211,16 @@ void TIM14_IRQHandler(void)
 void TIM17_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM17_IRQn 0 */
-
+  static TIM_HandleTypeDef *htim = &htim17;
+  /* TIM Update event */
+  if (__HAL_TIM_GET_FLAG(htim, TIM_FLAG_UPDATE) != RESET)
+  {
+    if (__HAL_TIM_GET_IT_SOURCE(htim, TIM_IT_UPDATE) != RESET)
+    {
+      __HAL_TIM_CLEAR_IT(htim, TIM_IT_UPDATE);
+      oneMilliSecCallback();
+    }
+  }
   /* USER CODE END TIM17_IRQn 0 */
   /* USER CODE BEGIN TIM17_IRQn 1 */
 
