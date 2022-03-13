@@ -26,6 +26,14 @@ typedef enum{
     SET_CLOCK_SETTING_SHOW,
     SET_CLOCK_SHOW_NONE,
 
+    SET_RUN_ON,
+    SET_RUN_OFF,
+    
+    SET_ARROWS_OFF,
+    SET_ARROW1_ON,
+    SET_ARROW2_ON,
+    SET_ARROW3_ON,
+
 }UI_Message_t;
 
 void UI_Init(void);

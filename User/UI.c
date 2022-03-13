@@ -64,10 +64,6 @@ void UI_Scan(void)
             break;
         }
 
-
-
-
-
         /* Get the RTC current Time */
         HAL_RTC_GetTime(&hrtc, &stimestructureget, RTC_FORMAT_BCD);
         /* Get the RTC current Date */
@@ -82,17 +78,47 @@ void UI_SendMessage(UI_Message_t message)
     case SET_TIME_WIGET_OFF:
         __TIME_TEXT_Off();
         break;
-        case SET_CLOCK_SETTING_SHOW:
+    case SET_CLOCK_SETTING_SHOW:
         Clock_WigetState = UI_CLOCKWIGET_SETTING;
         break;
-        case SET_CLOCK_NORMAL_SHOW:
+    case SET_CLOCK_NORMAL_SHOW:
         Clock_WigetState = UI_CLOCKWIGET_ON;
         break;
-        case SET_CLOCK_SHOW_NONE:
+    case SET_CLOCK_SHOW_NONE:
         Clock_WigetState = UI_CLOCKWIGET_NONE;
         break;
+
+    case SET_RUN_ON:
+        __RUN_TEXT_On();
+        __STOP_TEXT_Off();
+        break;
+    case SET_RUN_OFF:
+        __RUN_TEXT_Off();
+        __STOP_TEXT_On();
+        break;
+
     
-    default:
+    case SET_ARROWS_OFF:
+        __ARROW1_TEXT_Off();
+        __ARROW2_TEXT_Off();
+        __ARROW3_TEXT_Off();
+        break;
+    case SET_ARROW1_ON:
+        __ARROW1_TEXT_On();
+        __ARROW2_TEXT_Off();
+        __ARROW3_TEXT_Off();
+        break;
+    case SET_ARROW2_ON:
+        __ARROW1_TEXT_Off();
+        __ARROW2_TEXT_On();
+        __ARROW3_TEXT_Off();
+        break;
+    case SET_ARROW3_ON:
+        __ARROW1_TEXT_Off();
+        __ARROW2_TEXT_Off();
+        __ARROW3_TEXT_On();
+        break;
+        default:
         break;
     }
 }

@@ -29,6 +29,7 @@
 #include "Sys.h"
 #include "UI.h"
 #include "Key.h"
+#include "Keydef.h"
 #include <stdio.h>
 /* USER CODE END Includes */
 
@@ -60,7 +61,80 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void User_KeyInit()
+{
+  // only one key examle,read pin pullup,and key com pin connect to GND
+  KeyPin_t keyinpins[4] = {{GPIOA, GPIO_PIN_0}, {GPIOA, GPIO_PIN_1}, {GPIOA, GPIO_PIN_2}, {GPIOA, GPIO_PIN_3}};
+  KeyPin_t keysetpins[4] = {{GPIOA, GPIO_PIN_4}, {GPIOA, GPIO_PIN_5}, {GPIOA, GPIO_PIN_6}, {GPIOA, GPIO_PIN_7}};
+  KeyInit(4, 4, keyinpins, keysetpins);
+};
 
+void KeyDriver()
+{
+  static KeyState_t key = KEY_NONE;
+  static int key_foddder_cnt = 0, key_mode_cnt = 0;
+  if (!isKeyFIFOEmpty())
+  {
+    key = Key_FIFO_Get();
+    switch (key)
+    {
+    case KEY_FODDDER_P_Down:
+      key_foddder_cnt++;
+      if (key_foddder_cnt == 3)
+      {
+        key_foddder_cnt = 0;
+      }
+      switch (key_foddder_cnt)
+      {
+      case 0:
+        UI_SendMessage(SET_CLOCK_NORMAL_SHOW);
+        break;
+      case 1:
+        UI_SendMessage(SET_CLOCK_SETTING_SHOW);
+        break;
+      case 2:
+        UI_SendMessage(SET_CLOCK_SHOW_NONE);
+        break;
+      default:
+        break;
+      }
+      break;
+
+    case KEY_FODDDER_P_LongPress:
+
+      break;
+    case KEY_OFF_Down:
+      UI_SendMessage(SET_RUN_OFF);
+      break;
+    case KEY_ON_Down:
+      UI_SendMessage(SET_RUN_ON);
+      break;
+    case KEY_MODE_Down:
+      key_mode_cnt++;
+      if (key_mode_cnt == 3)
+      {
+        key_mode_cnt = 0;
+      }
+      switch (key_mode_cnt)
+      {
+      case 0:
+        UI_SendMessage(SET_ARROW1_ON);
+        break;
+      case 1:
+        UI_SendMessage(SET_ARROW2_ON);
+        break;
+      case 2:
+        UI_SendMessage(SET_ARROW3_ON);
+        break;
+      default:
+        break;
+      }
+      break;
+    default:
+      break;
+    }
+  }
+}
 /* USER CODE END 0 */
 
 /**
@@ -97,27 +171,16 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM14_Init();
   /* USER CODE BEGIN 2 */
+  UI_Init();
+  User_KeyInit();
   UserPIDInit();
   HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_1);
   HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_2);
   HAL_TIM_PWM_Start_IT(&htim14, TIM_CHANNEL_1);
   TIM14->CNT = PLUS_DELAY_CNT_MAX / 2;
 
-  UI_Init();
-  Lcd_Clock_Show_None();
-  Lcd_Period_Show(7);
-	Lcd_Fodder_Nixie_Show(22);
-	Lcd_Interval_Nixie_Show(8);
-	Lcd_Output_Nixie_Show(18);
-	Lcd_Area_Nixie_Show(22);
-  Lcd_Minit_Nixie_Show(129);
-  Lcd_Minit_Nixe_Off();
-  //only one key examle,read pin pullup,and key com pin connect to GND
-  KeyPin_t keyinpins[4] = {{GPIOA, GPIO_PIN_0},{GPIOA, GPIO_PIN_1},{GPIOA, GPIO_PIN_2},{GPIOA, GPIO_PIN_3}};
-  KeyPin_t keysetpins[4] = {{GPIOA, GPIO_PIN_4},{GPIOA, GPIO_PIN_5},{GPIOA, GPIO_PIN_6},{GPIOA, GPIO_PIN_7}};
-  KeyInit(4, 4, keyinpins, keysetpins);
-  KeyStateValue_t key = KEY_NONE;
-  int key1_cnt = 0;
+  //初始选项
+  UI_SendMessage(SET_ARROW1_ON);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -130,42 +193,7 @@ int main(void)
     HAL_Delay(0);
     UI_Scan();
     KeyScan();
-    
-    if (!isKeyFIFOEmpty())
-    {
-			key = Key_FIFO_Get();
-			switch (key)
-			{
-			case KEY1_Down:
-        key1_cnt++;
-        if(key1_cnt == 3){
-          key1_cnt = 0;
-        }
-        switch (key1_cnt)
-        {
-        case 0:
-          UI_SendMessage(SET_CLOCK_NORMAL_SHOW);
-          break;
-        case 1:
-          UI_SendMessage(SET_CLOCK_SETTING_SHOW);
-          break;
-        case 2:
-          UI_SendMessage(SET_CLOCK_SHOW_NONE);
-          break;
-        default:
-          break;
-        }
-				
-				break;
-	
-			case KEY1_LongPress:
-
-				break;
-
-			default:
-				break;
-			}
-    }
+    KeyDriver();
   }
   /* USER CODE END 3 */
 }
