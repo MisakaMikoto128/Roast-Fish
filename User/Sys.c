@@ -3,6 +3,8 @@
 #include "UI.h"
 #include "Counter.h"
 #include "TimeSetting.h"
+#include "flash.h"
+#include "main.h"
 PID FishPID;
 float piddecayfun(float z)
 {
@@ -198,4 +200,7 @@ void Sys_Run_State_Update()
 
 void reloadSysStateFromFlash()
 {
+    int a = sizeof(sysState);//0x17c -> 380 = 95*4
+    uint8_t p[sizeof(sysState)] = {0};
+    memcpy(p, (uint8_t *)&sysState, a);
 }

@@ -403,6 +403,7 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM14_Init();
   /* USER CODE BEGIN 2 */
+  reloadSysStateFromFlash();
   UI_Init();
   User_KeyInit();
   UserPIDInit();

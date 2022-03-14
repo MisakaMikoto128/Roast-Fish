@@ -33,7 +33,8 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Sys.h"
-
+#include <stdbool.h>
+#include <string.h>
 #define IS_EVEN(x) ((x)%2 == 0)
 #define IS_ODD(x) ((x)%2 == 1)
 /* USER CODE END Includes */
