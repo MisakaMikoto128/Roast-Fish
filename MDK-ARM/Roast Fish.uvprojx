@@ -599,6 +599,16 @@
               <FileType>1</FileType>
               <FilePath>..\User\LED.c</FilePath>
             </File>
+            <File>
+              <FileName>Optocoupler.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Optocoupler.c</FilePath>
+            </File>
+            <File>
+              <FileName>Relay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Relay.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
