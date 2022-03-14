@@ -1,5 +1,6 @@
 #include "UI.h"
 #include "rtc.h"
+#include "TimeSetting.h"
 //@note  You must call HAL_RTC_GetDate() after HAL_RTC_GetTime() to unlock the values
 
 RTC_DateTypeDef sdatestructureget;
@@ -90,16 +91,15 @@ void UI_Scan(void)
         case UI_CLOCKWIGET_NONE:
             Lcd_Clock_Show_None();
             __SECOND_DOT_TEXT_On();
+            __TIME_TEXT_Off();
             break;
         case UI_CLOCKWIGET_SETTING:
             __TIME_TEXT_Toggle();
             __SECOND_DOT_TEXT_On();
             break;
             case UI_CLOCKWIGET_SHOW_GLOBAL_SETTING_TIME:
-            Lcd_Clock_Show(stimestructureget.Hours, stimestructureget.Minutes);
+            Lcd_Clock_Show(globalSettingTimeObj.Hours, globalSettingTimeObj.Minutes);
             break;
-
-
         default:
             break;
         }
@@ -202,6 +202,10 @@ void UI_SendMessage(UI_Message_t message, void *arg)
     case SET_CLOCK_SHOW_NONE:
         Clock_WigetState = UI_CLOCKWIGET_NONE;
         break;
+    case SET_CLOCK_SHOW_GLOBAL_SETTING_TIME:
+        Clock_WigetState = UI_CLOCKWIGET_SHOW_GLOBAL_SETTING_TIME;
+        break;
+
 
     case SET_RUN_ON:
         __RUN_TEXT_On();
@@ -308,6 +312,8 @@ void UI_SendMessage(UI_Message_t message, void *arg)
     case SET_TIME_TEXT_ON:
         TimeText_WigetState = UI_WIGET_ON;
         break;
+
+    
     default:
         break;
     }

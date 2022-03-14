@@ -80,6 +80,55 @@ Counter key_area_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1};
 Counter key_run_time_set_cnt = {.count_max = 120, .count_min = 5, .count = 5, .step = 5};
 Counter key_period_cnt = {.count_max = 8 * 2, .count_min = 0, .count = 0, .step = 1};
 Counter set_rtc_cnt = {.count_max = 400, .count_min = 0, .count = 0, .step = 1};
+
+void RTC_Time_Minute_Increament(RTC_TimeTypeDef *time)
+{
+  if (time->Minutes == 59)
+  {
+    time->Minutes = 0;
+  }
+  else
+  {
+    time->Minutes++;
+  }
+}
+
+void RTC_Time_Minute_Decreament(RTC_TimeTypeDef *time)
+{
+  if (time->Minutes == 0)
+  {
+    time->Minutes = 59;
+  }
+  else
+  {
+    time->Minutes--;
+  }
+}
+
+void RTC_Time_Hour_Increament(RTC_TimeTypeDef *time)
+{
+  if (time->Hours == 23)
+  {
+    time->Hours = 0;
+  }
+  else
+  {
+    time->Hours++;
+  }
+}
+
+void RTC_Time_Hour_Decreament(RTC_TimeTypeDef *time)
+{
+  if (time->Hours == 0)
+  {
+    time->Hours = 23;
+  }
+  else
+  {
+    time->Hours--;
+  }
+}
+
 void KeyDriver()
 {
   static KeyState_t key = KEY_NONE;
@@ -167,6 +216,8 @@ void KeyDriver()
       sysState.mode = CounterGET(&key_mode_cnt);
       sysState.runState = SYS_STOP;
       __TDOT_TEXT_Off(); // Elimination of residual display
+      Counter_reset(&key_period_cnt);
+      timeSettingMode = SET_INVALID;  
       break;
 
     case KEY_MINUTE_Down:
@@ -174,40 +225,71 @@ void KeyDriver()
       {
         sysState.runState = SYS_STOP;
       }
-      if(sysState.mode == MOD_TIMING){
+      if (sysState.mode == MOD_TIMING)
+      {
         Counter_increment_circle(&key_run_time_set_cnt);
         sysState.run_time_set_value = CounterGET(&key_run_time_set_cnt);
-      }else{
-          switch (timeSettingMode)
-              {
-              case SET_INVALID:
-                  
-                  break;
-              case SET_RTC_TIME:
-                  stimestructureget.Minutes++;
-                  if (stimestructureget.Minutes >= 60)
-                  {
-                    stimestructureget.Minutes = 0;
-                  }
-                  Counter_reset(&set_rtc_cnt);
-                  Lcd_Clock_Show(stimestructureget.Hours, stimestructureget.Minutes);
-                  if (HAL_RTC_SetTime(&hrtc, &stimestructureget, RTC_FORMAT_BCD) != HAL_OK)
-                  {
-                    Error_Handler();
-                  }
-                  break;
-              case SET_PERIOD_START:
-
-                  break;
-              case SET_PERIOD_END:
-
-                  break;
-
-              default:
-                  break;
-              }
       }
-      
+      else
+      {
+        switch (timeSettingMode)
+        {
+        case SET_INVALID:
+
+          break;
+        case SET_RTC_TIME:
+          stimestructureget.Minutes++;
+          if (stimestructureget.Minutes >= 60)
+          {
+            stimestructureget.Minutes = 0;
+          }
+          Counter_reset(&set_rtc_cnt);
+          Lcd_Clock_Show(stimestructureget.Hours, stimestructureget.Minutes);
+          if (HAL_RTC_SetTime(&hrtc, &stimestructureget, RTC_FORMAT_BCD) != HAL_OK)
+          {
+            Error_Handler();
+          }
+          break;
+        case SET_PERIOD_START:
+        {
+          SysPeriodNode *pSysNode = &sysState.period[CounterGET(&key_period_cnt) / 2 + CounterGET(&key_period_cnt) % 2 - 1];
+          RTC_Time_Minute_Increament(&pSysNode->start);
+          if (!pSysNode->isOpen)
+          {
+            pSysNode->isOpen = true;
+          }
+          globalSettingTimeObj = pSysNode->start;
+          UI_SendMessage(SET_CLOCK_SHOW_GLOBAL_SETTING_TIME, NULL);
+        }
+        break;
+        case SET_PERIOD_END:
+        {
+          SysPeriodNode *pSysNode = &sysState.period[CounterGET(&key_period_cnt) / 2 + CounterGET(&key_period_cnt) % 2 - 1];
+          RTC_Time_Minute_Increament(&pSysNode->end);
+          UI_SendMessage(SET_CLOCK_SHOW_GLOBAL_SETTING_TIME, NULL);
+          if (!pSysNode->isOpen)
+          {
+            pSysNode->isOpen = true;
+          }
+          globalSettingTimeObj = pSysNode->end;
+          UI_SendMessage(SET_CLOCK_SHOW_GLOBAL_SETTING_TIME, NULL);
+        }
+
+        {
+          SysPeriodNode *pSysNode = &sysState.period[CounterGET(&key_period_cnt) / 2 + CounterGET(&key_period_cnt) % 2 - 1];
+          timeSettingMode = IS_ODD(CounterGET(&key_period_cnt)) ? SET_PERIOD_START : SET_PERIOD_END;
+          if (!pSysNode->isOpen)
+          {
+            pSysNode->isOpen = true;
+          }
+        }
+        break;
+
+        default:
+          break;
+        }
+      }
+
       break;
 
     case KEY_MINUTE_LongPress:
@@ -232,23 +314,47 @@ void KeyDriver()
         {
           __CLOSE_TEXT_Off(); // Elimination of residual display
           __OPEN_TEXT_On();   // Elimination of residual display
+          // 1,2->0
+          // 3,4->1
+          timeSettingMode = SET_PERIOD_START;
+          if (sysState.period[CounterGET(&key_period_cnt) / 2 + CounterGET(&key_period_cnt) % 2 - 1].isOpen)
+          {
+            globalSettingTimeObj = sysState.period[CounterGET(&key_period_cnt) / 2 + CounterGET(&key_period_cnt) % 2 - 1].start;
+            UI_SendMessage(SET_CLOCK_SHOW_GLOBAL_SETTING_TIME, NULL);
+          }
+          else
+          {
+            UI_SendMessage(SET_CLOCK_SHOW_NONE, NULL);
+          }
         }
         else
         {
           __OPEN_TEXT_Off(); // Elimination of residual display
           __CLOSE_TEXT_On(); // Elimination of residual display
+
+          // 1,2->0
+          // 3,4->1
+          timeSettingMode = SET_PERIOD_END;
+          if (sysState.period[CounterGET(&key_period_cnt) / 2 + CounterGET(&key_period_cnt) % 2 - 1].isOpen)
+          {
+            globalSettingTimeObj = sysState.period[CounterGET(&key_period_cnt) / 2 + CounterGET(&key_period_cnt) % 2 - 1].end;
+            UI_SendMessage(SET_CLOCK_SHOW_GLOBAL_SETTING_TIME, NULL);
+          }
+          else
+          {
+            UI_SendMessage(SET_CLOCK_SHOW_NONE, NULL);
+          }
         }
       }
 
       break;
 
-      case KEY_CaliTime_Down:
-        if(sysState.mode == MOD_NORMAL_OPEN)
-        {
-          timeSettingMode = SET_RTC_TIME;
-        }
+    case KEY_CaliTime_Down:
+      if (sysState.mode == MOD_NORMAL_OPEN)
+      {
+        timeSettingMode = SET_RTC_TIME;
+      }
       break;
-
 
     default:
       break;

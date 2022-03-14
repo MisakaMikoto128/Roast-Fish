@@ -157,6 +157,8 @@ void Sys_Update_State_2_UI()
     if (sysState.runState == SYS_RUN)
     {
         timeSettingMode = SET_INVALID;
+        UI_SendMessage(SET_CLOCK_NORMAL_SHOW,NULL);
+        Counter_reset(&key_period_cnt);
     }
     else
     {
