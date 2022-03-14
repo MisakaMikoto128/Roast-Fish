@@ -59,6 +59,7 @@ typedef struct Sys_
     int area_num;
     int run_time_set_value;
     int run_time; //定时模式的运行时间
+    uint32_t flash_addr;
 }Sys;
 
 extern Sys sysState;

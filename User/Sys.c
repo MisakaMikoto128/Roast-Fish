@@ -36,7 +36,9 @@ Sys sysState = {
     .output_num = 1,
     .area_num = 1,
     .run_time = 0,
-    .run_time_set_value = MIN_RUN_TIME};
+    .run_time_set_value = MIN_RUN_TIME,
+    .flash_addr = 0x0800F800,//page 31
+    };
 // the three points are shown in running and timing mode
 // the green LED is the running flag of the vibrator
 //@10ms
@@ -203,4 +205,9 @@ void reloadSysStateFromFlash()
     int a = sizeof(sysState);//0x17c -> 380 = 95*4
     uint8_t p[sizeof(sysState)] = {0};
     memcpy(p, (uint8_t *)&sysState, a);
+
+    Flash_Write_Alignment64(sysState.flash_addr,(uint8_t*)&sysState, sizeof(sysState));
+    
+		sysState = *((Sys *)sysState.flash_addr);
+    
 }
