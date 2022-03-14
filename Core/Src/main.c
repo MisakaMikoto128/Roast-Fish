@@ -139,6 +139,66 @@ void RTC_Time_ResetHMS(RTC_TimeTypeDef *time)
   time->Seconds = 0;
 }
 
+
+void onKeyMinuteDown(){
+sysState.runState = SYS_STOP;
+      if (sysState.mode == MOD_TIMING)
+      {
+        Counter_increment_circle(&key_run_time_set_cnt);
+        sysState.run_time_set_value = CounterGET(&key_run_time_set_cnt);
+      }
+      else
+      {
+        switch (timeSettingMode)
+        {
+        case SET_INVALID:
+          break;
+        case SET_RTC_TIME:
+          stimestructureget.Minutes++;
+          if (stimestructureget.Minutes >= 60)
+          {
+            stimestructureget.Minutes = 0;
+          }
+          Counter_reset(&set_rtc_cnt);
+          Lcd_Clock_Show(stimestructureget.Hours, stimestructureget.Minutes);
+          if (HAL_RTC_SetTime(&hrtc, &stimestructureget, RTC_FORMAT_BCD) != HAL_OK)
+          {
+            Error_Handler();
+          }
+          break;
+        case SET_PERIOD_START:
+        {
+          SysPeriodNode *pSysNode = &sysState.period[CounterGET(&key_period_cnt) / 2 + CounterGET(&key_period_cnt) % 2 - 1];
+          RTC_Time_Minute_Increament(&pSysNode->start);
+          if (!pSysNode->isOpen)
+          {
+            pSysNode->isOpen = true;
+          }
+          globalSettingTimeObj = pSysNode->start;
+          UI_SendMessage(SET_CLOCK_SHOW_GLOBAL_SETTING_TIME, NULL);
+        }
+        break;
+        case SET_PERIOD_END:
+        {
+          SysPeriodNode *pSysNode = &sysState.period[CounterGET(&key_period_cnt) / 2 + CounterGET(&key_period_cnt) % 2 - 1];
+          if (!pSysNode->isOpen)
+          {
+            pSysNode->isOpen = true;
+          }
+          RTC_Time_Minute_Increament(&pSysNode->end);
+          globalSettingTimeObj = pSysNode->end;
+          UI_SendMessage(SET_CLOCK_SHOW_GLOBAL_SETTING_TIME, NULL);
+        }
+        break;
+
+        default:
+          break;
+        }
+      }
+}
+
+
+
 void KeyDriver()
 {
   static KeyState_t key = KEY_NONE;
@@ -231,74 +291,15 @@ void KeyDriver()
       timeSettingMode = SET_INVALID;
       break;
 
+    
     case KEY_MINUTE_Down:
-
-      sysState.runState = SYS_STOP;
-
-      if (sysState.mode == MOD_TIMING)
-      {
-        Counter_increment_circle(&key_run_time_set_cnt);
-        sysState.run_time_set_value = CounterGET(&key_run_time_set_cnt);
-      }
-      else if (sysState.mode == MOD_NORMAL_AOTO)
-      {
-        switch (timeSettingMode)
-        {
-        case SET_INVALID:
-          break;
-        case SET_RTC_TIME:
-          stimestructureget.Minutes++;
-          if (stimestructureget.Minutes >= 60)
-          {
-            stimestructureget.Minutes = 0;
-          }
-          Counter_reset(&set_rtc_cnt);
-          Lcd_Clock_Show(stimestructureget.Hours, stimestructureget.Minutes);
-          if (HAL_RTC_SetTime(&hrtc, &stimestructureget, RTC_FORMAT_BCD) != HAL_OK)
-          {
-            Error_Handler();
-          }
-          break;
-        case SET_PERIOD_START:
-        {
-          SysPeriodNode *pSysNode = &sysState.period[CounterGET(&key_period_cnt) / 2 + CounterGET(&key_period_cnt) % 2 - 1];
-          RTC_Time_Minute_Increament(&pSysNode->start);
-          if (!pSysNode->isOpen)
-          {
-            pSysNode->isOpen = true;
-          }
-          globalSettingTimeObj = pSysNode->start;
-          UI_SendMessage(SET_CLOCK_SHOW_GLOBAL_SETTING_TIME, NULL);
-        }
-        break;
-        case SET_PERIOD_END:
-        {
-          SysPeriodNode *pSysNode = &sysState.period[CounterGET(&key_period_cnt) / 2 + CounterGET(&key_period_cnt) % 2 - 1];
-          if (!pSysNode->isOpen)
-          {
-            pSysNode->isOpen = true;
-          }
-          RTC_Time_Minute_Increament(&pSysNode->end);
-          globalSettingTimeObj = pSysNode->end;
-          UI_SendMessage(SET_CLOCK_SHOW_GLOBAL_SETTING_TIME, NULL);
-        }
-        break;
-
-        default:
-          break;
-        }
-      }
+      onKeyMinuteDown();
 
       break;
-
-    case KEY_MINUTE_LongPress:
-      if (sysState.runState == SYS_RUN)
-      {
-        sysState.runState = SYS_STOP;
-      }
-      Counter_increment_circle(&key_run_time_set_cnt);
-      sysState.run_time_set_value = CounterGET(&key_run_time_set_cnt);
+      case KEY_MINUTE_LongPress:
+      onKeyMinuteDown();
       break;
+
 
     case KEY_PERIOD_Down:
       sysState.runState = SYS_STOP;
