@@ -81,6 +81,7 @@ Counter key_interval_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step =
 Counter key_output_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1};
 Counter key_area_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1};
 Counter key_run_time_set_cnt = {.count_max = 120, .count_min = 5, .count = 5, .step = 5};
+
 Counter key_period_cnt = {.count_max = 8 * 2, .count_min = 0, .count = 0, .step = 1};
 Counter set_rtc_cnt = {.count_max = 400, .count_min = 0, .count = 0, .step = 1};
 
@@ -139,65 +140,106 @@ void RTC_Time_ResetHMS(RTC_TimeTypeDef *time)
   time->Seconds = 0;
 }
 
-
-void onKeyMinuteDown(){
-sysState.runState = SYS_STOP;
-      if (sysState.mode == MOD_TIMING)
+void onKeyMinuteDown()
+{
+  sysState.runState = SYS_STOP;
+  if (sysState.mode == MOD_TIMING)
+  {
+    Counter_increment_circle(&key_run_time_set_cnt);
+    sysState.run_time_set_value = CounterGET(&key_run_time_set_cnt);
+  }
+  else
+  {
+    switch (timeSettingMode)
+    {
+    case SET_INVALID:
+      break;
+    case SET_RTC_TIME:
+      RTC_Time_Minute_Increament(&stimestructureget);
+      Counter_reset(&set_rtc_cnt);
+      Lcd_Clock_Show(stimestructureget.Hours, stimestructureget.Minutes);
+      if (HAL_RTC_SetTime(&hrtc, &stimestructureget, RTC_FORMAT_BCD) != HAL_OK)
       {
-        Counter_increment_circle(&key_run_time_set_cnt);
-        sysState.run_time_set_value = CounterGET(&key_run_time_set_cnt);
+        Error_Handler();
       }
-      else
+      break;
+    case SET_PERIOD_START:
+    {
+      SysPeriodNode *pSysNode = &sysState.period[CounterGET(&key_period_cnt) / 2 + CounterGET(&key_period_cnt) % 2 - 1];
+      RTC_Time_Minute_Increament(&pSysNode->start);
+      if (!pSysNode->isOpen)
       {
-        switch (timeSettingMode)
-        {
-        case SET_INVALID:
-          break;
-        case SET_RTC_TIME:
-          stimestructureget.Minutes++;
-          if (stimestructureget.Minutes >= 60)
-          {
-            stimestructureget.Minutes = 0;
-          }
-          Counter_reset(&set_rtc_cnt);
-          Lcd_Clock_Show(stimestructureget.Hours, stimestructureget.Minutes);
-          if (HAL_RTC_SetTime(&hrtc, &stimestructureget, RTC_FORMAT_BCD) != HAL_OK)
-          {
-            Error_Handler();
-          }
-          break;
-        case SET_PERIOD_START:
-        {
-          SysPeriodNode *pSysNode = &sysState.period[CounterGET(&key_period_cnt) / 2 + CounterGET(&key_period_cnt) % 2 - 1];
-          RTC_Time_Minute_Increament(&pSysNode->start);
-          if (!pSysNode->isOpen)
-          {
-            pSysNode->isOpen = true;
-          }
-          globalSettingTimeObj = pSysNode->start;
-          UI_SendMessage(SET_CLOCK_SHOW_GLOBAL_SETTING_TIME, NULL);
-        }
-        break;
-        case SET_PERIOD_END:
-        {
-          SysPeriodNode *pSysNode = &sysState.period[CounterGET(&key_period_cnt) / 2 + CounterGET(&key_period_cnt) % 2 - 1];
-          if (!pSysNode->isOpen)
-          {
-            pSysNode->isOpen = true;
-          }
-          RTC_Time_Minute_Increament(&pSysNode->end);
-          globalSettingTimeObj = pSysNode->end;
-          UI_SendMessage(SET_CLOCK_SHOW_GLOBAL_SETTING_TIME, NULL);
-        }
-        break;
-
-        default:
-          break;
-        }
+        pSysNode->isOpen = true;
       }
+      globalSettingTimeObj = pSysNode->start;
+      UI_SendMessage(SET_CLOCK_SHOW_GLOBAL_SETTING_TIME, NULL);
+    }
+    break;
+    case SET_PERIOD_END:
+    {
+      SysPeriodNode *pSysNode = &sysState.period[CounterGET(&key_period_cnt) / 2 + CounterGET(&key_period_cnt) % 2 - 1];
+      if (!pSysNode->isOpen)
+      {
+        pSysNode->isOpen = true;
+      }
+      RTC_Time_Minute_Increament(&pSysNode->end);
+      globalSettingTimeObj = pSysNode->end;
+      UI_SendMessage(SET_CLOCK_SHOW_GLOBAL_SETTING_TIME, NULL);
+    }
+    break;
+
+    default:
+      break;
+    }
+  }
 }
 
+void onKeyHourDown()
+{
+  sysState.runState = SYS_STOP;
 
+  switch (timeSettingMode)
+  {
+  case SET_INVALID:
+    break;
+  case SET_RTC_TIME:
+    RTC_Time_Hour_Increament(&stimestructureget);
+    Counter_reset(&set_rtc_cnt);
+    Lcd_Clock_Show(stimestructureget.Hours, stimestructureget.Minutes);
+    if (HAL_RTC_SetTime(&hrtc, &stimestructureget, RTC_FORMAT_BCD) != HAL_OK)
+    {
+      Error_Handler();
+    }
+    break;
+  case SET_PERIOD_START:
+  {
+    SysPeriodNode *pSysNode = &sysState.period[CounterGET(&key_period_cnt) / 2 + CounterGET(&key_period_cnt) % 2 - 1];
+    RTC_Time_Hour_Increament(&pSysNode->start);
+    if (!pSysNode->isOpen)
+    {
+      pSysNode->isOpen = true;
+    }
+    globalSettingTimeObj = pSysNode->start;
+    UI_SendMessage(SET_CLOCK_SHOW_GLOBAL_SETTING_TIME, NULL);
+  }
+  break;
+  case SET_PERIOD_END:
+  {
+    SysPeriodNode *pSysNode = &sysState.period[CounterGET(&key_period_cnt) / 2 + CounterGET(&key_period_cnt) % 2 - 1];
+    if (!pSysNode->isOpen)
+    {
+      pSysNode->isOpen = true;
+    }
+    RTC_Time_Hour_Increament(&pSysNode->end);
+    globalSettingTimeObj = pSysNode->end;
+    UI_SendMessage(SET_CLOCK_SHOW_GLOBAL_SETTING_TIME, NULL);
+  }
+  break;
+
+  default:
+    break;
+  }
+}
 
 void KeyDriver()
 {
@@ -291,19 +333,22 @@ void KeyDriver()
       timeSettingMode = SET_INVALID;
       break;
 
-    
     case KEY_MINUTE_Down:
       onKeyMinuteDown();
 
       break;
-      case KEY_MINUTE_LongPress:
+    case KEY_MINUTE_LongPress:
       onKeyMinuteDown();
       break;
-
+    case KEY_HOUR_Down:
+      onKeyHourDown();
+      break;
+    case KEY_HOUR_LongPress:
+      onKeyHourDown();
+      break;
 
     case KEY_PERIOD_Down:
       sysState.runState = SYS_STOP;
-
       if (sysState.mode == MOD_NORMAL_AOTO)
       {
         Counter_increment_circle(&key_period_cnt);
@@ -360,7 +405,6 @@ void KeyDriver()
       }
       break;
     case KEY_CANCEL_Down:
-
       if (sysState.mode == MOD_TIMING)
       {
         Counter_increment_circle(&key_run_time_set_cnt);
