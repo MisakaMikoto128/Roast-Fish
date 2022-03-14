@@ -298,17 +298,17 @@ void UI_SendMessage(UI_Message_t message, void *arg)
     case SET_PERIOD_NIXIE_VALUE:
         Lcd_Period_Show(*(uint8_t *)arg);
         break;
-    case SET_BOX_NIXIE_NONE:
+    case SET_PERIOD_NIXIE_NONE:
         Lcd_Period_Show(NIXIE_NONE);
         break;
-    case SET_BOX_NIXIE_OFF:
+    case SET_PERIOD_NIXIE_OFF:
         Lcd_Period_Off();
         break;
 
     case SET_FODDER_NUM:
         Lcd_Fodder_Nixie_Show(*(uint8_t *)arg);
         break;
-
+        
     case SET_INTERVAL_NUM:
         Lcd_Interval_Nixie_Show(*(uint8_t *)arg);
         break;
@@ -331,6 +331,15 @@ void UI_SendMessage(UI_Message_t message, void *arg)
         TimeText_WigetState = UI_WIGET_ON;
         break;
 
+    case SET_BOX_ON:
+        BoxText_WigetState = UI_WIGET_ON;
+        break;
+    case SET_BOX_OFF:
+        BoxText_WigetState = UI_WIGET_OFF;
+        break;
+    case SET_BOX_BLINK:
+        BoxText_WigetState = UI_WIGET_BLINK;
+        break;
     default:
         break;
     }

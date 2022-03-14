@@ -180,8 +180,10 @@ void Sys_Update_State_2_UI()
 
     if(HAVE_FODDER()){
      __SQUARE_TEXT_On();
+     UI_SendMessage(SET_BOX_ON, NULL);
     }else{
        __SQUARE_TEXT_Off();
+       UI_SendMessage(SET_BOX_BLINK, NULL);
     }
 };
 
