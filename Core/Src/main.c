@@ -34,8 +34,8 @@
 #include <stdio.h>
 #include "TimeSetting.h"
 #include "LED.h"
-
-
+#include "Optocoupler.h"
+#include "Relay.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -408,16 +408,17 @@ int main(void)
   /* USER CODE BEGIN 2 */
   reloadSysStateFromFlash();
   LED_Init();
+  Relay_Init();
+  Optocoupler_Init();
   UI_Init();
   User_KeyInit();
   UserPIDInit();
   HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_1);
   HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_2);
   HAL_TIM_PWM_Start_IT(&htim14, TIM_CHANNEL_1);
-  HAL_TIM_Base_Start(&htim17);
-  HAL_TIM_Base_Start_IT(&htim17);
-  TIM14->CNT = PLUS_DELAY_CNT_MAX / 2;
 
+  TIM14->CNT = PLUS_DELAY_CNT_MAX / 2;
+	HAL_TIM_Base_Start_IT(&htim17);
   /* USER CODE END 2 */
 
   /* Infinite loop */

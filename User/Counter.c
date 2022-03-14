@@ -60,3 +60,11 @@ inline bool Counter_unreach_max(Counter *this){
 inline bool Counter_unreach_min(Counter *this){
     return this->count > this->count_min;
 }
+
+inline bool Counter_exceed_or_reach_max(Counter *this){
+    return this->count >= this->count_max;
+}
+
+inline bool Counter_exceed_or_reach_min(Counter *this){
+    return this->count <= this->count_min;
+}

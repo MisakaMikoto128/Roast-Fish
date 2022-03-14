@@ -1,0 +1,11 @@
+#ifndef OPTOCOUPLER_H
+#define OPTOCOUPLER_H
+#include "gpio.h"
+
+#define OPTOCOUPLER_Pin GPIO_PIN_14
+#define OPTOCOUPLER_GPIO_Port GPIOB
+#define OPTOCOUPLER_GPIO_CLK_ENABLE() __HAL_RCC_GPIOB_CLK_ENABLE()
+
+void Optocoupler_Init(void);
+#define OPTOCOUPLER_Read() HAL_GPIO_ReadPin(OPTOCOUPLER_GPIO_Port, OPTOCOUPLER_Pin)
+#endif // OPTOCOUPLER_H 

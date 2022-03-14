@@ -5,6 +5,10 @@
 #include "TimeSetting.h"
 #include "flash.h"
 #include "main.h"
+#include "Optocoupler.h"
+#define HAVE_FODDER_LEVEL GPIO_PIN_SET
+#define HAVE_FODDER() (OPTOCOUPLER_Read() == HAVE_FODDER_LEVEL)
+Counter fodder_existing_cnt = {.count = 0, .count_max = 3, .count_min = 0,.step = 1};
 PID FishPID;
 float piddecayfun(float z)
 {
@@ -172,6 +176,13 @@ void Sys_Update_State_2_UI()
     else
     {
     }
+
+
+    if(HAVE_FODDER()){
+     __SQUARE_TEXT_On();
+    }else{
+       __SQUARE_TEXT_Off();
+    }
 };
 
 /**
@@ -198,6 +209,15 @@ void Sys_Run_State_Update()
     else
     {
     }
+
+    if(HAVE_FODDER()){
+       Counter_reset(&fodder_existing_cnt);
+    }else{
+         Counter_increment(&fodder_existing_cnt);
+         if(Counter_exceed_or_reach_max(&fodder_existing_cnt)){
+             sysState.runState = SYS_STOP;
+         }
+    }
 }
 
 void reloadSysStateFromFlash()
@@ -208,7 +228,7 @@ void reloadSysStateFromFlash()
 
     Flash_Write_Alignment64(sysState.flash_addr,(uint8_t*)&sysState, sizeof(sysState));
     
-	sysState = *((Sys *)sysState.flash_addr);
+		sysState = *((Sys *)sysState.flash_addr);
     
 }
 

@@ -12,6 +12,7 @@ UI_WigetState_t OpenText_WigetState = UI_WIGET_OFF;
 UI_WigetState_t CloseText_WigetState = UI_WIGET_OFF;
 UI_WigetState_t MinitDotTetx_WigetState = UI_WIGET_OFF;
 UI_WigetState_t BoxText_WigetState = UI_WIGET_BLINK;
+UI_WigetState_t Square_WigetState = UI_WIGET_OFF;
 UI_ClockWigetState_t Clock_WigetState = UI_CLOCKWIGET_ON;
 
 CheckGroup_Wiget_t Mode_CheckGroup_Wiget = {UI_WIGET_OFF, 0, 2, NULL, true};
@@ -97,7 +98,7 @@ void UI_Scan(void)
             __TIME_TEXT_Toggle();
             __SECOND_DOT_TEXT_On();
             break;
-            case UI_CLOCKWIGET_SHOW_GLOBAL_SETTING_TIME:
+        case UI_CLOCKWIGET_SHOW_GLOBAL_SETTING_TIME:
             Lcd_Clock_Show(globalSettingTimeObj.Hours, globalSettingTimeObj.Minutes);
             break;
         default:
@@ -179,15 +180,29 @@ void UI_Scan(void)
             break;
         }
 
+        // switch (Square_WigetState)
+        // {
+        // case UI_WIGET_BLINK:
+        //     __SQUARE_TEXT_Toggle();
+        //     break;
+        // case UI_WIGET_OFF:
+        //     __SQUARE_TEXT_Off();
+        //     break;
+        // case UI_WIGET_ON:
+        //     __SQUARE_TEXT_On();
+        //     break;
+        // default:
+        //     break;
+        // }
         /* Get the RTC current Time */
         HAL_RTC_GetTime(&hrtc, &stimestructureget, RTC_FORMAT_BCD);
         /* Get the RTC current Date */
         HAL_RTC_GetDate(&hrtc, &sdatestructureget, RTC_FORMAT_BCD);
     }
 
-    if (cnt % (1000*60) == 0)
+    if (cnt % (1000 * 60) == 0)
     {
-       Sys_Run_State_Update();
+        Sys_Run_State_Update();
     }
 }
 
@@ -210,7 +225,6 @@ void UI_SendMessage(UI_Message_t message, void *arg)
     case SET_CLOCK_SHOW_GLOBAL_SETTING_TIME:
         Clock_WigetState = UI_CLOCKWIGET_SHOW_GLOBAL_SETTING_TIME;
         break;
-
 
     case SET_RUN_ON:
         __RUN_TEXT_On();
@@ -307,7 +321,6 @@ void UI_SendMessage(UI_Message_t message, void *arg)
         Lcd_Area_Nixie_Show(*(uint8_t *)arg);
         break;
 
-
     case SET_TIME_TEXT_BLINK:
         TimeText_WigetState = UI_WIGET_BLINK;
         break;
@@ -318,7 +331,6 @@ void UI_SendMessage(UI_Message_t message, void *arg)
         TimeText_WigetState = UI_WIGET_ON;
         break;
 
-    
     default:
         break;
     }
