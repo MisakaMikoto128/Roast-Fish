@@ -74,7 +74,7 @@ void UI_Scan(void)
     static uint64_t cnt = 0;
     cnt++;
 
-    if (cnt % 10 == 0)
+    if (cnt % 15 == 0)
     {
         Lcd_Show_Updata();
         Sys_Update_State_2_UI();

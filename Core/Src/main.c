@@ -369,6 +369,7 @@ void KeyDriver()
 void oneMilliSecCallback()
 {
   KeyScan();
+  UI_Scan();
 }
 /* USER CODE END 0 */
 
@@ -405,6 +406,7 @@ int main(void)
   MX_TIM3_Init();
   MX_USART2_UART_Init();
   MX_TIM14_Init();
+	MX_TIM17_Init();
   /* USER CODE BEGIN 2 */
   reloadSysStateFromFlash();
   LED_Init();
@@ -428,8 +430,6 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    KeyScan();
-    UI_Scan();
     KeyDriver();
     HAL_Delay(0);
   }
