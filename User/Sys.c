@@ -27,7 +27,7 @@ void UserPIDInit()
     FishPID.P = 0.0004;
     FishPID.I = 0.001;
     FishPID.D = 0.0002;
-    FishPID.Target = 1100;
+    FishPID.Target = 300;
     FishPID.pidDecayByAbsErrorFunc = piddecayfun;
 }
 
