@@ -208,6 +208,7 @@ void reloadSysStateFromFlash()
 
     Flash_Write_Alignment64(sysState.flash_addr,(uint8_t*)&sysState, sizeof(sysState));
     
-		sysState = *((Sys *)sysState.flash_addr);
+	sysState = *((Sys *)sysState.flash_addr);
     
 }
+

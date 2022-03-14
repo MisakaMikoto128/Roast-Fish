@@ -404,7 +404,7 @@ int main(void)
   MX_TIM14_Init();
   /* USER CODE BEGIN 2 */
   reloadSysStateFromFlash();
-  FLASH_Write_Test();
+
   UI_Init();
   User_KeyInit();
   UserPIDInit();

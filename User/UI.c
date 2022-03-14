@@ -185,7 +185,7 @@ void UI_Scan(void)
         HAL_RTC_GetDate(&hrtc, &sdatestructureget, RTC_FORMAT_BCD);
     }
 
-    if (cnt % 1000 == 0)
+    if (cnt % (1000*60) == 0)
     {
        Sys_Run_State_Update();
     }
