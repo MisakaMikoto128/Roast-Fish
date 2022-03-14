@@ -594,6 +594,11 @@
               <FileType>1</FileType>
               <FilePath>..\User\TimeSetting.c</FilePath>
             </File>
+            <File>
+              <FileName>LED.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\LED.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
