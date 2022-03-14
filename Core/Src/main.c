@@ -33,6 +33,9 @@
 #include "Counter.h"
 #include <stdio.h>
 #include "TimeSetting.h"
+#include "LED.h"
+
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -404,7 +407,7 @@ int main(void)
   MX_TIM14_Init();
   /* USER CODE BEGIN 2 */
   reloadSysStateFromFlash();
-
+  LED_Init();
   UI_Init();
   User_KeyInit();
   UserPIDInit();

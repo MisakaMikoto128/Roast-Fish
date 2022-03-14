@@ -2,3 +2,4 @@
 /MDK-ARM/.vscode/
 *.o
 *.d
+/.VSCodeCounter/
