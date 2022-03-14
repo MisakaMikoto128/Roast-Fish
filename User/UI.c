@@ -70,7 +70,7 @@ void UI_Init(void)
 void UI_Scan(void)
 {
 
-    static uint32_t cnt = 0;
+    static uint64_t cnt = 0;
     cnt++;
 
     if (cnt % 10 == 0)
@@ -183,6 +183,11 @@ void UI_Scan(void)
         HAL_RTC_GetTime(&hrtc, &stimestructureget, RTC_FORMAT_BCD);
         /* Get the RTC current Date */
         HAL_RTC_GetDate(&hrtc, &sdatestructureget, RTC_FORMAT_BCD);
+    }
+
+    if (cnt % 1000 == 0)
+    {
+       Sys_Run_State_Update();
     }
 }
 

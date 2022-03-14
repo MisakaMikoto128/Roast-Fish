@@ -210,6 +210,7 @@ void KeyDriver()
       break;
     case KEY_ON_Down:
       sysState.runState = SYS_RUN;
+      sysState.run_time = sysState.run_time_set_value;
       break;
     case KEY_MODE_Down:
       Counter_increment_circle(&key_mode_cnt);

@@ -26,7 +26,7 @@ void UserPIDInit()
 }
 
 Sys sysState = {
-    .runState = SYS_RUN,
+    .runState = SYS_STOP,
     .mode = MOD_TIMING,
     .period = {0},
     .fodder_num = 1,
@@ -35,8 +35,13 @@ Sys sysState = {
     .area_num = 1,
     .run_time = 0,
     .run_time_set_value = MIN_RUN_TIME};
-//三个点是在运行和定时模式下出现的
-//绿色LED是振动器运行标志
+// the three points are shown in running and timing mode
+// the green LED is the running flag of the vibrator
+//@10ms
+/**
+ * @brief scan interval is 10ms
+ *
+ */
 void Sys_Update_State_2_UI()
 {
     if (sysState.runState == SYS_RUN)
@@ -157,13 +162,39 @@ void Sys_Update_State_2_UI()
     if (sysState.runState == SYS_RUN)
     {
         timeSettingMode = SET_INVALID;
-        UI_SendMessage(SET_CLOCK_NORMAL_SHOW,NULL);
+        UI_SendMessage(SET_CLOCK_NORMAL_SHOW, NULL);
         Counter_reset(&key_period_cnt);
     }
     else
     {
     }
 };
+
+/**
+ * @brief scan interval is 1minute
+ *
+ */
+void Sys_Run_State_Update()
+{
+
+    if (sysState.runState == SYS_RUN)
+    {
+        // TIMING MODE RUNNING
+        if (sysState.mode == MOD_TIMING)
+        {
+
+            sysState.run_time--;
+            if (sysState.run_time == 0)
+            {
+                sysState.run_time = sysState.run_time_set_value;
+                sysState.runState = SYS_STOP;
+            }
+        }
+    }
+    else
+    {
+    }
+}
 
 void reloadSysStateFromFlash()
 {

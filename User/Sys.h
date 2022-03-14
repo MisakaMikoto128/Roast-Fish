@@ -64,6 +64,7 @@ typedef struct Sys_
 extern Sys sysState;
 
 void Sys_Update_State_2_UI();
+void Sys_Run_State_Update();
 void reloadSysStateFromFlash();
 
 extern Counter key_calitime_cnt;

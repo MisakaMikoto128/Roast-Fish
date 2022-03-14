@@ -168,6 +168,10 @@ void Lcd_Text_On(LCD_TextName_t textName)
 
 void Lcd_Text_Off(LCD_TextName_t textName);
 void Lcd_Text_Toggle(LCD_TextName_t textName);
+/**
+ * @brief scan interval is 10ms
+ * 
+ */
 void Lcd_Show_Updata(void)
 {
     for (int i = 0; i < LCD_MEM_SZIE; i++)
