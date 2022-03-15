@@ -148,7 +148,6 @@ void SysTick_Handler(void)
 /* For the available peripheral interrupt handler names,                      */
 /* please refer to the startup file (startup_stm32g0xx.s).                    */
 /******************************************************************************/
-
 /**
   * @brief This function handles TIM1 capture compare interrupt.
   */
@@ -174,7 +173,7 @@ void TIM1_CC_IRQHandler(void)
   if (__HAL_TIM_GET_FLAG(&htim1, TIM_FLAG_CC2) != RESET)
   {
     TIM14->CNT = pluse_delay;
-    TIM16->CNT = 100;
+    TIM16->CNT = vibrator_pluse_delay;
     SoftWDOG_Feed(&flashWriteWDOG);
     __HAL_TIM_CLEAR_IT(&htim1, TIM_IT_CC2);
   }

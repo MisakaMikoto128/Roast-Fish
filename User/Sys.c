@@ -11,6 +11,7 @@
 #define HAVE_FODDER_LEVEL GPIO_PIN_SET
 #define HAVE_FODDER() (OPTOCOUPLER_Read() == HAVE_FODDER_LEVEL)
 Counter fodder_existing_cnt = {.count = 0, .count_max = 3, .count_min = 0, .step = 1};
+int32_t vibrator_pluse_delay = VIBRATOR_GET_GEAR_DELAY_TIME(0);
 SoftWDOG flashWriteWDOG = {.cnt = 0,
                            .upper_limit = 20,
                            .lower_limit = -20,
@@ -287,7 +288,7 @@ void Sys_Running_Scan()
         }
         else
         {
-            
+             FishPID.Target = 1000;
         }
     }
 }

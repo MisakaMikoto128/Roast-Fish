@@ -80,6 +80,13 @@ extern bool vibrator_enable;
 #define VIBRATOR_ENABLE() (vibrator_enable = true)
 #define VIBRATOR_DISABLE() (vibrator_enable = false)
 #define IS_VIBRATOR_ENABLE() (vibrator_enable)
+#define VIBRATOR_DELAY_MAX 10000UL
+#define VIBRATOR_GEAR_NUM 16UL
+#define VIBRATOR_GEAR_MIN 200UL
+#define VIBRATOR_GEAR_MAX (VIBRATOR_DELAY_MAX - VIBRATOR_GEAR_MIN)
+#define VIBRATOR_GEAR_STEP ((VIBRATOR_GEAR_MAX - VIBRATOR_GEAR_MIN)/VIBRATOR_GEAR_NUM)
+#define VIBRATOR_GET_GEAR_DELAY_TIME(x)	(VIBRATOR_GEAR_MIN+VIBRATOR_GEAR_STEP*(x)) //x = 0-16
+extern int32_t vibrator_pluse_delay;
 void Sys_Update_State_2_UI();
 void Sys_Run_State_Update();
 void Sys_Running_Scan();
