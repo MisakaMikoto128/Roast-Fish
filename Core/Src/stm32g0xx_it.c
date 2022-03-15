@@ -26,6 +26,7 @@
 #include "tim.h"
 #include "Measure.h"
 #include "Sys.h"
+#include "gpio.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -61,6 +62,7 @@
 /* External variables --------------------------------------------------------*/
 extern TIM_HandleTypeDef htim1;
 extern TIM_HandleTypeDef htim14;
+extern TIM_HandleTypeDef htim16;
 extern TIM_HandleTypeDef htim17;
 /* USER CODE BEGIN EV */
 
@@ -203,6 +205,38 @@ void TIM14_IRQHandler(void)
   /* USER CODE BEGIN TIM14_IRQn 1 */
 
   /* USER CODE END TIM14_IRQn 1 */
+}
+
+/**
+  * @brief This function handles TIM16 global interrupt.
+  */
+void TIM16_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM16_IRQn 0 */
+	//200Hz
+
+  #define SOFT_PWM_PIN GPIO_PIN_4
+	#define SOFT_PWM_GPIO_Port GPIOB
+  #define GPIO_NUMBER           (16u)
+ static TIM_HandleTypeDef *htim = &htim16;
+  /* TIM Update event */
+  if (__HAL_TIM_GET_FLAG(htim, TIM_FLAG_UPDATE) != RESET)
+  {
+    if (__HAL_TIM_GET_IT_SOURCE(htim, TIM_IT_UPDATE) != RESET)
+    {
+      __HAL_TIM_CLEAR_IT(htim, TIM_IT_UPDATE);
+      //Toggle GPIOB->PIN4
+      uint32_t odr;
+      /* get current Output Data Register value */
+      odr = GPIOB->ODR;
+      /* Set selected pins that were at low level, and reset ones that were high */
+      SOFT_PWM_GPIO_Port->BSRR = ((odr & SOFT_PWM_PIN) << GPIO_NUMBER) | (~odr & SOFT_PWM_PIN);
+    }
+  }
+  /* USER CODE END TIM16_IRQn 0 */
+  /* USER CODE BEGIN TIM16_IRQn 1 */
+
+  /* USER CODE END TIM16_IRQn 1 */
 }
 
 /**

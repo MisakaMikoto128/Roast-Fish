@@ -24,8 +24,8 @@ void UserPIDInit()
     FishPID.Fmin = 0.1;
     FishPID.F = 0.5;
     FishPID.sysArg = PLUS_DELAY_CNT_MAX; // eg. In DC/DC buck control system , this value is PWM output timer's period.
-    FishPID.P = 0.0004;
-    FishPID.I = 0.001;
+    FishPID.P = 0.004;
+    FishPID.I = 0.00005;
     FishPID.D = 0.0002;
     FishPID.Target = 300;
     FishPID.pidDecayByAbsErrorFunc = piddecayfun;
