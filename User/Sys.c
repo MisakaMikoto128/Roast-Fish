@@ -53,6 +53,9 @@ Sys sysState = {
     .run_time = 0,
     .run_time_set_value = MIN_RUN_TIME,
     .flash_addr = 0x0800F800, // page 31
+    .read_count = 0,
+    .write_count = 0,
+    .crc = 0,
 };
 Sys sysState_bak = {
     .runState = SYS_STOP,
@@ -65,6 +68,9 @@ Sys sysState_bak = {
     .run_time = 0,
     .run_time_set_value = MIN_RUN_TIME,
     .flash_addr = 0x0800F800, // page 31
+    .read_count = 0,
+    .write_count = 0,
+    .crc = 0,
 };
 
 // the three points are shown in running and timing mode
@@ -288,26 +294,28 @@ void Sys_Running_Scan()
 
 void reloadSysStateFromFlash()
 {
-    int a = sizeof(sysState); // 0x17c -> 380 = 95*4
-    uint8_t p[sizeof(sysState)] = {0};
-    memcpy(p, (uint8_t *)&sysState, a);
-
-    Flash_Write_Alignment64(sysState.flash_addr, (uint8_t *)&sysState, sizeof(sysState));
-    volatile uint32_t crc1 = HAL_CRC_Calculate(&hcrc, (uint32_t *)&sysState, sizeof(sysState));
-    volatile uint32_t crc2 = HAL_CRC_Calculate(&hcrc, (uint32_t *)&sysState, sizeof(sysState));
-    volatile uint32_t crc3 = HAL_CRC_Accumulate(&hcrc, (uint32_t *)&sysState, sizeof(sysState));
-    sysState = *((Sys *)sysState.flash_addr);
+    Sys temp = {0};
+    temp = *((Sys *)sysState.flash_addr);
+    if(checkSysStateCrcValid(&temp)){
+        sysState = temp;
+        sysState.read_count++;
+    }else{
+        saveSysStateToFlash();
+    }
 }
 
 bool checkSysStateCrcValid(const Sys * pSysState){
-    uint32_t crc = HAL_CRC_Calculate(&hcrc, (uint32_t *)pSysState, sizeof(Sys));
+    uint32_t crc = HAL_CRC_Calculate(&hcrc, (uint32_t *)pSysState, SYS_STATE_CRC_LEN);
     return crc == pSysState->crc;
 }
 
 void saveSysStateToFlash()
 {
-
-    // TODO : check sysState.flash_addr is valid
-    // Flash_Write_Alignment64(sysState.flash_addr,(uint8_t*)&sysState, sizeof(sysState));
-    SoftWDOG_Disable(&flashWriteWDOG);
+	sysState.write_count++;
+	uint32_t crc = HAL_CRC_Calculate(&hcrc, (uint32_t *)&sysState, SYS_STATE_CRC_LEN);
+	sysState.crc = crc;
+	
+	 // TODO : check sysState.flash_addr is valid
+	Flash_Write_Alignment64(sysState.flash_addr,(uint8_t*)&sysState, sizeof(sysState));
+	SoftWDOG_Disable(&flashWriteWDOG);
 }

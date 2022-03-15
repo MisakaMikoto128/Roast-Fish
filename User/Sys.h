@@ -5,6 +5,7 @@
 #define TIMER3_FREQ 100L
 #include "PID.h"
 #include "rtc.h"
+#include "main.h"
 #include <time.h>
 #include <stdbool.h>
 #include "Counter.h"
