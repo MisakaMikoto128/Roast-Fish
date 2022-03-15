@@ -65,7 +65,13 @@ typedef struct Sys_
     int run_time_set_value;
     int run_time; //定时模式的运行时间
     uint32_t flash_addr;
+    uint32_t write_count;
+    uint32_t read_count;
+    uint32_t crc;
 }Sys;
+
+#define SYS_STATE_CRC_LEN (sizeof(Sys) - sizeof(uint32_t))
+
 
 extern Sys sysState;
 extern Sys sysState_bak;
@@ -78,6 +84,7 @@ void Sys_Run_State_Update();
 void Sys_Running_Scan();
 void reloadSysStateFromFlash();
 void saveSysStateToFlash();
+bool checkSysStateCrcValid(const Sys * pSysState);
 extern Counter key_calitime_cnt;
 extern Counter key_mode_cnt;
 extern Counter key_fodder_cnt;

@@ -1,10 +1,10 @@
 Dependencies for Project 'Roast Fish', Target 'Roast Fish': (DO NOT MODIFY !)
 CompilerVersion: 6160000::V6.16::ARMCLANG
-F (startup_stm32g030xx.s)(0x622FEF53)(--cpu Cortex-M0+ -g --pd "__MICROLIB SETA 1"-I.\RTE\_Roast_Fish-ID:\Keil_v5\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Arm\Packs\Keil\STM32G0xx_DFP\1.3.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include--pd "__UVISION_VERSION SETA 536"--pd "_RTE_ SETA 1"--pd "STM32G030xx SETA 1"--pd "_RTE_ SETA 1"--list startup_stm32g030xx.lst--xref -o "roast fish\startup_stm32g030xx.o"--depend "roast fish\startup_stm32g030xx.d")
-F (../Core/Src/main.c)(0x62303B93)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/main.o" -MD)
-I (..\Core\Inc\main.h)(0x622FFC49)
+F (startup_stm32g030xx.s)(0x62303EDF)(--cpu Cortex-M0+ -g --pd "__MICROLIB SETA 1"-I.\RTE\_Roast_Fish-ID:\Keil_v5\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\Arm\Packs\Keil\STM32G0xx_DFP\1.3.0\Drivers\CMSIS\Device\ST\STM32G0xx\Include--pd "__UVISION_VERSION SETA 536"--pd "_RTE_ SETA 1"--pd "STM32G030xx SETA 1"--pd "_RTE_ SETA 1"--list startup_stm32g030xx.lst--xref -o "roast fish\startup_stm32g030xx.o"--depend "roast fish\startup_stm32g030xx.d")
+F (../Core/Src/main.c)(0x62303ED3)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/main.o" -MD)
+I (..\Core\Inc\main.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -29,6 +29,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -42,10 +44,11 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x603507CA)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x603507D0)
-I (..\Core\Inc\rtc.h)(0x622FEF46)
-I (..\Core\Inc\tim.h)(0x622FEF46)
-I (..\Core\Inc\usart.h)(0x622FEF47)
-I (..\Core\Inc\gpio.h)(0x622FEF45)
+I (..\Core\Inc\crc.h)(0x62303ECE)
+I (..\Core\Inc\rtc.h)(0x62303ECE)
+I (..\Core\Inc\tim.h)(0x62303ECF)
+I (..\Core\Inc\usart.h)(0x62303ED0)
+I (..\Core\Inc\gpio.h)(0x62303ECB)
 I (..\User\Sys.h)(0x62303A8E)
 I (..\User\PID.h)(0x62008E28)
 I (D:\Keil_v5\ARM\ARMCLANG\include\time.h)(0x603507D0)
@@ -61,11 +64,11 @@ I (..\User\TimeSetting.h)(0x622DCEED)
 I (..\User\LED.h)(0x622EAA8F)
 I (..\User\Optocoupler.h)(0x622EBA36)
 I (..\User\Relay.h)(0x622EBA0C)
-F (../Core/Src/gpio.c)(0x622FEF44)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/gpio.o" -MD)
-I (..\Core\Inc\gpio.h)(0x622FEF45)
-I (..\Core\Inc\main.h)(0x622FFC49)
+F (../Core/Src/gpio.c)(0x62303ECA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/gpio.o" -MD)
+I (..\Core\Inc\gpio.h)(0x62303ECB)
+I (..\Core\Inc\main.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -90,6 +93,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -103,11 +108,11 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x603507CA)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x603507D0)
-F (../Core/Src/rtc.c)(0x622FEF45)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/rtc.o" -MD)
-I (..\Core\Inc\rtc.h)(0x622FEF46)
-I (..\Core\Inc\main.h)(0x622FFC49)
+F (../Core/Src/crc.c)(0x62303ECD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/crc.o" -MD)
+I (..\Core\Inc\crc.h)(0x62303ECE)
+I (..\Core\Inc\main.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -132,6 +137,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -145,11 +152,11 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x603507CA)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x603507D0)
-F (../Core/Src/tim.c)(0x62301016)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/tim.o" -MD)
-I (..\Core\Inc\tim.h)(0x622FEF46)
-I (..\Core\Inc\main.h)(0x622FFC49)
+F (../Core/Src/rtc.c)(0x62303ECE)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/rtc.o" -MD)
+I (..\Core\Inc\rtc.h)(0x62303ECE)
+I (..\Core\Inc\main.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -174,6 +181,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -187,11 +196,11 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x603507CA)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x603507D0)
-F (../Core/Src/usart.c)(0x622FEF47)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/usart.o" -MD)
-I (..\Core\Inc\usart.h)(0x622FEF47)
-I (..\Core\Inc\main.h)(0x622FFC49)
+F (../Core/Src/tim.c)(0x62303ECF)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/tim.o" -MD)
+I (..\Core\Inc\tim.h)(0x62303ECF)
+I (..\Core\Inc\main.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -216,6 +225,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -229,10 +240,11 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x603507CA)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x603507D0)
-F (../Core/Src/stm32g0xx_it.c)(0x62303B2D)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_it.o" -MD)
-I (..\Core\Inc\main.h)(0x622FFC49)
+F (../Core/Src/usart.c)(0x62303ED0)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/usart.o" -MD)
+I (..\Core\Inc\usart.h)(0x62303ED0)
+I (..\Core\Inc\main.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -257,6 +269,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -270,21 +284,64 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x603507CA)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x603507D0)
-I (..\Core\Inc\stm32g0xx_it.h)(0x622FEF48)
-I (..\Core\Inc\tim.h)(0x622FEF46)
+F (../Core/Src/stm32g0xx_it.c)(0x62303ED1)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_it.o" -MD)
+I (..\Core\Inc\main.h)(0x62303ED2)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
+I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
+I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g030xx.h)(0x61FF9B53)
+I (..\Drivers\CMSIS\Include\core_cm0plus.h)(0x61FF9B59)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x61FF9B59)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x61FF9B59)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x61FF9B59)
+I (D:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x602A3B7E)
+I (D:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x603507C4)
+I (..\Drivers\CMSIS\Include\mpu_armv7.h)(0x61FF9B59)
+I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\system_stm32g0xx.h)(0x61FF9B53)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x61FF9B78)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x603507D0)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_rcc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_gpio.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_gpio_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_pwr.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_pwr_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rtc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rtc_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_tim.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_tim_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x603507CA)
+I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x603507D0)
+I (..\Core\Inc\stm32g0xx_it.h)(0x62303ED1)
+I (..\Core\Inc\tim.h)(0x62303ECF)
 I (..\User\Measure.h)(0x61FFE1A7)
 I (..\User\Sys.h)(0x62303A8E)
 I (..\User\PID.h)(0x62008E28)
-I (..\Core\Inc\rtc.h)(0x622FEF46)
+I (..\Core\Inc\rtc.h)(0x62303ECE)
 I (D:\Keil_v5\ARM\ARMCLANG\include\time.h)(0x603507D0)
 I (..\User\Counter.h)(0x622EBD67)
 I (..\User\SoftWDOG.h)(0x622FF958)
 I (D:\Keil_v5\ARM\ARMCLANG\include\limits.h)(0x603507CA)
-I (..\Core\Inc\gpio.h)(0x622FEF45)
-F (../Core/Src/stm32g0xx_hal_msp.c)(0x622FEF48)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_msp.o" -MD)
-I (..\Core\Inc\main.h)(0x622FFC49)
+I (..\Core\Inc\gpio.h)(0x62303ECB)
+F (../Core/Src/stm32g0xx_hal_msp.c)(0x62303ED1)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_msp.o" -MD)
+I (..\Core\Inc\main.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -309,6 +366,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -322,9 +381,9 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x603507CA)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x603507D0)
-F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_rtc.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_rtc.o" -MD)
+F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_crc.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_crc.o" -MD)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -349,6 +408,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -360,9 +421,9 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_tim.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_tim_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
-F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_rtc_ex.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_rtc_ex.o" -MD)
+F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_crc_ex.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_crc_ex.o" -MD)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -387,6 +448,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -400,7 +463,7 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_rcc.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_rcc.o" -MD)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -425,6 +488,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -438,7 +503,7 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_rcc_ex.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_rcc_ex.o" -MD)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -463,6 +528,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -477,7 +544,7 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_ll_rcc.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_ll_rcc.o" -MD)
 F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_flash.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_flash.o" -MD)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -502,6 +569,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -515,7 +584,7 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_flash_ex.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_flash_ex.o" -MD)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -540,6 +609,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -553,7 +624,7 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_gpio.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_gpio.o" -MD)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -578,6 +649,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -591,7 +664,7 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_dma.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_dma.o" -MD)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -616,6 +689,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -629,7 +704,7 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_dma_ex.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_dma_ex.o" -MD)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -654,6 +729,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -668,7 +745,7 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_ll_dma.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_ll_dma.o" -MD)
 F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_pwr.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_pwr.o" -MD)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -693,6 +770,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -706,7 +785,7 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_pwr_ex.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_pwr_ex.o" -MD)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -731,6 +810,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -744,7 +825,7 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_cortex.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_cortex.o" -MD)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -769,6 +850,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -782,7 +865,7 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal.o" -MD)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -807,6 +890,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -820,7 +905,7 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_exti.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_exti.o" -MD)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -845,6 +930,88 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_pwr.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_pwr_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rtc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rtc_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_tim.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_tim_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
+F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_rtc.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_rtc.o" -MD)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
+I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
+I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g030xx.h)(0x61FF9B53)
+I (..\Drivers\CMSIS\Include\core_cm0plus.h)(0x61FF9B59)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x61FF9B59)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x61FF9B59)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x61FF9B59)
+I (D:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x602A3B7E)
+I (D:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x603507C4)
+I (..\Drivers\CMSIS\Include\mpu_armv7.h)(0x61FF9B59)
+I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\system_stm32g0xx.h)(0x61FF9B53)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x61FF9B78)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x603507D0)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_rcc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_gpio.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_gpio_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_pwr.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_pwr_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rtc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rtc_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_tim.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_tim_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
+F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_rtc_ex.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_rtc_ex.o" -MD)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
+I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
+I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g030xx.h)(0x61FF9B53)
+I (..\Drivers\CMSIS\Include\core_cm0plus.h)(0x61FF9B59)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
+I (..\Drivers\CMSIS\Include\cmsis_version.h)(0x61FF9B59)
+I (..\Drivers\CMSIS\Include\cmsis_compiler.h)(0x61FF9B59)
+I (..\Drivers\CMSIS\Include\cmsis_armclang.h)(0x61FF9B59)
+I (D:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x602A3B7E)
+I (D:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x603507C4)
+I (..\Drivers\CMSIS\Include\mpu_armv7.h)(0x61FF9B59)
+I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\system_stm32g0xx.h)(0x61FF9B53)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x61FF9B78)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stddef.h)(0x603507D0)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_rcc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_gpio.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_gpio_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -858,7 +1025,7 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_tim.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_tim.o" -MD)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -883,6 +1050,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -896,7 +1065,7 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_tim_ex.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_tim_ex.o" -MD)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -921,6 +1090,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -934,7 +1105,7 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_uart.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_uart.o" -MD)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -959,6 +1130,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -972,7 +1145,7 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 F (../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_uart_ex.c)(0x61FF9B78)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/stm32g0xx_hal_uart_ex.o" -MD)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -997,6 +1170,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -1021,7 +1196,7 @@ I (D:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x603507C4)
 I (..\Drivers\CMSIS\Include\mpu_armv7.h)(0x61FF9B59)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\system_stm32g0xx.h)(0x61FF9B53)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x61FF9B78)
@@ -1035,6 +1210,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -1048,9 +1225,9 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 F (..\User\Measure.c)(0x61FFE13F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/measure.o" -MD)
 I (..\User\Measure.h)(0x61FFE1A7)
-I (..\Core\Inc\main.h)(0x622FFC49)
+I (..\Core\Inc\main.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -1075,6 +1252,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -1091,13 +1270,13 @@ I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x603507D0)
 F (..\User\PID.c)(0x62008BA2)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/pid.o" -MD)
 I (..\User\PID.h)(0x62008E28)
 I (D:\Keil_v5\ARM\ARMCLANG\include\math.h)(0x603507CA)
-F (..\User\Sys.c)(0x62303BBE)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/sys.o" -MD)
+F (..\User\Sys.c)(0x6230403C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/sys.o" -MD)
 I (..\User\Sys.h)(0x62303A8E)
 I (..\User\PID.h)(0x62008E28)
-I (..\Core\Inc\rtc.h)(0x622FEF46)
-I (..\Core\Inc\main.h)(0x622FFC49)
+I (..\Core\Inc\rtc.h)(0x62303ECE)
+I (..\Core\Inc\main.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -1122,6 +1301,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -1145,13 +1326,14 @@ I (..\User\HT1621.h)(0x622DBE92)
 I (..\User\TimeSetting.h)(0x622DCEED)
 I (..\User\flash.h)(0x622AB487)
 I (..\User\Optocoupler.h)(0x622EBA36)
-I (..\Core\Inc\gpio.h)(0x622FEF45)
-I (..\Core\Inc\tim.h)(0x622FEF46)
+I (..\Core\Inc\gpio.h)(0x62303ECB)
+I (..\Core\Inc\tim.h)(0x62303ECF)
+I (..\Core\Inc\crc.h)(0x62303ECE)
 F (..\User\flash.c)(0x622AB82A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/flash.o" -MD)
 I (..\User\flash.h)(0x622AB487)
-I (..\Core\Inc\main.h)(0x622FFC49)
+I (..\Core\Inc\main.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -1176,6 +1358,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -1191,9 +1375,9 @@ I (D:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x603507CA)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x603507D0)
 F (..\User\HT1621.c)(0x622E98E4)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/ht1621.o" -MD)
 I (..\User\HT1621.h)(0x622DBE92)
-I (..\Core\Inc\main.h)(0x622FFC49)
+I (..\Core\Inc\main.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -1218,6 +1402,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -1234,9 +1420,9 @@ I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x603507D0)
 I (D:\Keil_v5\ARM\ARMCLANG\include\time.h)(0x603507D0)
 F (..\User\UI.c)(0x622FFBA8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/ui.o" -MD)
 I (..\User\UI.h)(0x622ED37C)
-I (..\Core\Inc\main.h)(0x622FFC49)
+I (..\Core\Inc\main.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -1261,6 +1447,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -1276,7 +1464,7 @@ I (D:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x603507CA)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x603507D0)
 I (..\User\HT1621.h)(0x622DBE92)
 I (D:\Keil_v5\ARM\ARMCLANG\include\time.h)(0x603507D0)
-I (..\Core\Inc\rtc.h)(0x622FEF46)
+I (..\Core\Inc\rtc.h)(0x62303ECE)
 I (..\User\TimeSetting.h)(0x622DCEED)
 I (..\User\Sys.h)(0x62303A8E)
 I (..\User\PID.h)(0x62008E28)
@@ -1285,9 +1473,9 @@ I (..\User\SoftWDOG.h)(0x622FF958)
 I (D:\Keil_v5\ARM\ARMCLANG\include\limits.h)(0x603507CA)
 F (..\User\Key.c)(0x622D9011)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/key.o" -MD)
 I (..\User\Key.h)(0x622D9008)
-I (..\Core\Inc\main.h)(0x622FFC49)
+I (..\Core\Inc\main.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -1312,6 +1500,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -1325,16 +1515,16 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_uart_ex.h)(0x61FF9B78)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x603507CA)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x603507D0)
-I (..\Core\Inc\gpio.h)(0x622FEF45)
+I (..\Core\Inc\gpio.h)(0x62303ECB)
 F (..\User\Counter.c)(0x622EBD6A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/counter.o" -MD)
 I (..\User\Counter.h)(0x622EBD67)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x603507CA)
 F (..\User\TimeSetting.c)(0x622DCEF5)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/timesetting.o" -MD)
 I (..\User\TimeSetting.h)(0x622DCEED)
-I (..\Core\Inc\rtc.h)(0x622FEF46)
-I (..\Core\Inc\main.h)(0x622FFC49)
+I (..\Core\Inc\rtc.h)(0x62303ECE)
+I (..\Core\Inc\main.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -1359,6 +1549,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -1374,10 +1566,10 @@ I (D:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x603507CA)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x603507D0)
 F (..\User\LED.c)(0x622EC257)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/led.o" -MD)
 I (..\User\LED.h)(0x622EAA8F)
-I (..\Core\Inc\gpio.h)(0x622FEF45)
-I (..\Core\Inc\main.h)(0x622FFC49)
+I (..\Core\Inc\gpio.h)(0x62303ECB)
+I (..\Core\Inc\main.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -1402,6 +1594,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -1417,10 +1611,10 @@ I (D:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x603507CA)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x603507D0)
 F (..\User\Optocoupler.c)(0x622EBAEE)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/optocoupler.o" -MD)
 I (..\User\Optocoupler.h)(0x622EBA36)
-I (..\Core\Inc\gpio.h)(0x622FEF45)
-I (..\Core\Inc\main.h)(0x622FFC49)
+I (..\Core\Inc\gpio.h)(0x62303ECB)
+I (..\Core\Inc\main.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -1445,6 +1639,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -1460,10 +1656,10 @@ I (D:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x603507CA)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x603507D0)
 F (..\User\Relay.c)(0x622EB9EB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/relay.o" -MD)
 I (..\User\Relay.h)(0x622EBA0C)
-I (..\Core\Inc\gpio.h)(0x622FEF45)
-I (..\Core\Inc\main.h)(0x622FFC49)
+I (..\Core\Inc\gpio.h)(0x62303ECB)
+I (..\Core\Inc\main.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -1488,6 +1684,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)
@@ -1503,9 +1701,9 @@ I (D:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x603507CA)
 I (D:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x603507D0)
 F (..\User\SoftWDOG.c)(0x622FF9A3)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m0plus -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../Core/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc -I ../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I ../Drivers/CMSIS/Include -I ../User-I./RTE/_Roast_Fish-ID:/Keil_v5/Arm/Packs/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/Arm/Packs/Keil/STM32G0xx_DFP/1.3.0/Drivers/CMSIS/Device/ST/STM32G0xx/Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32G030xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G030xx-o "roast fish/softwdog.o" -MD)
 I (..\User\SoftWDOG.h)(0x622FF958)
-I (..\Core\Inc\main.h)(0x622FFC49)
+I (..\Core\Inc\main.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal.h)(0x61FF9B78)
-I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x622FEF48)
+I (..\Core\Inc\stm32g0xx_hal_conf.h)(0x62303ED2)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_rcc.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_def.h)(0x61FF9B78)
 I (..\Drivers\CMSIS\Device\ST\STM32G0xx\Include\stm32g0xx.h)(0x61FF9B53)
@@ -1530,6 +1728,8 @@ I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dma.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_ll_dmamux.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_dma_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_cortex.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc.h)(0x61FF9B78)
+I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_crc_ex.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_exti.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash.h)(0x61FF9B78)
 I (..\Drivers\STM32G0xx_HAL_Driver\Inc\stm32g0xx_hal_flash_ex.h)(0x61FF9B78)

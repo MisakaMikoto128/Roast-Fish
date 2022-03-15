@@ -19,6 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "crc.h"
 #include "rtc.h"
 #include "tim.h"
 #include "usart.h"
@@ -61,7 +62,7 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-//当前UI的设计模式一部分是UI更新值到设备，另�?部分是不断更新sysState的�?�到UI设备
+//当前UI的设计模式一部分是UI更新值到设备，另�??部分是不断更新sysState的�?�到UI设备
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -492,6 +493,7 @@ int main(void)
   MX_TIM14_Init();
   MX_TIM16_Init();
   MX_TIM17_Init();
+  MX_CRC_Init();
   /* USER CODE BEGIN 2 */
   reloadSysStateFromFlash();
   LED_Init();

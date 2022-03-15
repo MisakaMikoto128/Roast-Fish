@@ -7,6 +7,7 @@
 #include "main.h"
 #include "Optocoupler.h"
 #include "tim.h"
+#include "crc.h"
 #define HAVE_FODDER_LEVEL GPIO_PIN_SET
 #define HAVE_FODDER() (OPTOCOUPLER_Read() == HAVE_FODDER_LEVEL)
 Counter fodder_existing_cnt = {.count = 0, .count_max = 3, .count_min = 0, .step = 1};
@@ -292,8 +293,15 @@ void reloadSysStateFromFlash()
     memcpy(p, (uint8_t *)&sysState, a);
 
     Flash_Write_Alignment64(sysState.flash_addr, (uint8_t *)&sysState, sizeof(sysState));
-
+    volatile uint32_t crc1 = HAL_CRC_Calculate(&hcrc, (uint32_t *)&sysState, sizeof(sysState));
+    volatile uint32_t crc2 = HAL_CRC_Calculate(&hcrc, (uint32_t *)&sysState, sizeof(sysState));
+    volatile uint32_t crc3 = HAL_CRC_Accumulate(&hcrc, (uint32_t *)&sysState, sizeof(sysState));
     sysState = *((Sys *)sysState.flash_addr);
+}
+
+bool checkSysStateCrcValid(const Sys * pSysState){
+    uint32_t crc = HAL_CRC_Calculate(&hcrc, (uint32_t *)pSysState, sizeof(Sys));
+    return crc == pSysState->crc;
 }
 
 void saveSysStateToFlash()
