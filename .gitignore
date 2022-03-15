@@ -4,3 +4,4 @@
 *.d
 /.VSCodeCounter/
 *.7z
+.vscode/settings.json
