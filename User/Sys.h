@@ -8,6 +8,7 @@
 #include <time.h>
 #include <stdbool.h>
 #include "Counter.h"
+#include "SoftWDOG.h"
 extern PID FishPID;
 void UserPIDInit();
 
@@ -67,7 +68,7 @@ extern Sys sysState;
 void Sys_Update_State_2_UI();
 void Sys_Run_State_Update();
 void reloadSysStateFromFlash();
-
+void saveSysStateToFlash();
 extern Counter key_calitime_cnt;
 extern Counter key_mode_cnt;
 extern Counter key_fodder_cnt;
@@ -77,4 +78,7 @@ extern Counter key_area_cnt;
 extern Counter key_run_time_set_cnt;
 extern Counter key_period_cnt;
 extern Counter set_rtc_cnt;
+
+
+extern SoftWDOG flashWriteWDOG;
 #endif // _SYS_H_

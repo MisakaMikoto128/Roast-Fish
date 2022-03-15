@@ -2,6 +2,7 @@
 #define _SOFT_WDOG_H_
 #include "main.h"
 #include <stdbool.h>
+#include <limits.h>
 typedef void (*SoftWDOG_Callback)(void);
 typedef struct _SoftWDOG
 {

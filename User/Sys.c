@@ -9,6 +9,10 @@
 #define HAVE_FODDER_LEVEL GPIO_PIN_SET
 #define HAVE_FODDER() (OPTOCOUPLER_Read() == HAVE_FODDER_LEVEL)
 Counter fodder_existing_cnt = {.count = 0, .count_max = 3, .count_min = 0,.step = 1};
+SoftWDOG flashWriteWDOG = {.cnt = 0, 
+.upper_limit = 20, .lower_limit = -20, 
+.upper_callback = NULL, .lower_callback = saveSysStateToFlash, 
+.enable = true};
 PID FishPID;
 float piddecayfun(float z)
 {
@@ -230,7 +234,15 @@ void reloadSysStateFromFlash()
 
     Flash_Write_Alignment64(sysState.flash_addr,(uint8_t*)&sysState, sizeof(sysState));
     
-		sysState = *((Sys *)sysState.flash_addr);
+	sysState = *((Sys *)sysState.flash_addr);
     
 }
 
+
+void saveSysStateToFlash()
+{
+
+    //TODO : check sysState.flash_addr is valid
+    //Flash_Write_Alignment64(sysState.flash_addr,(uint8_t*)&sysState, sizeof(sysState));
+    SoftWDOG_Disable(&flashWriteWDOG);
+}

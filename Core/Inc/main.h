@@ -32,11 +32,16 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "Sys.h"
 #include <stdbool.h>
 #include <string.h>
 #define IS_EVEN(x) ((x)%2 == 0)
 #define IS_ODD(x) ((x)%2 == 1)
+
+#define IS_BITi_SET(x,y) ((x)&(1<<(y)))
+#define IS_BITi_RESET(x,y) (!((x)&(1<<(y))))
+
+#define IS_BIT_SET(x,bit) ((x)&(bit))
+#define IS_BIT_RESET(x,bit) (!((x)&(bit)))
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/

@@ -609,6 +609,11 @@
               <FileType>1</FileType>
               <FilePath>..\User\Relay.c</FilePath>
             </File>
+            <File>
+              <FileName>SoftWDOG.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\SoftWDOG.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

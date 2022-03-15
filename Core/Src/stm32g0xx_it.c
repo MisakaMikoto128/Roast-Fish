@@ -26,6 +26,7 @@
 #include "tim.h"
 #include "Measure.h"
 #include "Sys.h"
+#include "SoftWDOG.h"
 #include "gpio.h"
 /* USER CODE END Includes */
 
@@ -170,6 +171,7 @@ void TIM1_CC_IRQHandler(void)
   if (__HAL_TIM_GET_FLAG(&htim1, TIM_FLAG_CC2) != RESET)
   {
     TIM14->CNT = pluse_delay;
+    SoftWDOG_Feed(&flashWriteWDOG);
     __HAL_TIM_CLEAR_IT(&htim1, TIM_IT_CC2);
   }
   /* USER CODE END TIM1_CC_IRQn 0 */
@@ -195,8 +197,6 @@ void TIM14_IRQHandler(void)
       {
        __HAL_TIM_ENABLE(&htim3);
         HAL_TIM_OnePulse_Start(&htim3, TIM_CHANNEL_2);
-        // HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_5);
-        // HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_5);
       }
       __HAL_TIM_CLEAR_IT(htim, TIM_IT_CC1);
     }
@@ -218,6 +218,7 @@ void TIM16_IRQHandler(void)
   #define SOFT_PWM_PIN GPIO_PIN_4
 	#define SOFT_PWM_GPIO_Port GPIOB
   #define GPIO_NUMBER           (16u)
+
  static TIM_HandleTypeDef *htim = &htim16;
   /* TIM Update event */
   if (__HAL_TIM_GET_FLAG(htim, TIM_FLAG_UPDATE) != RESET)
@@ -229,6 +230,11 @@ void TIM16_IRQHandler(void)
       uint32_t odr;
       /* get current Output Data Register value */
       odr = GPIOB->ODR;
+      if(IS_BIT_SET(odr, SOFT_PWM_PIN))
+      {
+        SoftWDOG_Decrease(&flashWriteWDOG);
+      }
+
       /* Set selected pins that were at low level, and reset ones that were high */
       SOFT_PWM_GPIO_Port->BSRR = ((odr & SOFT_PWM_PIN) << GPIO_NUMBER) | (~odr & SOFT_PWM_PIN);
     }

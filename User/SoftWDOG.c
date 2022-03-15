@@ -11,7 +11,9 @@ void SoftWDOG_Init(SoftWDOG *wd,int32_t upper_limit,int32_t lower_limit,SoftWDOG
 }
 
 void SoftWDOG_Feed(SoftWDOG *wd){
-    wd->cnt++;
+    if(wd->cnt < INT_MAX){
+        wd->cnt++;
+    }
     if(wd->cnt >= wd->upper_limit){
         if(wd->upper_callback != NULL && wd->enable){
             wd->upper_callback();
@@ -19,7 +21,9 @@ void SoftWDOG_Feed(SoftWDOG *wd){
     }
 }
 void SoftWDOG_Decrease(SoftWDOG *wd){
-    wd->cnt--;
+    if(wd->cnt > INT_MIN){
+        wd->cnt--;
+    }
     if(wd->cnt <= wd->lower_limit){
         if(wd->lower_callback != NULL && wd->enable){
             wd->lower_callback();
