@@ -61,7 +61,7 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-//当前UI的设计模式一部分是UI更新值到设备，另�?部分是不断更新sysState的�?�到UI设备
+//当前UI的设计模式一部分是UI更新值到设备，另�?部分是不断更新sysState的�?�到UI设备
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -452,6 +452,7 @@ void KeyDriver()
 void oneMilliSecCallback()
 {
   KeyScan();
+  Sys_Running_Scan();
   UI_Scan();
 }
 /* USER CODE END 0 */
@@ -501,7 +502,7 @@ int main(void)
   UserPIDInit();
   HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_1);
   HAL_TIM_IC_Start_IT(&htim1, TIM_CHANNEL_2);
-  HAL_TIM_PWM_Start_IT(&htim14, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Stop_IT(&htim14, TIM_CHANNEL_1);
   TIM14->CNT = PLUS_DELAY_CNT_MAX / 2;
 	HAL_TIM_Base_Start_IT(&htim17);
 	HAL_TIM_Base_Start_IT(&htim16);

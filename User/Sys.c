@@ -6,13 +6,19 @@
 #include "flash.h"
 #include "main.h"
 #include "Optocoupler.h"
+#include "tim.h"
 #define HAVE_FODDER_LEVEL GPIO_PIN_SET
 #define HAVE_FODDER() (OPTOCOUPLER_Read() == HAVE_FODDER_LEVEL)
-Counter fodder_existing_cnt = {.count = 0, .count_max = 3, .count_min = 0,.step = 1};
-SoftWDOG flashWriteWDOG = {.cnt = 0, 
-.upper_limit = 20, .lower_limit = -20, 
-.upper_callback = NULL, .lower_callback = saveSysStateToFlash, 
-.enable = true};
+Counter fodder_existing_cnt = {.count = 0, .count_max = 3, .count_min = 0, .step = 1};
+SoftWDOG flashWriteWDOG = {.cnt = 0,
+                           .upper_limit = 20,
+                           .lower_limit = -20,
+                           .upper_callback = NULL,
+                           .lower_callback = saveSysStateToFlash,
+                           .enable = true};
+
+bool vibrator_enable = false;
+
 PID FishPID;
 float piddecayfun(float z)
 {
@@ -45,8 +51,21 @@ Sys sysState = {
     .area_num = 1,
     .run_time = 0,
     .run_time_set_value = MIN_RUN_TIME,
-    .flash_addr = 0x0800F800,//page 31
-    };
+    .flash_addr = 0x0800F800, // page 31
+};
+Sys sysState_bak = {
+    .runState = SYS_STOP,
+    .mode = MOD_TIMING,
+    .period = {0},
+    .fodder_num = 1,
+    .interval_num = 1,
+    .output_num = 1,
+    .area_num = 1,
+    .run_time = 0,
+    .run_time_set_value = MIN_RUN_TIME,
+    .flash_addr = 0x0800F800, // page 31
+};
+
 // the three points are shown in running and timing mode
 // the green LED is the running flag of the vibrator
 //@10ms
@@ -181,13 +200,15 @@ void Sys_Update_State_2_UI()
     {
     }
 
-
-    if(HAVE_FODDER()){
-     __SQUARE_TEXT_On();
-     UI_SendMessage(SET_BOX_ON, NULL);
-    }else{
-       __SQUARE_TEXT_Off();
-       UI_SendMessage(SET_BOX_BLINK, NULL);
+    if (HAVE_FODDER())
+    {
+        __SQUARE_TEXT_On();
+        UI_SendMessage(SET_BOX_ON, NULL);
+    }
+    else
+    {
+        __SQUARE_TEXT_Off();
+        UI_SendMessage(SET_BOX_BLINK, NULL);
     }
 };
 
@@ -203,7 +224,6 @@ void Sys_Run_State_Update()
         // TIMING MODE RUNNING
         if (sysState.mode == MOD_TIMING)
         {
-
             sysState.run_time--;
             if (sysState.run_time == 0)
             {
@@ -216,33 +236,70 @@ void Sys_Run_State_Update()
     {
     }
 
-    if(HAVE_FODDER()){
-       Counter_reset(&fodder_existing_cnt);
-    }else{
-         Counter_increment(&fodder_existing_cnt);
-         if(Counter_exceed_or_reach_max(&fodder_existing_cnt)){
-             sysState.runState = SYS_STOP;
-         }
+    if (HAVE_FODDER())
+    {
+        Counter_reset(&fodder_existing_cnt);
+    }
+    else
+    {
+        Counter_increment(&fodder_existing_cnt);
+        if (Counter_exceed_or_reach_max(&fodder_existing_cnt))
+        {
+            sysState.runState = SYS_STOP;
+        }
+    }
+}
+
+/**
+ * @brief 1ms scan interval
+ *
+ */
+void Sys_Running_Scan()
+{
+    static Counter sysRun_cnt = {.count = 0, .count_max = PRE_RUNING_TIME, .count_min = 0, .step = 1};
+    if (sysState.runState != sysState_bak.runState)
+    {
+        sysState_bak.runState = sysState.runState;
+        if (sysState.runState == SYS_RUN)
+        {
+            Counter_reset(&sysRun_cnt);
+            HAL_TIM_PWM_Start_IT(&htim14, TIM_CHANNEL_1);
+        }
+        else
+        {
+            HAL_TIM_PWM_Stop_IT(&htim14, TIM_CHANNEL_1);
+        }
+    }
+
+    if (sysState.runState == SYS_RUN)
+    {
+        if (Counter_unreach_max(&sysRun_cnt))
+        {
+            Counter_increment(&sysRun_cnt);
+            FishPID.Target = PRE_RUNNING_SPEED;
+        }
+        else
+        {
+            
+        }
     }
 }
 
 void reloadSysStateFromFlash()
 {
-    int a = sizeof(sysState);//0x17c -> 380 = 95*4
+    int a = sizeof(sysState); // 0x17c -> 380 = 95*4
     uint8_t p[sizeof(sysState)] = {0};
     memcpy(p, (uint8_t *)&sysState, a);
 
-    Flash_Write_Alignment64(sysState.flash_addr,(uint8_t*)&sysState, sizeof(sysState));
-    
-	sysState = *((Sys *)sysState.flash_addr);
-    
-}
+    Flash_Write_Alignment64(sysState.flash_addr, (uint8_t *)&sysState, sizeof(sysState));
 
+    sysState = *((Sys *)sysState.flash_addr);
+}
 
 void saveSysStateToFlash()
 {
 
-    //TODO : check sysState.flash_addr is valid
-    //Flash_Write_Alignment64(sysState.flash_addr,(uint8_t*)&sysState, sizeof(sysState));
+    // TODO : check sysState.flash_addr is valid
+    // Flash_Write_Alignment64(sysState.flash_addr,(uint8_t*)&sysState, sizeof(sysState));
     SoftWDOG_Disable(&flashWriteWDOG);
 }

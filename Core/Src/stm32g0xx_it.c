@@ -73,8 +73,8 @@ extern TIM_HandleTypeDef htim17;
 /*           Cortex-M0+ Processor Interruption and Exception Handlers          */
 /******************************************************************************/
 /**
-  * @brief This function handles Non maskable interrupt.
-  */
+ * @brief This function handles Non maskable interrupt.
+ */
 void NMI_Handler(void)
 {
   /* USER CODE BEGIN NonMaskableInt_IRQn 0 */
@@ -88,8 +88,8 @@ void NMI_Handler(void)
 }
 
 /**
-  * @brief This function handles Hard fault interrupt.
-  */
+ * @brief This function handles Hard fault interrupt.
+ */
 void HardFault_Handler(void)
 {
   /* USER CODE BEGIN HardFault_IRQn 0 */
@@ -103,8 +103,8 @@ void HardFault_Handler(void)
 }
 
 /**
-  * @brief This function handles System service call via SWI instruction.
-  */
+ * @brief This function handles System service call via SWI instruction.
+ */
 void SVC_Handler(void)
 {
   /* USER CODE BEGIN SVC_IRQn 0 */
@@ -116,8 +116,8 @@ void SVC_Handler(void)
 }
 
 /**
-  * @brief This function handles Pendable request for system service.
-  */
+ * @brief This function handles Pendable request for system service.
+ */
 void PendSV_Handler(void)
 {
   /* USER CODE BEGIN PendSV_IRQn 0 */
@@ -129,8 +129,8 @@ void PendSV_Handler(void)
 }
 
 /**
-  * @brief This function handles System tick timer.
-  */
+ * @brief This function handles System tick timer.
+ */
 void SysTick_Handler(void)
 {
   /* USER CODE BEGIN SysTick_IRQn 0 */
@@ -150,27 +150,31 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-  * @brief This function handles TIM1 capture compare interrupt.
-  */
+ * @brief This function handles TIM1 capture compare interrupt.
+ */
 void TIM1_CC_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM1_CC_IRQn 0 */
   static uint32_t count = 0;
-  static int32_t pluse_delay = PLUS_DELAY_CNT_MAX/2;
+  static int32_t pluse_delay = PLUS_DELAY_CNT_MAX / 2;
+
   if (__HAL_TIM_GET_FLAG(&htim1, TIM_FLAG_CC1) != RESET)
   {
     count = TIM1->CNT;
     TIM1->CNT = 0;
     Freq = TIMER1_FREQ / count;
-
-    PIDSetSampleValue(&FishPID, Freq); //
-    IncPIDCalcDeltaAutoDecay(&FishPID);
-    pluse_delay = PIDUpdateValue_P(&FishPID); //
+    if (sysState_bak.runState == SYS_RUN)
+    {
+      PIDSetSampleValue(&FishPID, Freq); //
+      IncPIDCalcDeltaAutoDecay(&FishPID);
+      pluse_delay = PIDUpdateValue_P(&FishPID); //
+    }
     __HAL_TIM_CLEAR_IT(&htim1, TIM_IT_CC1);
   }
   if (__HAL_TIM_GET_FLAG(&htim1, TIM_FLAG_CC2) != RESET)
   {
     TIM14->CNT = pluse_delay;
+    TIM16->CNT = 100;
     SoftWDOG_Feed(&flashWriteWDOG);
     __HAL_TIM_CLEAR_IT(&htim1, TIM_IT_CC2);
   }
@@ -181,8 +185,8 @@ void TIM1_CC_IRQHandler(void)
 }
 
 /**
-  * @brief This function handles TIM14 global interrupt.
-  */
+ * @brief This function handles TIM14 global interrupt.
+ */
 void TIM14_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM14_IRQn 0 */
@@ -195,7 +199,7 @@ void TIM14_IRQHandler(void)
       /* Input capture event */
       if (!((htim->Instance->CCMR1 & TIM_CCMR1_CC1S) != 0x00U))
       {
-       __HAL_TIM_ENABLE(&htim3);
+        __HAL_TIM_ENABLE(&htim3);
         HAL_TIM_OnePulse_Start(&htim3, TIM_CHANNEL_2);
       }
       __HAL_TIM_CLEAR_IT(htim, TIM_IT_CC1);
@@ -208,35 +212,38 @@ void TIM14_IRQHandler(void)
 }
 
 /**
-  * @brief This function handles TIM16 global interrupt.
-  */
+ * @brief This function handles TIM16 global interrupt.
+ */
 void TIM16_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM16_IRQn 0 */
-	//200Hz
+  // 100Hz
 
-  #define SOFT_PWM_PIN GPIO_PIN_4
-	#define SOFT_PWM_GPIO_Port GPIOB
-  #define GPIO_NUMBER           (16u)
+#define SOFT_PWM_PIN GPIO_PIN_4
+#define SOFT_PWM_GPIO_Port GPIOB
+#define GPIO_NUMBER (16u)
 
- static TIM_HandleTypeDef *htim = &htim16;
+  static TIM_HandleTypeDef *htim = &htim16;
   /* TIM Update event */
   if (__HAL_TIM_GET_FLAG(htim, TIM_FLAG_UPDATE) != RESET)
   {
     if (__HAL_TIM_GET_IT_SOURCE(htim, TIM_IT_UPDATE) != RESET)
     {
       __HAL_TIM_CLEAR_IT(htim, TIM_IT_UPDATE);
-      //Toggle GPIOB->PIN4
-      uint32_t odr;
-      /* get current Output Data Register value */
-      odr = GPIOB->ODR;
-      if(IS_BIT_SET(odr, SOFT_PWM_PIN))
+      SoftWDOG_Decrease(&flashWriteWDOG);
+      if (IS_VIBRATOR_ENABLE())
       {
-        SoftWDOG_Decrease(&flashWriteWDOG);
+        // Toggle GPIOB->PIN4
+        uint32_t odr;
+        /* get current Output Data Register value */
+        odr = GPIOB->ODR;
+        /* Set selected pins that were at low level, and reset ones that were high */
+        SOFT_PWM_GPIO_Port->BSRR = ((odr & SOFT_PWM_PIN) << GPIO_NUMBER) | (~odr & SOFT_PWM_PIN);
+        /* get current Output Data Register value */
+        odr = GPIOB->ODR;
+        /* Set selected pins that were at low level, and reset ones that were high */
+        SOFT_PWM_GPIO_Port->BSRR = ((odr & SOFT_PWM_PIN) << GPIO_NUMBER) | (~odr & SOFT_PWM_PIN);
       }
-
-      /* Set selected pins that were at low level, and reset ones that were high */
-      SOFT_PWM_GPIO_Port->BSRR = ((odr & SOFT_PWM_PIN) << GPIO_NUMBER) | (~odr & SOFT_PWM_PIN);
     }
   }
   /* USER CODE END TIM16_IRQn 0 */
@@ -246,8 +253,8 @@ void TIM16_IRQHandler(void)
 }
 
 /**
-  * @brief This function handles TIM17 global interrupt.
-  */
+ * @brief This function handles TIM17 global interrupt.
+ */
 void TIM17_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM17_IRQn 0 */

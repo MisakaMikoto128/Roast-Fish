@@ -29,6 +29,10 @@ void UserPIDInit();
 #define RUN_STATE_NUM 2
 
 #define MIN_RUN_TIME 5
+
+#define PRE_RUNING_TIME 3000 //ms
+
+#define PRE_RUNNING_SPEED 300 //Hz
 typedef enum {
     SYS_RUN,
     SYS_STOP,
@@ -64,9 +68,14 @@ typedef struct Sys_
 }Sys;
 
 extern Sys sysState;
-
+extern Sys sysState_bak;
+extern bool vibrator_enable;
+#define VIBRATOR_ENABLE() (vibrator_enable = true)
+#define VIBRATOR_DISABLE() (vibrator_enable = false)
+#define IS_VIBRATOR_ENABLE() (vibrator_enable)
 void Sys_Update_State_2_UI();
 void Sys_Run_State_Update();
+void Sys_Running_Scan();
 void reloadSysStateFromFlash();
 void saveSysStateToFlash();
 extern Counter key_calitime_cnt;

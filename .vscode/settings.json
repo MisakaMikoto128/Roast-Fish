@@ -7,6 +7,7 @@
         "TimeSetting.C": "cpp",
         "timesetting.h": "c",
         "ui.h": "c",
-        "optocoupler.h": "c"
+        "optocoupler.h": "c",
+        "sys.h": "c"
     }
 }
