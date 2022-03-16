@@ -233,19 +233,6 @@ void TIM16_IRQHandler(void)
       SoftWDOG_Decrease(&flashWriteWDOG);
       if (IS_VIBRATOR_ENABLE())
       {
-				
-//        // Toggle GPIOB->PIN4
-//        uint32_t odr;
-//        /* get current Output Data Register value */
-//        odr = GPIOB->ODR;
-//        /* Set selected pins that were at low level, and reset ones that were high */
-//        SOFT_PWM_GPIO_Port->BSRR = ((odr & SOFT_PWM_PIN) << GPIO_NUMBER) | (~odr & SOFT_PWM_PIN);
-//				
-//        /* get current Output Data Register value */
-//        odr = GPIOB->ODR;
-//        /* Set selected pins that were at low level, and reset ones that were high */
-//        SOFT_PWM_GPIO_Port->BSRR = ((odr & SOFT_PWM_PIN) << GPIO_NUMBER) | (~odr & SOFT_PWM_PIN);
-
 				for(int i = 0;i<6;i++){
 					HAL_GPIO_WritePin(SOFT_PWM_GPIO_Port,SOFT_PWM_PIN,GPIO_PIN_SET);
 				}

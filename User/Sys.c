@@ -265,25 +265,25 @@ void Sys_Run_State_Update()
 void Sys_Running_Scan()
 {
     static Counter sysRun_cnt = {.count = 0, .count_max = PRE_RUNING_TIME, .count_min = 0, .step = 1};
-    static Counter vibrator_interval_time_cnt = {0};
-    static Counter vibrator_running_time_cnt = {0};
+
     if (sysState.runState != sysState_bak.runState)
     {
         sysState_bak.runState = sysState.runState;
         if (sysState.runState == SYS_RUN)
         {
             Counter_reset(&sysRun_cnt);
-						
+            Counter_init(&vibrator_interval_time_cnt, GET_FODDER_TIME(sysState.fodder_num),0, 1);
+						Counter_init(&vibrator_running_time_cnt, GET_FODDER_TIME(sysState.fodder_num),0, 1);
             HAL_TIM_PWM_Start_IT(&htim14, TIM_CHANNEL_1);
             TIM14->CNT = PLUS_DELAY_CNT_MAX / 2;
-            Counter_init(&vibrator_interval_time_cnt, 0, MAX_INTERVAL, 1);
+
             VIBRATOR_ENABLE();
         }
         else
         {
             HAL_TIM_PWM_Stop_IT(&htim14, TIM_CHANNEL_1);
             VIBRATOR_DISABLE();
-					FishPID.F = 0.5;
+			FishPID.F = 0.0;
         }
     }
 
@@ -298,6 +298,23 @@ void Sys_Running_Scan()
         {
             float F = (FishPID.Fmax - FishPID.Fmin) * (sysState.area_num / (float)MAX_AREA) + FishPID.Fmin;
             FishPID.Target = F * MAX_MOTOR_SPEED;
+            VIBRATOR_SET_GEAR_DELAY_TIME(sysState.output_num);
+        }
+
+        if(IS_VIBRATOR_ENABLE()){
+            Counter_increment(&vibrator_running_time_cnt);
+            if(Counter_exceed_or_reach_max(&vibrator_running_time_cnt)){
+                VIBRATOR_DISABLE();
+                Counter_reset(&vibrator_running_time_cnt);
+            }
+        }
+				
+				if(!IS_VIBRATOR_ENABLE()){
+            Counter_increment(&vibrator_interval_time_cnt);
+            if(Counter_exceed_or_reach_max(&vibrator_interval_time_cnt)){
+                VIBRATOR_ENABLE();
+                Counter_reset(&vibrator_interval_time_cnt);
+            }
         }
     }
 }

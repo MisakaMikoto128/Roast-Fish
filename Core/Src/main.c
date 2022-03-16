@@ -88,6 +88,9 @@ Counter key_run_time_set_cnt = {.count_max = 120, .count_min = 5, .count = 5, .s
 Counter key_period_cnt = {.count_max = 8 * 2, .count_min = 0, .count = 0, .step = 1};
 Counter set_rtc_cnt = {.count_max = 400, .count_min = 0, .count = 0, .step = 1};
 
+Counter vibrator_interval_time_cnt = {0};
+Counter vibrator_running_time_cnt = {0};
+
 void RTC_Time_Minute_Increament(RTC_TimeTypeDef *time)
 {
   if (time->Minutes == 59)
@@ -258,10 +261,12 @@ void KeyDriver()
     case KEY_FODDDER_P_Down:
       Counter_increment(&key_fodder_cnt);
       sysState.fodder_num = CounterGET(&key_fodder_cnt);
+      Counter_init(&vibrator_interval_time_cnt, GET_FODDER_TIME(sysState.fodder_num),0, 1);
       break;
     case KEY_FODDDER_P_LongPress:
       Counter_increment(&key_fodder_cnt);
       sysState.fodder_num = CounterGET(&key_fodder_cnt);
+     Counter_init(&vibrator_interval_time_cnt, GET_FODDER_TIME(sysState.fodder_num),0, 1);
       break;
     case KEY_FODDDER_N_Down:
       Counter_decrement(&key_fodder_cnt);
@@ -465,6 +470,7 @@ void oneMilliSecCallback()
   * @retval int
   */
 int main(void)
+
 {
   /* USER CODE BEGIN 1 */
 

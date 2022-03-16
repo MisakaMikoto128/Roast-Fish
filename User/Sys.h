@@ -19,10 +19,12 @@ void UserPIDInit();
 #define MAX_FODDER_TIME 6000 //ms 
 #define MAX_FODDER 16
 #define MIN_FODDER 1
+#define GET_FODDER_TIME(x) ((x)/(float)MAX_FODDER * MAX_FODDER_TIME)
 
 #define MAX_INTERVAL_TIME 18000UL //ms 18s
 #define MAX_INTERVAL 16
 #define MIN_INTERVAL 1
+#define GET_INTERVAL_TIME(x) ((x)/(float)MAX_INTERVAL * MAX_INTERVAL_TIME)
 
 #define MAX_OUTPOUT 16
 #define MIN_OUTPOUT 1
@@ -80,16 +82,18 @@ typedef struct Sys_
 extern Sys sysState;
 extern Sys sysState_bak;
 extern bool vibrator_enable;
+
 #define VIBRATOR_ENABLE() (vibrator_enable = true)
 #define VIBRATOR_DISABLE() (vibrator_enable = false)
 #define IS_VIBRATOR_ENABLE() (vibrator_enable)
-#define VIBRATOR_DELAY_MAX 10000UL
+#define VIBRATOR_DELAY_MAX 8000UL //Hz
 #define VIBRATOR_GEAR_NUM 16UL
-#define VIBRATOR_GEAR_MIN 200UL
+#define VIBRATOR_GEAR_MIN 3000UL //Hz
 #define VIBRATOR_GEAR_MAX (VIBRATOR_DELAY_MAX - VIBRATOR_GEAR_MIN)
-#define VIBRATOR_GEAR_STEP ((VIBRATOR_GEAR_MAX - VIBRATOR_GEAR_MIN)/VIBRATOR_GEAR_NUM)
+#define VIBRATOR_GEAR_STEP ((VIBRATOR_GEAR_MAX - VIBRATOR_GEAR_MIN)/(float)VIBRATOR_GEAR_NUM)
 #define VIBRATOR_GET_GEAR_DELAY_TIME(x)	(VIBRATOR_GEAR_MIN+VIBRATOR_GEAR_STEP*(x)) //x = 0-16
 extern int32_t vibrator_pluse_delay;
+#define VIBRATOR_SET_GEAR_DELAY_TIME(x) (vibrator_pluse_delay = VIBRATOR_GET_GEAR_DELAY_TIME(x))
 void Sys_Update_State_2_UI();
 void Sys_Run_State_Update();
 void Sys_Running_Scan();
@@ -105,6 +109,8 @@ extern Counter key_area_cnt;
 extern Counter key_run_time_set_cnt;
 extern Counter key_period_cnt;
 extern Counter set_rtc_cnt;
+extern Counter vibrator_interval_time_cnt;
+extern Counter vibrator_running_time_cnt ;
 
 
 extern SoftWDOG flashWriteWDOG;
