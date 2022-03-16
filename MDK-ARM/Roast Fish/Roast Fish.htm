@@ -3,7 +3,7 @@
 <title>Static Call Graph - [Roast Fish\Roast Fish.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image Roast Fish\Roast Fish.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Wed Mar 16 13:42:36 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Wed Mar 16 14:10:21 2022
 <BR><P>
 <H3>Maximum Stack Usage =        588 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -59,7 +59,7 @@ Global Symbols
 <P><STRONG><a name="[20]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32g030xx.o(.text)
 </UL>
-<P><STRONG><a name="[de]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+<P><STRONG><a name="[df]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
 
 <P><STRONG><a name="[22]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
@@ -69,15 +69,15 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[df]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+<P><STRONG><a name="[e0]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
 
-<P><STRONG><a name="[e0]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+<P><STRONG><a name="[e1]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
 
-<P><STRONG><a name="[e1]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+<P><STRONG><a name="[e2]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
 
-<P><STRONG><a name="[e2]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
+<P><STRONG><a name="[e3]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
 
-<P><STRONG><a name="[e3]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
+<P><STRONG><a name="[e4]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
 
 <P><STRONG><a name="[1]"></a>Reset_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, startup_stm32g030xx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32g030xx.o(RESET)
@@ -149,39 +149,39 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
 <LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Scan
+<BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Scan
 </UL>
 
 <P><STRONG><a name="[3c]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Write_Alignment64
 </UL>
 
-<P><STRONG><a name="[dc]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reloadSysStateFromFlash
+<P><STRONG><a name="[dd]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reloadSysStateFromFlash
 </UL>
 
-<P><STRONG><a name="[e4]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
+<P><STRONG><a name="[e5]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
 
 <P><STRONG><a name="[28]"></a>__aeabi_memset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset$wrapper
 <LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 
-<P><STRONG><a name="[e5]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[e6]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[e6]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[e7]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[27]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
 
 <P><STRONG><a name="[ba]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reloadSysStateFromFlash
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<BR><BR>[Called By]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reloadSysStateFromFlash
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_RTC_Init
 </UL>
 
-<P><STRONG><a name="[e7]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[e8]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[29]"></a>_memset$wrapper</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, memseta.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
@@ -252,7 +252,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_CC_IRQHandler
 </UL>
 
-<P><STRONG><a name="[ce]"></a>__aeabi_f2iz</STRONG> (Thumb, 50 bytes, Stack size 0 bytes, ffixi.o(.text))
+<P><STRONG><a name="[cf]"></a>__aeabi_f2iz</STRONG> (Thumb, 50 bytes, Stack size 0 bytes, ffixi.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_CC_IRQHandler
 </UL>
 
@@ -282,7 +282,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 
-<P><STRONG><a name="[e8]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, llshl.o(.text), UNUSED)
+<P><STRONG><a name="[e9]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, llshl.o(.text), UNUSED)
 
 <P><STRONG><a name="[25]"></a>__aeabi_llsr</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, llushr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_llsr
@@ -290,9 +290,9 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 
-<P><STRONG><a name="[e9]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, llushr.o(.text), UNUSED)
+<P><STRONG><a name="[ea]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, llushr.o(.text), UNUSED)
 
-<P><STRONG><a name="[ea]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, iusefp.o(.text), UNUSED)
+<P><STRONG><a name="[eb]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, iusefp.o(.text), UNUSED)
 
 <P><STRONG><a name="[2c]"></a>_float_round</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, fepilogue.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
@@ -313,11 +313,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[eb]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[ec]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
-<P><STRONG><a name="[ec]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
+<P><STRONG><a name="[ed]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
 
-<P><STRONG><a name="[ed]"></a>__decompress1</STRONG> (Thumb, 86 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
+<P><STRONG><a name="[ee]"></a>__decompress1</STRONG> (Thumb, 86 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
 
 <P><STRONG><a name="[96]"></a>Counter_decrement</STRONG> (Thumb, 44 bytes, Stack size 4 bytes, counter.o(.text.Counter_decrement))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = Counter_decrement
@@ -336,7 +336,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Running_Scan
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyDriver
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Update_State_2_UI
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Update_State_2_UI
 <LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Run_State_Update
 </UL>
 
@@ -347,6 +347,12 @@ Global Symbols
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyDriver
 </UL>
 
+<P><STRONG><a name="[c9]"></a>Counter_init</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, counter.o(.text.Counter_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Counter_init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Running_Scan
+</UL>
+
 <P><STRONG><a name="[98]"></a>Counter_reset</STRONG> (Thumb, 14 bytes, Stack size 4 bytes, counter.o(.text.Counter_reset))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = Counter_reset
 </UL>
@@ -354,15 +360,15 @@ Global Symbols
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;onKeyHourDown
 <LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Running_Scan
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyDriver
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Update_State_2_UI
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Update_State_2_UI
 <LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Run_State_Update
 </UL>
 
-<P><STRONG><a name="[c9]"></a>Counter_unreach_max</STRONG> (Thumb, 32 bytes, Stack size 12 bytes, counter.o(.text.Counter_unreach_max))
+<P><STRONG><a name="[ca]"></a>Counter_unreach_max</STRONG> (Thumb, 32 bytes, Stack size 12 bytes, counter.o(.text.Counter_unreach_max))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = Counter_unreach_max
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Running_Scan
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Update_State_2_UI
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Update_State_2_UI
 </UL>
 
 <P><STRONG><a name="[b7]"></a>Error_Handler</STRONG> (Thumb, 14 bytes, Stack size 4 bytes, main.o(.text.Error_Handler))
@@ -370,7 +376,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;onKeyMinuteDown
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;onKeyHourDown
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_USART2_UART_Init
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM3_Init
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM1_Init
@@ -433,7 +439,7 @@ Global Symbols
 <LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CRC_Handle_16
 </UL>
 <BR>[Called By]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;saveSysStateToFlash
-<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkSysStateCrcValid
+<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkSysStateCrcValid
 </UL>
 
 <P><STRONG><a name="[40]"></a>HAL_CRC_Init</STRONG> (Thumb, 208 bytes, Stack size 16 bytes, stm32g0xx_hal_crc.o(.text.HAL_CRC_Init))
@@ -489,7 +495,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_MspInit
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_MspPostInit
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Init
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Init
 <LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Relay_Init
 <LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Optocoupler_Init
 <LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
@@ -500,18 +506,19 @@ Global Symbols
 <P><STRONG><a name="[c6]"></a>HAL_GPIO_ReadPin</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, stm32g0xx_hal_gpio.o(.text.HAL_GPIO_ReadPin))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HAL_GPIO_ReadPin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Update_State_2_UI
+<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Update_State_2_UI
 <LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Run_State_Update
 </UL>
 
 <P><STRONG><a name="[8b]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, stm32g0xx_hal_gpio.o(.text.HAL_GPIO_WritePin))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM16_IRQHandler
+<LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WritetoHT1621
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteDatatoHT1621
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteDatatoHT1621
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteCmdtoHT1621
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HT1621Init
 </UL>
@@ -525,7 +532,7 @@ Global Symbols
 <LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_EnterInitMode
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RTC_WaitForSynchro
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_WaitOnFlagUntilTimeout
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_WaitOnFlagUntilTimeout
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_CheckIdleState
 </UL>
 
@@ -582,7 +589,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidiv
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
 <P><STRONG><a name="[50]"></a>HAL_RCCEx_PeriphCLKConfig</STRONG> (Thumb, 536 bytes, Stack size 40 bytes, stm32g0xx_hal_rcc_ex.o(.text.HAL_RCCEx_PeriphCLKConfig))
@@ -590,7 +597,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
 <P><STRONG><a name="[51]"></a>HAL_RCC_ClockConfig</STRONG> (Thumb, 572 bytes, Stack size 24 bytes, stm32g0xx_hal_rcc.o(.text.HAL_RCC_ClockConfig))
@@ -600,7 +607,7 @@ Global Symbols
 <LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 <LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
 <P><STRONG><a name="[54]"></a>HAL_RCC_GetHCLKFreq</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32g0xx_hal_rcc.o(.text.HAL_RCC_GetHCLKFreq))
@@ -631,7 +638,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 <LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
 <P><STRONG><a name="[57]"></a>HAL_RTC_GetDate</STRONG> (Thumb, 116 bytes, Stack size 24 bytes, stm32g0xx_hal_rtc.o(.text.HAL_RTC_GetDate))
@@ -639,7 +646,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_Bcd2ToByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Scan
+<BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Scan
 </UL>
 
 <P><STRONG><a name="[59]"></a>HAL_RTC_GetTime</STRONG> (Thumb, 148 bytes, Stack size 24 bytes, stm32g0xx_hal_rtc.o(.text.HAL_RTC_GetTime))
@@ -647,7 +654,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_Bcd2ToByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Scan
+<BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Scan
 </UL>
 
 <P><STRONG><a name="[5a]"></a>HAL_RTC_Init</STRONG> (Thumb, 260 bytes, Stack size 16 bytes, stm32g0xx_hal_rtc.o(.text.HAL_RTC_Init))
@@ -743,7 +750,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
 </UL>
 
-<P><STRONG><a name="[da]"></a>HAL_TIM_Base_Start_IT</STRONG> (Thumb, 148 bytes, Stack size 12 bytes, stm32g0xx_hal_tim.o(.text.HAL_TIM_Base_Start_IT))
+<P><STRONG><a name="[db]"></a>HAL_TIM_Base_Start_IT</STRONG> (Thumb, 148 bytes, Stack size 12 bytes, stm32g0xx_hal_tim.o(.text.HAL_TIM_Base_Start_IT))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = HAL_TIM_Base_Start_IT
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -899,7 +906,7 @@ Global Symbols
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WritetoHT1621
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteCmdtoHT1621
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Init
+<BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Init
 </UL>
 
 <P><STRONG><a name="[3]"></a>HardFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32g0xx_it.o(.text.HardFault_Handler))
@@ -917,10 +924,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_CC_IRQHandler
 </UL>
 
-<P><STRONG><a name="[d5]"></a>IncPIDInit</STRONG> (Thumb, 74 bytes, Stack size 4 bytes, pid.o(.text.IncPIDInit))
+<P><STRONG><a name="[d6]"></a>IncPIDInit</STRONG> (Thumb, 74 bytes, Stack size 4 bytes, pid.o(.text.IncPIDInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = IncPIDInit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UserPIDInit
+<BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UserPIDInit
 </UL>
 
 <P><STRONG><a name="[92]"></a>KeyDriver</STRONG> (Thumb, 1244 bytes, Stack size 112 bytes, main.o(.text.KeyDriver))
@@ -955,7 +962,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyGPIOConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;User_KeyInit
+<BR>[Called By]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;User_KeyInit
 </UL>
 
 <P><STRONG><a name="[a2]"></a>KeyPinRead</STRONG> (Thumb, 24 bytes, Stack size 4 bytes, key.o(.text.KeyPinRead))
@@ -977,7 +984,7 @@ Global Symbols
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyPinSet
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyPinRead
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oneMilliSecCallback
+<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oneMilliSecCallback
 </UL>
 
 <P><STRONG><a name="[94]"></a>Key_FIFO_Get</STRONG> (Thumb, 64 bytes, Stack size 4 bytes, key.o(.text.Key_FIFO_Get))
@@ -1050,7 +1057,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;onKeyMinuteDown
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;onKeyHourDown
-<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Scan
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Scan
 </UL>
 
 <P><STRONG><a name="[ab]"></a>Lcd_Clock_Show_None</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, ht1621.o(.text.Lcd_Clock_Show_None))
@@ -1058,7 +1065,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_8Nixie_ShowNum
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Scan
+<BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Scan
 </UL>
 
 <P><STRONG><a name="[ac]"></a>Lcd_Fodder_Nixie_Show</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, ht1621.o(.text.Lcd_Fodder_Nixie_Show))
@@ -1082,7 +1089,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_10Nixe_Off
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Update_State_2_UI
+<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Update_State_2_UI
 </UL>
 
 <P><STRONG><a name="[b0]"></a>Lcd_Minit_Nixie_Show</STRONG> (Thumb, 76 bytes, Stack size 24 bytes, ht1621.o(.text.Lcd_Minit_Nixie_Show))
@@ -1092,7 +1099,7 @@ Global Symbols
 <LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidiv
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_10Nixie_ShowNum
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Update_State_2_UI
+<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Update_State_2_UI
 </UL>
 
 <P><STRONG><a name="[b1]"></a>Lcd_Output_Nixie_Show</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, ht1621.o(.text.Lcd_Output_Nixie_Show))
@@ -1109,7 +1116,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_8Nixie_Off
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_SendMessage
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Update_State_2_UI
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Update_State_2_UI
 </UL>
 
 <P><STRONG><a name="[b4]"></a>Lcd_Period_Show</STRONG> (Thumb, 22 bytes, Stack size 16 bytes, ht1621.o(.text.Lcd_Period_Show))
@@ -1118,7 +1125,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_8Nixie_ShowNum
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_SendMessage
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Update_State_2_UI
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Update_State_2_UI
 </UL>
 
 <P><STRONG><a name="[b5]"></a>Lcd_Show_Updata</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, ht1621.o(.text.Lcd_Show_Updata))
@@ -1126,7 +1133,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WritetoHT1621
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Scan
+<BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Scan
 </UL>
 
 <P><STRONG><a name="[b6]"></a>MX_CRC_Init</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, crc.o(.text.MX_CRC_Init))
@@ -1275,7 +1282,7 @@ Global Symbols
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RTC_SetTime
 </UL>
 
-<P><STRONG><a name="[db]"></a>RTC_Time_Hour_Increament</STRONG> (Thumb, 36 bytes, Stack size 4 bytes, main.o(.text.RTC_Time_Hour_Increament))
+<P><STRONG><a name="[dc]"></a>RTC_Time_Hour_Increament</STRONG> (Thumb, 36 bytes, Stack size 4 bytes, main.o(.text.RTC_Time_Hour_Increament))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = RTC_Time_Hour_Increament
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;onKeyHourDown
@@ -1305,19 +1312,19 @@ Global Symbols
 <P><STRONG><a name="[4]"></a>SVC_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32g0xx_it.o(.text.SVC_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32g030xx.o(RESET)
 </UL>
-<P><STRONG><a name="[cc]"></a>SoftWDOG_Decrease</STRONG> (Thumb, 78 bytes, Stack size 16 bytes, softwdog.o(.text.SoftWDOG_Decrease))
+<P><STRONG><a name="[cd]"></a>SoftWDOG_Decrease</STRONG> (Thumb, 78 bytes, Stack size 16 bytes, softwdog.o(.text.SoftWDOG_Decrease))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = SoftWDOG_Decrease
 </UL>
 <BR>[Called By]<UL><LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM16_IRQHandler
 </UL>
 
-<P><STRONG><a name="[dd]"></a>SoftWDOG_Disable</STRONG> (Thumb, 14 bytes, Stack size 4 bytes, softwdog.o(.text.SoftWDOG_Disable))
+<P><STRONG><a name="[de]"></a>SoftWDOG_Disable</STRONG> (Thumb, 14 bytes, Stack size 4 bytes, softwdog.o(.text.SoftWDOG_Disable))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = SoftWDOG_Disable
 </UL>
 <BR>[Called By]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;saveSysStateToFlash
 </UL>
 
-<P><STRONG><a name="[cf]"></a>SoftWDOG_Feed</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, softwdog.o(.text.SoftWDOG_Feed))
+<P><STRONG><a name="[d0]"></a>SoftWDOG_Feed</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, softwdog.o(.text.SoftWDOG_Feed))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = SoftWDOG_Feed
 </UL>
 <BR>[Called By]<UL><LI><a href="#[13]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_CC_IRQHandler
@@ -1338,11 +1345,11 @@ Global Symbols
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Counter_increment
 <LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Counter_exceed_or_reach_max
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Scan
+<BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Scan
 </UL>
 
-<P><STRONG><a name="[c8]"></a>Sys_Running_Scan</STRONG> (Thumb, 180 bytes, Stack size 24 bytes, sys.o(.text.Sys_Running_Scan))
-<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = Sys_Running_Scan &rArr; HAL_TIM_PWM_Start_IT &rArr; TIM_CCxChannelCmd
+<P><STRONG><a name="[c8]"></a>Sys_Running_Scan</STRONG> (Thumb, 216 bytes, Stack size 40 bytes, sys.o(.text.Sys_Running_Scan))
+<BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = Sys_Running_Scan &rArr; HAL_TIM_PWM_Start_IT &rArr; TIM_CCxChannelCmd
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Stop_IT
@@ -1350,15 +1357,16 @@ Global Symbols
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Counter_increment
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start_IT
 <LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Counter_unreach_max
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Counter_unreach_max
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Counter_init
 <LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
 <LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
 <LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oneMilliSecCallback
+<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oneMilliSecCallback
 </UL>
 
-<P><STRONG><a name="[ca]"></a>Sys_Update_State_2_UI</STRONG> (Thumb, 688 bytes, Stack size 48 bytes, sys.o(.text.Sys_Update_State_2_UI))
+<P><STRONG><a name="[cb]"></a>Sys_Update_State_2_UI</STRONG> (Thumb, 688 bytes, Stack size 48 bytes, sys.o(.text.Sys_Update_State_2_UI))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = Sys_Update_State_2_UI &rArr; UI_SendMessage &rArr; Lcd_Output_Nixie_Show &rArr; Lcd_10Nixie_ShowNum &rArr; __aeabi_uidivmod
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
@@ -1369,12 +1377,12 @@ Global Symbols
 <LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_Period_Off
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_Minit_Nixie_Show
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_Minit_Nixe_Off
-<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Counter_unreach_max
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Counter_unreach_max
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Scan
+<BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Scan
 </UL>
 
-<P><STRONG><a name="[cb]"></a>SystemClock_Config</STRONG> (Thumb, 170 bytes, Stack size 112 bytes, main.o(.text.SystemClock_Config))
+<P><STRONG><a name="[cc]"></a>SystemClock_Config</STRONG> (Thumb, 170 bytes, Stack size 112 bytes, main.o(.text.SystemClock_Config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 240<LI>Call Chain = SystemClock_Config &rArr; HAL_RCC_OscConfig &rArr; HAL_InitTick &rArr; HAL_SYSTICK_Config &rArr; SysTick_Config &rArr; __NVIC_SetPriority
 </UL>
 <BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
@@ -1397,17 +1405,18 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32g030xx.o(RESET)
 </UL>
-<P><STRONG><a name="[16]"></a>TIM16_IRQHandler</STRONG> (Thumb, 120 bytes, Stack size 16 bytes, stm32g0xx_it.o(.text.TIM16_IRQHandler))
+<P><STRONG><a name="[16]"></a>TIM16_IRQHandler</STRONG> (Thumb, 148 bytes, Stack size 16 bytes, stm32g0xx_it.o(.text.TIM16_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = TIM16_IRQHandler &rArr; SoftWDOG_Decrease
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SoftWDOG_Decrease
+<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SoftWDOG_Decrease
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32g030xx.o(RESET)
 </UL>
 <P><STRONG><a name="[17]"></a>TIM17_IRQHandler</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, stm32g0xx_it.o(.text.TIM17_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = TIM17_IRQHandler &rArr; oneMilliSecCallback &rArr; UI_Scan &rArr; Sys_Update_State_2_UI &rArr; UI_SendMessage &rArr; Lcd_Output_Nixie_Show &rArr; Lcd_10Nixie_ShowNum &rArr; __aeabi_uidivmod
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oneMilliSecCallback
+<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oneMilliSecCallback
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32g030xx.o(RESET)
 </UL>
@@ -1416,8 +1425,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SoftWDOG_Feed
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SoftWDOG_Feed
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IncPIDCalcDeltaAutoDecay
 <LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidiv
 </UL>
@@ -1469,7 +1478,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = UART_CheckIdleState &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_WaitOnFlagUntilTimeout
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Init
 </UL>
@@ -1484,7 +1493,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Init
 </UL>
 
-<P><STRONG><a name="[d0]"></a>UART_WaitOnFlagUntilTimeout</STRONG> (Thumb, 268 bytes, Stack size 32 bytes, stm32g0xx_hal_uart.o(.text.UART_WaitOnFlagUntilTimeout))
+<P><STRONG><a name="[d1]"></a>UART_WaitOnFlagUntilTimeout</STRONG> (Thumb, 268 bytes, Stack size 32 bytes, stm32g0xx_hal_uart.o(.text.UART_WaitOnFlagUntilTimeout))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = UART_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
@@ -1492,21 +1501,21 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_CheckIdleState
 </UL>
 
-<P><STRONG><a name="[d2]"></a>UI_Constant_Text_Show</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, ui.o(.text.UI_Constant_Text_Show))
-<BR><BR>[Called By]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Init
+<P><STRONG><a name="[d3]"></a>UI_Constant_Text_Show</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, ui.o(.text.UI_Constant_Text_Show))
+<BR><BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Init
 </UL>
 
-<P><STRONG><a name="[d1]"></a>UI_Init</STRONG> (Thumb, 72 bytes, Stack size 32 bytes, ui.o(.text.UI_Init))
+<P><STRONG><a name="[d2]"></a>UI_Init</STRONG> (Thumb, 72 bytes, Stack size 32 bytes, ui.o(.text.UI_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 124<LI>Call Chain = UI_Init &rArr; HT1621Init &rArr; WritetoHT1621 &rArr; WriteDatatoHT1621 &rArr; HAL_GPIO_WritePin
 </UL>
 <BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Constant_Text_Show
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Constant_Text_Show
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HT1621Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[d3]"></a>UI_Scan</STRONG> (Thumb, 640 bytes, Stack size 40 bytes, ui.o(.text.UI_Scan))
+<P><STRONG><a name="[d4]"></a>UI_Scan</STRONG> (Thumb, 640 bytes, Stack size 40 bytes, ui.o(.text.UI_Scan))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = UI_Scan &rArr; Sys_Update_State_2_UI &rArr; UI_SendMessage &rArr; Lcd_Output_Nixie_Show &rArr; Lcd_10Nixie_ShowNum &rArr; __aeabi_uidivmod
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_Clock_Show
@@ -1515,10 +1524,10 @@ Global Symbols
 <LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 <LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_Show_Updata
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_Clock_Show_None
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Update_State_2_UI
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Update_State_2_UI
 <LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Run_State_Update
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oneMilliSecCallback
+<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oneMilliSecCallback
 </UL>
 
 <P><STRONG><a name="[9b]"></a>UI_SendMessage</STRONG> (Thumb, 588 bytes, Stack size 24 bytes, ui.o(.text.UI_SendMessage))
@@ -1534,18 +1543,18 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;onKeyMinuteDown
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;onKeyHourDown
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyDriver
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Update_State_2_UI
+<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Update_State_2_UI
 </UL>
 
-<P><STRONG><a name="[d4]"></a>UserPIDInit</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, sys.o(.text.UserPIDInit))
+<P><STRONG><a name="[d5]"></a>UserPIDInit</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, sys.o(.text.UserPIDInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = UserPIDInit &rArr; IncPIDInit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IncPIDInit
+<BR>[Calls]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;IncPIDInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[d6]"></a>User_KeyInit</STRONG> (Thumb, 44 bytes, Stack size 88 bytes, main.o(.text.User_KeyInit))
+<P><STRONG><a name="[d7]"></a>User_KeyInit</STRONG> (Thumb, 44 bytes, Stack size 88 bytes, main.o(.text.User_KeyInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 224<LI>Call Chain = User_KeyInit &rArr; KeyInit &rArr; KeyGPIOConfig &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyInit
@@ -1557,12 +1566,12 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = WriteCmdtoHT1621 &rArr; WriteDatatoHT1621 &rArr; HAL_GPIO_WritePin
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteDatatoHT1621
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteDatatoHT1621
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HT1621Init
 </UL>
 
-<P><STRONG><a name="[d7]"></a>WriteDatatoHT1621</STRONG> (Thumb, 128 bytes, Stack size 24 bytes, ht1621.o(.text.WriteDatatoHT1621))
+<P><STRONG><a name="[d8]"></a>WriteDatatoHT1621</STRONG> (Thumb, 128 bytes, Stack size 24 bytes, ht1621.o(.text.WriteDatatoHT1621))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = WriteDatatoHT1621 &rArr; HAL_GPIO_WritePin
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
@@ -1575,18 +1584,18 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = WritetoHT1621 &rArr; WriteDatatoHT1621 &rArr; HAL_GPIO_WritePin
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteDatatoHT1621
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteDatatoHT1621
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_Show_Updata
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HT1621Init
 </UL>
 
-<P><STRONG><a name="[d8]"></a>checkSysStateCrcValid</STRONG> (Thumb, 40 bytes, Stack size 24 bytes, sys.o(.text.checkSysStateCrcValid))
+<P><STRONG><a name="[d9]"></a>checkSysStateCrcValid</STRONG> (Thumb, 40 bytes, Stack size 24 bytes, sys.o(.text.checkSysStateCrcValid))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = checkSysStateCrcValid &rArr; HAL_CRC_Calculate &rArr; CRC_Handle_8
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CRC_Calculate
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reloadSysStateFromFlash
+<BR>[Called By]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reloadSysStateFromFlash
 </UL>
 
 <P><STRONG><a name="[9f]"></a>enableKey_GPIO_CLK</STRONG> (Thumb, 200 bytes, Stack size 24 bytes, key.o(.text.enableKey_GPIO_CLK))
@@ -1602,11 +1611,11 @@ Global Symbols
 <P><STRONG><a name="[1e]"></a>main</STRONG> (Thumb, 144 bytes, Stack size 24 bytes, main.o(.text.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 588<LI>Call Chain = main &rArr; reloadSysStateFromFlash &rArr; saveSysStateToFlash &rArr; Flash_Write_Alignment64 &rArr; HAL_FLASH_Program &rArr; FLASH_Program_Fast
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reloadSysStateFromFlash
-<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;User_KeyInit
-<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UserPIDInit
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Init
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<BR>[Calls]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reloadSysStateFromFlash
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;User_KeyInit
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UserPIDInit
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Init
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Relay_Init
 <LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Optocoupler_Init
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_USART2_UART_Init
@@ -1622,7 +1631,7 @@ Global Symbols
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyDriver
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Stop_IT
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_Start_IT
-<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
+<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
@@ -1633,7 +1642,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = onKeyHourDown &rArr; UI_SendMessage &rArr; Lcd_Output_Nixie_Show &rArr; Lcd_10Nixie_ShowNum &rArr; __aeabi_uidivmod
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_SendMessage
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_Time_Hour_Increament
+<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_Time_Hour_Increament
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_Clock_Show
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RTC_SetTime
 <LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
@@ -1656,10 +1665,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyDriver
 </UL>
 
-<P><STRONG><a name="[cd]"></a>oneMilliSecCallback</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, main.o(.text.oneMilliSecCallback))
+<P><STRONG><a name="[ce]"></a>oneMilliSecCallback</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, main.o(.text.oneMilliSecCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = oneMilliSecCallback &rArr; UI_Scan &rArr; Sys_Update_State_2_UI &rArr; UI_SendMessage &rArr; Lcd_Output_Nixie_Show &rArr; Lcd_10Nixie_ShowNum &rArr; __aeabi_uidivmod
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Scan
+<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Scan
 <LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Running_Scan
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyScan
 </UL>
@@ -1671,13 +1680,13 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> sys.o(.text.UserPIDInit)
 </UL>
-<P><STRONG><a name="[d9]"></a>reloadSysStateFromFlash</STRONG> (Thumb, 84 bytes, Stack size 416 bytes, sys.o(.text.reloadSysStateFromFlash))
+<P><STRONG><a name="[da]"></a>reloadSysStateFromFlash</STRONG> (Thumb, 84 bytes, Stack size 416 bytes, sys.o(.text.reloadSysStateFromFlash))
 <BR><BR>[Stack]<UL><LI>Max Depth = 564<LI>Call Chain = reloadSysStateFromFlash &rArr; saveSysStateToFlash &rArr; Flash_Write_Alignment64 &rArr; HAL_FLASH_Program &rArr; FLASH_Program_Fast
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
-<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 <LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;saveSysStateToFlash
-<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkSysStateCrcValid
+<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkSysStateCrcValid
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1686,18 +1695,18 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 148<LI>Call Chain = saveSysStateToFlash &rArr; Flash_Write_Alignment64 &rArr; HAL_FLASH_Program &rArr; FLASH_Program_Fast
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CRC_Calculate
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SoftWDOG_Disable
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SoftWDOG_Disable
 <LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Flash_Write_Alignment64
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reloadSysStateFromFlash
+<BR>[Called By]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reloadSysStateFromFlash
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> sys.o(.data.flashWriteWDOG)
 </UL>
-<P><STRONG><a name="[ee]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[ef]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[ef]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[f0]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[f0]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[f1]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 <P>
 <H3>
 Local Symbols

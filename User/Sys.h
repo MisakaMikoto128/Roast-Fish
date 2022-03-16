@@ -3,7 +3,7 @@
 #define PLUS_DELAY_CNT_MAX (64000)
 #define MAX_MOTOR_SPEED (1200)
 #define PRE_RUNING_TIME 3000 //ms //TODO: change to 4000 ms
-#define PRE_RUNNING_SPEED 400 //Hz
+#define PRE_RUNNING_SPEED 1200 //Hz
 #define TIMER1_FREQ 400000
 #define TIMER3_FREQ 100L
 #include "PID.h"
@@ -16,9 +16,11 @@
 extern PID FishPID;
 void UserPIDInit();
 
+#define MAX_FODDER_TIME 6000 //ms 
 #define MAX_FODDER 16
 #define MIN_FODDER 1
 
+#define MAX_INTERVAL_TIME 18000UL //ms 18s
 #define MAX_INTERVAL 16
 #define MIN_INTERVAL 1
 

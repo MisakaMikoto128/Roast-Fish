@@ -11,7 +11,7 @@
 #define HAVE_FODDER_LEVEL GPIO_PIN_SET
 #define HAVE_FODDER() (OPTOCOUPLER_Read() == HAVE_FODDER_LEVEL)
 Counter fodder_existing_cnt = {.count = 0, .count_max = 3, .count_min = 0, .step = 1};
-int32_t vibrator_pluse_delay = VIBRATOR_GET_GEAR_DELAY_TIME(0);
+int32_t vibrator_pluse_delay = VIBRATOR_GET_GEAR_DELAY_TIME(5);
 SoftWDOG flashWriteWDOG = {.cnt = 0,
                            .upper_limit = 20,
                            .lower_limit = -20,
@@ -33,7 +33,7 @@ void UserPIDInit()
 {
     IncPIDInit(&FishPID); // This code is not necessary.
     FishPID.Fmax = 0.85;
-    FishPID.Fmin = 0.15;
+    FishPID.Fmin = 0.22;
     FishPID.F = 0.5;
     FishPID.sysArg = PLUS_DELAY_CNT_MAX; // eg. In DC/DC buck control system , this value is PWM output timer's period.
     FishPID.P = 0.004;
@@ -265,18 +265,25 @@ void Sys_Run_State_Update()
 void Sys_Running_Scan()
 {
     static Counter sysRun_cnt = {.count = 0, .count_max = PRE_RUNING_TIME, .count_min = 0, .step = 1};
+    static Counter vibrator_interval_time_cnt = {0};
+    static Counter vibrator_running_time_cnt = {0};
     if (sysState.runState != sysState_bak.runState)
     {
         sysState_bak.runState = sysState.runState;
         if (sysState.runState == SYS_RUN)
         {
             Counter_reset(&sysRun_cnt);
+						
             HAL_TIM_PWM_Start_IT(&htim14, TIM_CHANNEL_1);
             TIM14->CNT = PLUS_DELAY_CNT_MAX / 2;
+            Counter_init(&vibrator_interval_time_cnt, 0, MAX_INTERVAL, 1);
+            VIBRATOR_ENABLE();
         }
         else
         {
             HAL_TIM_PWM_Stop_IT(&htim14, TIM_CHANNEL_1);
+            VIBRATOR_DISABLE();
+					FishPID.F = 0.5;
         }
     }
 
