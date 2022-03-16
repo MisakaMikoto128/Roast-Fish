@@ -273,7 +273,7 @@ void Sys_Running_Scan()
         {
             Counter_reset(&sysRun_cnt);
             Counter_init(&vibrator_interval_time_cnt, GET_FODDER_TIME(sysState.fodder_num),0, 1);
-						Counter_init(&vibrator_running_time_cnt, GET_FODDER_TIME(sysState.fodder_num),0, 1);
+			Counter_init(&vibrator_running_time_cnt, GET_FODDER_TIME(sysState.fodder_num),0, 1);
             HAL_TIM_PWM_Start_IT(&htim14, TIM_CHANNEL_1);
             TIM14->CNT = PLUS_DELAY_CNT_MAX / 2;
 

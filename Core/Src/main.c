@@ -463,6 +463,16 @@ void KeyDriver()
   }
 }
 
+
+void Update_SyaState_2_Counter(){
+Counter_set_cnt(&key_fodder_cnt,sysState.fodder_num);
+Counter_set_cnt(&key_interval_cnt,sysState.interval_num);
+Counter_set_cnt(&key_output_cnt,sysState.output_num);
+Counter_set_cnt(&key_area_cnt,sysState.area_num);
+Counter_init(&vibrator_interval_time_cnt, GET_FODDER_TIME(sysState.fodder_num),0, 1);
+Counter_init(&vibrator_running_time_cnt, GET_FODDER_TIME(sysState.fodder_num),0, 1);
+}
+
 void oneMilliSecCallback()
 {
   KeyScan();
@@ -510,6 +520,7 @@ int main(void)
   MX_CRC_Init();
   /* USER CODE BEGIN 2 */
   reloadSysStateFromFlash();
+  Update_SyaState_2_Counter();
   LED_Init();
   Relay_Init();
   RELAY_ON();

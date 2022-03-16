@@ -68,3 +68,16 @@ inline bool Counter_exceed_or_reach_max(Counter *this){
 inline bool Counter_exceed_or_reach_min(Counter *this){
     return this->count <= this->count_min;
 }
+
+bool Counter_set_cnt(Counter *this, int count){
+    if(count > this->count_max){
+        this->count = this->count_max;
+        return false;
+    }else if(count < this->count_min){
+        this->count = this->count_min;
+        return false;
+    }else{
+        this->count = count;
+        return true;
+    }
+}
