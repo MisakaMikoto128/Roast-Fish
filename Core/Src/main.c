@@ -62,7 +62,7 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-//当前UI的设计模式一部分是UI更新值到设备，另�??部分是不断更新sysState的�?�到UI设备
+//当前UI的设计模式一部分是UI更新值到设备，另�??部分是不断更新sysState的�?�到UI设备
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -498,6 +498,7 @@ int main(void)
   reloadSysStateFromFlash();
   LED_Init();
   Relay_Init();
+  RELAY_ON();
   Optocoupler_Init();
   UI_Init();
   User_KeyInit();
