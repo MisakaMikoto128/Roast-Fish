@@ -126,6 +126,7 @@ void onKeyMinuteDown()
         pSysNode->isOpen = true;
       }
       globalSettingTimeObj = pSysNode->start;
+      Lcd_Clock_Show(globalSettingTimeObj.Hours, globalSettingTimeObj.Minutes);
       UI_SendMessage(SET_CLOCK_SHOW_GLOBAL_SETTING_TIME, NULL);
     }
     break;
@@ -138,6 +139,7 @@ void onKeyMinuteDown()
       }
       RTC_Time_Minute_Increament(&pSysNode->end);
       globalSettingTimeObj = pSysNode->end;
+      Lcd_Clock_Show(globalSettingTimeObj.Hours, globalSettingTimeObj.Minutes);
       UI_SendMessage(SET_CLOCK_SHOW_GLOBAL_SETTING_TIME, NULL);
     }
     break;
@@ -174,6 +176,7 @@ void onKeyHourDown()
       pSysNode->isOpen = true;
     }
     globalSettingTimeObj = pSysNode->start;
+    Lcd_Clock_Show(globalSettingTimeObj.Hours, globalSettingTimeObj.Minutes);
     UI_SendMessage(SET_CLOCK_SHOW_GLOBAL_SETTING_TIME, NULL);
   }
   break;
@@ -186,6 +189,7 @@ void onKeyHourDown()
     }
     RTC_Time_Hour_Increament(&pSysNode->end);
     globalSettingTimeObj = pSysNode->end;
+    Lcd_Clock_Show(globalSettingTimeObj.Hours, globalSettingTimeObj.Minutes);
     UI_SendMessage(SET_CLOCK_SHOW_GLOBAL_SETTING_TIME, NULL);
   }
   break;
@@ -426,6 +430,7 @@ void oneMilliSecCallback()
   KeyScan();
   Sys_Running_Scan();
   UI_Scan();
+  KeyDriver();
 }
 /* USER CODE END 0 */
 
@@ -492,7 +497,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    KeyDriver();
+    
     HAL_Delay(0);
   }
   /* USER CODE END 3 */
