@@ -261,36 +261,42 @@ void KeyDriver()
     case KEY_FODDDER_P_Down:
       Counter_increment(&key_fodder_cnt);
       sysState.fodder_num = CounterGET(&key_fodder_cnt);
-      Counter_init(&vibrator_interval_time_cnt, GET_FODDER_TIME(sysState.fodder_num),0, 1);
+      Counter_init(&vibrator_running_time_cnt, GET_FODDER_TIME(sysState.fodder_num),0, 1);
       break;
     case KEY_FODDDER_P_LongPress:
       Counter_increment(&key_fodder_cnt);
       sysState.fodder_num = CounterGET(&key_fodder_cnt);
-     Counter_init(&vibrator_interval_time_cnt, GET_FODDER_TIME(sysState.fodder_num),0, 1);
+     Counter_init(&vibrator_running_time_cnt, GET_FODDER_TIME(sysState.fodder_num),0, 1);
       break;
     case KEY_FODDDER_N_Down:
       Counter_decrement(&key_fodder_cnt);
       sysState.fodder_num = CounterGET(&key_fodder_cnt);
+      Counter_init(&vibrator_running_time_cnt, GET_FODDER_TIME(sysState.fodder_num),0, 1);
       break;
     case KEY_FODDDER_N_LongPress:
       Counter_decrement(&key_fodder_cnt);
       sysState.fodder_num = CounterGET(&key_fodder_cnt);
+      Counter_init(&vibrator_running_time_cnt, GET_FODDER_TIME(sysState.fodder_num),0, 1);
       break;
     case KEY_INTERVAL_P_Down:
       Counter_increment(&key_interval_cnt);
       sysState.interval_num = CounterGET(&key_interval_cnt);
+      Counter_init(&vibrator_interval_time_cnt, GET_FODDER_TIME(sysState.interval_num),0, 1);
       break;
     case KEY_INTERVAL_P_LongPress:
       Counter_increment(&key_interval_cnt);
       sysState.interval_num = CounterGET(&key_interval_cnt);
+      Counter_init(&vibrator_interval_time_cnt, GET_FODDER_TIME(sysState.interval_num),0, 1);
       break;
     case KEY_INTERVAL_N_Down:
       Counter_decrement(&key_interval_cnt);
       sysState.interval_num = CounterGET(&key_interval_cnt);
+      Counter_init(&vibrator_interval_time_cnt, GET_FODDER_TIME(sysState.interval_num),0, 1);
       break;
     case KEY_INTERVAL_N_LongPress:
       Counter_decrement(&key_interval_cnt);
       sysState.interval_num = CounterGET(&key_interval_cnt);
+      Counter_init(&vibrator_interval_time_cnt, GET_FODDER_TIME(sysState.interval_num),0, 1);
       break;
     case KEY_OUTPUT_P_Down:
       Counter_increment(&key_output_cnt);

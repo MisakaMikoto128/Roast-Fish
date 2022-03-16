@@ -3,7 +3,7 @@
 <title>Static Call Graph - [Roast Fish\Roast Fish.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image Roast Fish\Roast Fish.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Wed Mar 16 14:49:14 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Wed Mar 16 14:53:01 2022
 <BR><P>
 <H3>Maximum Stack Usage =        588 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -559,8 +559,8 @@ Global Symbols
 <P><STRONG><a name="[47]"></a>HAL_InitTick</STRONG> (Thumb, 120 bytes, Stack size 24 bytes, stm32g0xx_hal.o(.text.HAL_InitTick))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = HAL_InitTick &rArr; HAL_SYSTICK_Config &rArr; SysTick_Config &rArr; __NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_Config
-<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_Config
 <LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidiv
 </UL>
 <BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
@@ -937,7 +937,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UserPIDInit
 </UL>
 
-<P><STRONG><a name="[92]"></a>KeyDriver</STRONG> (Thumb, 1328 bytes, Stack size 112 bytes, main.o(.text.KeyDriver))
+<P><STRONG><a name="[92]"></a>KeyDriver</STRONG> (Thumb, 1548 bytes, Stack size 112 bytes, main.o(.text.KeyDriver))
 <BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = KeyDriver &rArr; onKeyMinuteDown &rArr; UI_SendMessage &rArr; Lcd_Output_Nixie_Show &rArr; Lcd_10Nixie_ShowNum &rArr; __aeabi_uidivmod
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;onKeyMinuteDown
