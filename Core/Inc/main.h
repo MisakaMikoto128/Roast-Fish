@@ -42,6 +42,7 @@ extern "C" {
 
 #define IS_BIT_SET(x,bit) ((x)&(bit))
 #define IS_BIT_RESET(x,bit) (!((x)&(bit)))
+#define RTC_DATA_FORMAT RTC_FORMAT_BIN
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/

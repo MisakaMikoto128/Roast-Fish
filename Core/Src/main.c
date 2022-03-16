@@ -112,7 +112,7 @@ void onKeyMinuteDown()
       RTC_Time_Minute_Increament(&stimestructureget);
       Counter_reset(&set_rtc_cnt);
       Lcd_Clock_Show(stimestructureget.Hours, stimestructureget.Minutes);
-      if (HAL_RTC_SetTime(&hrtc, &stimestructureget, RTC_FORMAT_BCD) != HAL_OK)
+      if (HAL_RTC_SetTime(&hrtc, &stimestructureget, RTC_DATA_FORMAT) != HAL_OK)
       {
         Error_Handler();
       }
@@ -160,7 +160,7 @@ void onKeyHourDown()
     RTC_Time_Hour_Increament(&stimestructureget);
     Counter_reset(&set_rtc_cnt);
     Lcd_Clock_Show(stimestructureget.Hours, stimestructureget.Minutes);
-    if (HAL_RTC_SetTime(&hrtc, &stimestructureget, RTC_FORMAT_BCD) != HAL_OK)
+    if (HAL_RTC_SetTime(&hrtc, &stimestructureget, RTC_DATA_FORMAT) != HAL_OK)
     {
       Error_Handler();
     }

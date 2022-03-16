@@ -9,6 +9,9 @@
         "ui.h": "c",
         "optocoupler.h": "c",
         "sys.h": "c",
-        "rtclib.h": "c"
+        "rtclib.h": "c",
+        "softwdog.h": "c",
+        "rtc.h": "c",
+        "stdbool.h": "c"
     }
 }

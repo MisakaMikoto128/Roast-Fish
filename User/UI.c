@@ -196,9 +196,9 @@ void UI_Scan(void)
         //     break;
         // }
         /* Get the RTC current Time */
-        HAL_RTC_GetTime(&hrtc, &stimestructureget, RTC_FORMAT_BCD);
+        HAL_RTC_GetTime(&hrtc, &stimestructureget, RTC_DATA_FORMAT);
         /* Get the RTC current Date */
-        HAL_RTC_GetDate(&hrtc, &sdatestructureget, RTC_FORMAT_BCD);
+        HAL_RTC_GetDate(&hrtc, &sdatestructureget, RTC_DATA_FORMAT);
     }
 
     if (cnt % (1000 * 60) == 0)

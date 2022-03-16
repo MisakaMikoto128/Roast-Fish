@@ -782,6 +782,11 @@
               <FileType>1</FileType>
               <FilePath>..\User\SoftWDOG.c</FilePath>
             </File>
+            <File>
+              <FileName>RTCLib.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\RTCLib.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

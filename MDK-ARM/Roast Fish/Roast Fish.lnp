@@ -44,6 +44,7 @@
 "roast fish\optocoupler.o"
 "roast fish\relay.o"
 "roast fish\softwdog.o"
+"roast fish\rtclib.o"
 --library_type=microlib --strict --scatter "Roast Fish\Roast Fish.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
