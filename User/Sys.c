@@ -32,8 +32,8 @@ float piddecayfun(float z)
 void UserPIDInit()
 {
     IncPIDInit(&FishPID); // This code is not necessary.
-    FishPID.Fmax = 0.9;
-    FishPID.Fmin = 0.1;
+    FishPID.Fmax = 0.85;
+    FishPID.Fmin = 0.22;
     FishPID.F = 0.5;
     FishPID.sysArg = PLUS_DELAY_CNT_MAX; // eg. In DC/DC buck control system , this value is PWM output timer's period.
     FishPID.P = 0.004;
@@ -272,6 +272,7 @@ void Sys_Running_Scan()
         {
             Counter_reset(&sysRun_cnt);
             HAL_TIM_PWM_Start_IT(&htim14, TIM_CHANNEL_1);
+            TIM14->CNT = PLUS_DELAY_CNT_MAX / 2;
         }
         else
         {
@@ -288,7 +289,7 @@ void Sys_Running_Scan()
         }
         else
         {
-             FishPID.Target = 1000;
+            FishPID.Target = 1000;
         }
     }
 }

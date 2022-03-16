@@ -3,7 +3,7 @@
 <title>Static Call Graph - [Roast Fish\Roast Fish.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image Roast Fish\Roast Fish.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Tue Mar 15 16:36:58 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Wed Mar 16 13:08:40 2022
 <BR><P>
 <H3>Maximum Stack Usage =        588 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -486,7 +486,8 @@ Global Symbols
 <P><STRONG><a name="[89]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, stm32g0xx_hal_gpio.o(.text.HAL_GPIO_WritePin))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
+<BR>[Called By]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WritetoHT1621
 <LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteDatatoHT1621
@@ -973,8 +974,8 @@ Global Symbols
 <P><STRONG><a name="[a3]"></a>LED_Init</STRONG> (Thumb, 68 bytes, Stack size 48 bytes, led.o(.text.LED_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = LED_Init &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
+<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1119,8 +1120,8 @@ Global Symbols
 <P><STRONG><a name="[b6]"></a>MX_GPIO_Init</STRONG> (Thumb, 256 bytes, Stack size 72 bytes, gpio.o(.text.MX_GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = MX_GPIO_Init &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
+<BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1319,7 +1320,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Scan
 </UL>
 
-<P><STRONG><a name="[c6]"></a>Sys_Running_Scan</STRONG> (Thumb, 108 bytes, Stack size 8 bytes, sys.o(.text.Sys_Running_Scan))
+<P><STRONG><a name="[c6]"></a>Sys_Running_Scan</STRONG> (Thumb, 116 bytes, Stack size 8 bytes, sys.o(.text.Sys_Running_Scan))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = Sys_Running_Scan &rArr; HAL_TIM_PWM_Start_IT &rArr; TIM_CCxChannelCmd
 </UL>
 <BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Stop_IT
@@ -1597,6 +1598,7 @@ Global Symbols
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_Start_IT
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
 <LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
