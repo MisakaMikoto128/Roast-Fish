@@ -205,6 +205,11 @@ void UI_Scan(void)
     {
         Sys_Run_State_Update();
     }
+
+    if (cnt % (1000) == 0)
+    {
+        Sys_Running_Schedule_Scan();
+    }
 }
 
 void UI_SendMessage(UI_Message_t message, void *arg)
@@ -309,7 +314,7 @@ void UI_SendMessage(UI_Message_t message, void *arg)
     case SET_FODDER_NUM:
         Lcd_Fodder_Nixie_Show(*(uint8_t *)arg);
         break;
-        
+
     case SET_INTERVAL_NUM:
         Lcd_Interval_Nixie_Show(*(uint8_t *)arg);
         break;

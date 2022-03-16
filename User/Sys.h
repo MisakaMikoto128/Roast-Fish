@@ -13,6 +13,7 @@
 #include <stdbool.h>
 #include "Counter.h"
 #include "SoftWDOG.h"
+#include "LED.h"
 extern PID FishPID;
 void UserPIDInit();
 
@@ -83,8 +84,8 @@ extern Sys sysState;
 extern Sys sysState_bak;
 extern bool vibrator_enable;
 
-#define VIBRATOR_ENABLE() (vibrator_enable = true)
-#define VIBRATOR_DISABLE() (vibrator_enable = false)
+#define VIBRATOR_ENABLE() do{vibrator_enable = true;LED_ON();}while(0)
+#define VIBRATOR_DISABLE() do{vibrator_enable = false;LED_OFF();}while(0)
 #define IS_VIBRATOR_ENABLE() (vibrator_enable)
 #define VIBRATOR_DELAY_MAX 8000UL //Hz
 #define VIBRATOR_GEAR_NUM 16UL
@@ -97,6 +98,7 @@ extern int32_t vibrator_pluse_delay;
 void Sys_Update_State_2_UI();
 void Sys_Run_State_Update();
 void Sys_Running_Scan();
+void Sys_Running_Schedule_Scan();
 void reloadSysStateFromFlash();
 void saveSysStateToFlash();
 bool checkSysStateCrcValid(const Sys * pSysState);

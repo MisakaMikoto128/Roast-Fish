@@ -8,6 +8,7 @@
         "timesetting.h": "c",
         "ui.h": "c",
         "optocoupler.h": "c",
-        "sys.h": "c"
+        "sys.h": "c",
+        "rtclib.h": "c"
     }
 }

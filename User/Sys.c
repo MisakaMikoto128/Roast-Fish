@@ -272,8 +272,8 @@ void Sys_Running_Scan()
         if (sysState.runState == SYS_RUN)
         {
             Counter_reset(&sysRun_cnt);
-            Counter_init(&vibrator_interval_time_cnt, GET_FODDER_TIME(sysState.fodder_num),0, 1);
-			Counter_init(&vibrator_running_time_cnt, GET_FODDER_TIME(sysState.fodder_num),0, 1);
+            Counter_init(&vibrator_interval_time_cnt, GET_FODDER_TIME(sysState.fodder_num), 0, 1);
+            Counter_init(&vibrator_running_time_cnt, GET_FODDER_TIME(sysState.fodder_num), 0, 1);
             HAL_TIM_PWM_Start_IT(&htim14, TIM_CHANNEL_1);
             TIM14->CNT = PLUS_DELAY_CNT_MAX / 2;
 
@@ -283,7 +283,7 @@ void Sys_Running_Scan()
         {
             HAL_TIM_PWM_Stop_IT(&htim14, TIM_CHANNEL_1);
             VIBRATOR_DISABLE();
-			FishPID.F = 0.0;
+            FishPID.F = 0.0;
         }
     }
 
@@ -301,19 +301,48 @@ void Sys_Running_Scan()
             VIBRATOR_SET_GEAR_DELAY_TIME(sysState.output_num);
         }
 
-        if(IS_VIBRATOR_ENABLE()){
+        if (IS_VIBRATOR_ENABLE())
+        {
             Counter_increment(&vibrator_running_time_cnt);
-            if(Counter_exceed_or_reach_max(&vibrator_running_time_cnt)){
+            if (Counter_exceed_or_reach_max(&vibrator_running_time_cnt))
+            {
                 VIBRATOR_DISABLE();
                 Counter_reset(&vibrator_running_time_cnt);
             }
         }
-				
-				if(!IS_VIBRATOR_ENABLE()){
+
+        if (!IS_VIBRATOR_ENABLE())
+        {
             Counter_increment(&vibrator_interval_time_cnt);
-            if(Counter_exceed_or_reach_max(&vibrator_interval_time_cnt)){
+            if (Counter_exceed_or_reach_max(&vibrator_interval_time_cnt))
+            {
                 VIBRATOR_ENABLE();
                 Counter_reset(&vibrator_interval_time_cnt);
+            }
+        }
+    }
+}
+
+/**
+ * @brief 1s scan interval
+ *
+ */
+void Sys_Running_Schedule_Scan()
+{
+    if (sysState.mode == MOD_NORMAL_AOTO)
+    {
+        for (int i = 0; i < PERIOD_NUM; i++)
+        {
+            if (sysState.period[i].isOpen)
+            {
+                if (RTC_Time_Equal(&sysState.period[i].start, &stimestructureget))
+                {
+                    sysState.runState = SYS_RUN;
+                }
+                if (RTC_Time_Equal(&sysState.period[i].end, &stimestructureget))
+                {
+                    sysState.runState = SYS_STOP;
+                }
             }
         }
     }
@@ -323,26 +352,30 @@ void reloadSysStateFromFlash()
 {
     Sys temp = {0};
     temp = *((Sys *)sysState.flash_addr);
-    if(checkSysStateCrcValid(&temp)){
+    if (checkSysStateCrcValid(&temp))
+    {
         sysState = temp;
         sysState.read_count++;
-    }else{
+    }
+    else
+    {
         saveSysStateToFlash();
     }
 }
 
-bool checkSysStateCrcValid(const Sys * pSysState){
+bool checkSysStateCrcValid(const Sys *pSysState)
+{
     uint32_t crc = HAL_CRC_Calculate(&hcrc, (uint32_t *)pSysState, SYS_STATE_CRC_LEN);
     return crc == pSysState->crc;
 }
 
 void saveSysStateToFlash()
 {
-	sysState.write_count++;
-	uint32_t crc = HAL_CRC_Calculate(&hcrc, (uint32_t *)&sysState, SYS_STATE_CRC_LEN);
-	sysState.crc = crc;
-	
-	 // TODO : check sysState.flash_addr is valid
-	Flash_Write_Alignment64(sysState.flash_addr,(uint8_t*)&sysState, sizeof(sysState));
-	SoftWDOG_Disable(&flashWriteWDOG);
+    sysState.write_count++;
+    uint32_t crc = HAL_CRC_Calculate(&hcrc, (uint32_t *)&sysState, SYS_STATE_CRC_LEN);
+    sysState.crc = crc;
+
+    // TODO : check sysState.flash_addr is valid
+    Flash_Write_Alignment64(sysState.flash_addr, (uint8_t *)&sysState, sizeof(sysState));
+    SoftWDOG_Disable(&flashWriteWDOG);
 }

@@ -3,7 +3,7 @@
 <title>Static Call Graph - [Roast Fish\Roast Fish.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image Roast Fish\Roast Fish.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Wed Mar 16 14:59:03 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6160001: Last Updated: Wed Mar 16 15:06:47 2022
 <BR><P>
 <H3>Maximum Stack Usage =        588 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -533,6 +533,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM16_IRQHandler
 <LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sys_Running_Scan
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WritetoHT1621
@@ -1371,7 +1372,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_Scan
 </UL>
 
-<P><STRONG><a name="[ca]"></a>Sys_Running_Scan</STRONG> (Thumb, 420 bytes, Stack size 64 bytes, sys.o(.text.Sys_Running_Scan))
+<P><STRONG><a name="[ca]"></a>Sys_Running_Scan</STRONG> (Thumb, 476 bytes, Stack size 64 bytes, sys.o(.text.Sys_Running_Scan))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = Sys_Running_Scan &rArr; HAL_TIM_PWM_Start_IT &rArr; TIM_CCxChannelCmd
 </UL>
 <BR>[Calls]<UL><LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
@@ -1379,6 +1380,7 @@ Global Symbols
 <LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Stop_IT
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Counter_reset
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Counter_init
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Counter_increment
@@ -1540,7 +1542,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[d4]"></a>UI_Scan</STRONG> (Thumb, 640 bytes, Stack size 40 bytes, ui.o(.text.UI_Scan))
+<P><STRONG><a name="[d4]"></a>UI_Scan</STRONG> (Thumb, 644 bytes, Stack size 40 bytes, ui.o(.text.UI_Scan))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = UI_Scan &rArr; Sys_Update_State_2_UI &rArr; UI_SendMessage &rArr; Lcd_Output_Nixie_Show &rArr; Lcd_10Nixie_ShowNum &rArr; __aeabi_uidivmod
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_Clock_Show

@@ -37,6 +37,7 @@
 #include "LED.h"
 #include "Optocoupler.h"
 #include "Relay.h"
+#include "RTCLib.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -91,60 +92,7 @@ Counter set_rtc_cnt = {.count_max = 400, .count_min = 0, .count = 0, .step = 1};
 Counter vibrator_interval_time_cnt = {0};
 Counter vibrator_running_time_cnt = {0};
 
-void RTC_Time_Minute_Increament(RTC_TimeTypeDef *time)
-{
-  if (time->Minutes == 59)
-  {
-    time->Minutes = 0;
-  }
-  else
-  {
-    time->Minutes++;
-  }
-}
 
-void RTC_Time_Minute_Decreament(RTC_TimeTypeDef *time)
-{
-  if (time->Minutes == 0)
-  {
-    time->Minutes = 59;
-  }
-  else
-  {
-    time->Minutes--;
-  }
-}
-
-void RTC_Time_Hour_Increament(RTC_TimeTypeDef *time)
-{
-  if (time->Hours == 23)
-  {
-    time->Hours = 0;
-  }
-  else
-  {
-    time->Hours++;
-  }
-}
-
-void RTC_Time_Hour_Decreament(RTC_TimeTypeDef *time)
-{
-  if (time->Hours == 0)
-  {
-    time->Hours = 23;
-  }
-  else
-  {
-    time->Hours--;
-  }
-}
-
-void RTC_Time_ResetHMS(RTC_TimeTypeDef *time)
-{
-  time->Hours = 0;
-  time->Minutes = 0;
-  time->Seconds = 0;
-}
 
 void onKeyMinuteDown()
 {
