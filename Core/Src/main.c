@@ -77,10 +77,12 @@ void User_KeyInit()
 
 Counter key_calitime_cnt = {.count_max = 2, .count_min = 0, .count = 0, .step = 1};
 Counter key_mode_cnt = {.count_max = 2, .count_min = 0, .count = 0, .step = 1};
-Counter key_fodder_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1};
-Counter key_interval_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1};
-Counter key_output_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1};
-Counter key_area_cnt = {.count_max = 16, .count_min = 1, .count = 1, .step = 1};
+
+Counter key_fodder_cnt = {.count_max = MAX_FODDER, .count_min = MIN_FODDER, .count = 1, .step = 1};
+Counter key_interval_cnt = {.count_max = MAX_INTERVAL, .count_min = MIN_INTERVAL, .count = 1, .step = 1};
+Counter key_output_cnt = {.count_max = MAX_OUTPOUT, .count_min = MIN_OUTPOUT, .count = 1, .step = 1};
+Counter key_area_cnt = {.count_max = MAX_AREA, .count_min = MIN_AREA, .count = 1, .step = 1};
+
 Counter key_run_time_set_cnt = {.count_max = 120, .count_min = 5, .count = 5, .step = 5};
 
 Counter key_period_cnt = {.count_max = 8 * 2, .count_min = 0, .count = 0, .step = 1};

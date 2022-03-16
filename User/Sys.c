@@ -33,7 +33,7 @@ void UserPIDInit()
 {
     IncPIDInit(&FishPID); // This code is not necessary.
     FishPID.Fmax = 0.85;
-    FishPID.Fmin = 0.22;
+    FishPID.Fmin = 0.15;
     FishPID.F = 0.5;
     FishPID.sysArg = PLUS_DELAY_CNT_MAX; // eg. In DC/DC buck control system , this value is PWM output timer's period.
     FishPID.P = 0.004;
@@ -289,7 +289,8 @@ void Sys_Running_Scan()
         }
         else
         {
-            FishPID.Target = 1000;
+            float F = (FishPID.Fmax - FishPID.Fmin) * (sysState.area_num / (float)MAX_AREA) + FishPID.Fmin;
+            FishPID.Target = F * MAX_MOTOR_SPEED;
         }
     }
 }

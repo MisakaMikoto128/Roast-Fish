@@ -1,6 +1,9 @@
 #ifndef _SYS_H_
 #define _SYS_H_
 #define PLUS_DELAY_CNT_MAX (64000)
+#define MAX_MOTOR_SPEED (1200)
+#define PRE_RUNING_TIME 3000 //ms //TODO: change to 4000 ms
+#define PRE_RUNNING_SPEED 400 //Hz
 #define TIMER1_FREQ 400000
 #define TIMER3_FREQ 100L
 #include "PID.h"
@@ -13,17 +16,17 @@
 extern PID FishPID;
 void UserPIDInit();
 
-#define MAX_FODDER 15
-#define MIN_FODDER 0
+#define MAX_FODDER 16
+#define MIN_FODDER 1
 
-#define MAX_INTERVAL 15
-#define MIN_INTERVAL 0
+#define MAX_INTERVAL 16
+#define MIN_INTERVAL 1
 
-#define MAX_OUTPOUT 15
-#define MIN_OUTPOUT 0
+#define MAX_OUTPOUT 16
+#define MIN_OUTPOUT 1
 
-#define MAX_AREA 15
-#define MIN_AREA 0
+#define MAX_AREA 16
+#define MIN_AREA 1
 
 #define MODE_NUM 3
 #define PERIOD_NUM 8
@@ -31,9 +34,7 @@ void UserPIDInit();
 
 #define MIN_RUN_TIME 5
 
-#define PRE_RUNING_TIME 3000 //ms
 
-#define PRE_RUNNING_SPEED 300 //Hz
 typedef enum {
     SYS_RUN,
     SYS_STOP,
