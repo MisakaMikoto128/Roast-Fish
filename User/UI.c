@@ -101,6 +101,8 @@ void UI_Scan(void)
             break;
         case UI_CLOCKWIGET_SHOW_GLOBAL_SETTING_TIME:
             Lcd_Clock_Show(globalSettingTimeObj.Hours, globalSettingTimeObj.Minutes);
+						__SECOND_DOT_TEXT_On();
+            __TIME_TEXT_Off();
             break;
         default:
             break;
